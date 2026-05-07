@@ -70,6 +70,14 @@ const venues = [
     cta: "bicyclecoffeeco.com",
   },
   {
+    name: "Farmhouse Kitchen Thai",
+    role: "Dinner · presentations",
+    blurb:
+      "Award-winning Thai restaurant in Jack London Square. Where we sit down after the sunset cruise for a real dinner and project presentations on the screens — chef-driven food, family-style tables, room for fifty.",
+    href: "https://farmhousethai.com/oakland",
+    cta: "farmhousethai.com/oakland",
+  },
+  {
     name: "Heinold's First and Last Chance Saloon",
     role: "After-party",
     blurb:
@@ -85,8 +93,8 @@ const schedule = [
   { time: "10:30 AM", title: "Coffee tickets redeem", where: "Bicycle Coffee" },
   { time: "11:00 AM", title: "Lunch · hackathon kickoff", where: "Plank" },
   { time: "3:00 PM", title: "Coffee break", where: "Bicycle Coffee" },
-  { time: "6:00 – 8:00 PM", title: "Sunset cruise · dinner · networking", where: "Dragon Lady" },
-  { time: "Post-cruise", title: "Demos · judging · winners", where: "Plank" },
+  { time: "6:00 – 8:00 PM", title: "Sunset networking cruise", where: "Dragon Lady" },
+  { time: "8:15 PM", title: "Dinner · demos · judging", where: "Farmhouse Kitchen Thai" },
   { time: "Late", title: "After-party", where: "Heinold's" },
 ] as const;
 
@@ -95,7 +103,8 @@ const includes = [
   "Lunch at Plank (pizza, chicken, drinks)",
   "Arcade credits + bowling at Plank",
   "Coffee tickets for Bicycle Coffee",
-  "Sunset cruise with dinner on board",
+  "Sunset networking cruise on the bay",
+  "Dinner at Farmhouse Kitchen Thai",
   "Contree workspace + Token Factory keys",
   "Nebius GPU credits for inference & deploy",
   "Composio + Tavily API access for the day",
@@ -117,7 +126,7 @@ const faqs = [
   },
   {
     q: "Drinks?",
-    a: "Self-pay at Plank. BYOB on the boat (cheaper that way). After-party drinks at Heinold's are on us.",
+    a: "Self-pay at Plank and Farmhouse. BYOB on the boat (cheaper that way). After-party drinks at Heinold's are on us.",
   },
 ] as const;
 
@@ -149,8 +158,8 @@ export default function HackJackLondonSquarePage() {
             </h1>
             <p className="mt-7 max-w-2xl text-xl text-ink-600">
               Cross the bay on a sailboat. Build all day at Plank. Ship something with Nebius, Composio,
-              and Tavily. Sunset cruise, dinner on the water, demos, and an after-party at the oldest
-              saloon on the waterfront.
+              and Tavily. Sunset networking cruise, dinner at Farmhouse Kitchen Thai, demos, and an
+              after-party at the oldest saloon on the waterfront.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link href="/builders/login" className="btn-lime px-6 py-3.5 text-sm">
