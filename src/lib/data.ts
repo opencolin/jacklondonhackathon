@@ -204,7 +204,7 @@ export const events: Event[] = [
     format: "MEETUP",
     state: "UPCOMING",
     startDateTime: "2026-05-18T18:00:00-07:00",
-    endDateTime: "2026-05-18T21:00:00-07:00",
+    endDateTime: "2026-05-18T20:00:00-07:00",
     city: "SF",
     venue: "Frontier Tower, 9th Floor, 995 Market St, San Francisco, CA",
     isOnline: false,
