@@ -497,7 +497,7 @@ export default function HackJackLondonSquarePage() {
         <Section id="judges">
           <SectionHeader
             eyebrow="Who's scoring you"
-            title="No five-minute stage pitch. 1:1 conversations all day."
+            title="Not just a 5-minute pitch. Demo and connect one-on-one with conversations all day."
             body="The score on May 30 is a blend. AI judges read your code over the three weeks. Sponsor teams, angels, and VCs do 1:1s with every builder all day at Plank — your pitch sharpens with each conversation. Final presentations before the sunset cruise. Everyone's vote counts."
           />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
