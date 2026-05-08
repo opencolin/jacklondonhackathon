@@ -7,7 +7,7 @@ import { Section, SectionHeader } from "@/components/section";
 export const metadata: Metadata = {
   title: "Hack Jack London Square — Nebius Builders Boat Hackathon",
   description:
-    "A one-day boat hackathon across Jack London Square. Sponsored by Nebius, Composio, and Tavily. Cross the bay, hack at Plank, sunset cruise dinner, after-party at Heinold's.",
+    "A one-day boat hackathon across Jack London Square. Sponsored by Nebius, Composio, and Tavily. Cross the bay on the Dragon Lady, hack at Plank, dinner at Farmhouse, after-party back on the yacht.",
 };
 
 const sponsors = [
@@ -77,14 +77,45 @@ const venues = [
     href: "https://farmhousethai.com/oakland",
     cta: "farmhousethai.com/oakland",
   },
+] as const;
+
+const perks = [
   {
-    name: "Heinold's First and Last Chance Saloon",
-    role: "After-party",
-    blurb:
-      "Historic 1883 saloon on the Jack London Square waterfront. Where the day ends — drinks, war stories, judging hangover, and the occasional uneven floor.",
-    href: "#",
-    cta: "Intro pending",
+    tag: "On the water",
+    title: "Sunset cruise",
+    body: "Two hours on the bay aboard the 80-foot Dragon Lady. The calmest networking time you will ever have.",
   },
+  {
+    tag: "Plank",
+    title: "Free bowling",
+    body: "Plank's lanes are part of the takeover. Strikes between commits, frame counters by the pizza.",
+  },
+  {
+    tag: "Plank",
+    title: "Arcade games",
+    body: "Fifteen dollars in arcade credits per builder. Skee-ball-driven development, officially endorsed.",
+  },
+  {
+    tag: "All day",
+    title: "Amazing food",
+    body: "Lunch at Plank, dinner at Farmhouse Kitchen Thai. Real meals, no pizza fatigue.",
+  },
+  {
+    tag: "Bicycle Coffee",
+    title: "Coffee on tap",
+    body: "Tickets you can redeem any time you need to walk and think. Oakland-roasted, ten minutes from the dock.",
+  },
+  {
+    tag: "Dragon Lady",
+    title: "After-party on the yacht",
+    body: "Boat stays docked. Top deck, hot tub running, sunset still in your eyes — and someone always brings a bottle.",
+  },
+] as const;
+
+const sdkPerks = [
+  "Contree workspace + Token Factory keys",
+  "Nebius GPU credits for inference & deploy",
+  "Composio + Tavily API access for the day",
 ] as const;
 
 const schedule = [
@@ -95,20 +126,7 @@ const schedule = [
   { time: "3:00 PM", title: "Coffee break", where: "Bicycle Coffee" },
   { time: "6:00 – 8:00 PM", title: "Sunset networking cruise", where: "Dragon Lady" },
   { time: "8:15 PM", title: "Dinner · demos · judging", where: "Farmhouse Kitchen Thai" },
-  { time: "Late", title: "After-party", where: "Heinold's" },
-] as const;
-
-const includes = [
-  "Round-trip bay crossing on the Dragon Lady",
-  "Lunch at Plank (pizza, chicken, drinks)",
-  "Arcade credits + bowling at Plank",
-  "Coffee tickets for Bicycle Coffee",
-  "Sunset networking cruise on the bay",
-  "Dinner at Farmhouse Kitchen Thai",
-  "Contree workspace + Token Factory keys",
-  "Nebius GPU credits for inference & deploy",
-  "Composio + Tavily API access for the day",
-  "After-party drinks at Heinold's",
+  { time: "Late", title: "After-party on the yacht", where: "Dragon Lady (docked)" },
 ] as const;
 
 const faqs = [
@@ -126,7 +144,7 @@ const faqs = [
   },
   {
     q: "Drinks?",
-    a: "Self-pay at Plank and Farmhouse. BYOB on the boat (cheaper that way). After-party drinks at Heinold's are on us.",
+    a: "Self-pay at Plank and Farmhouse. BYOB on the boat (cheaper that way). After-party drinks back on the docked Dragon Lady — sponsors picking up that tab.",
   },
 ] as const;
 
@@ -159,7 +177,7 @@ export default function HackJackLondonSquarePage() {
             <p className="mt-7 max-w-2xl text-xl text-ink-600">
               Cross the bay on an 80-foot yacht. Build all day at Plank. Ship something with Nebius,
               Composio, and Tavily. Sunset networking cruise, dinner at Farmhouse Kitchen Thai, demos,
-              and an after-party at the oldest saloon on the waterfront.
+              and an after-party back on the docked yacht with the hot tub running.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link href="/builders/login" className="btn-lime px-6 py-3.5 text-sm">
@@ -198,33 +216,43 @@ export default function HackJackLondonSquarePage() {
           <div className="overflow-hidden rounded-card border border-ink-200 bg-white">
             {/* Hero photo */}
             <img
-              src="https://jerrysfaeries.com/wp-content/uploads/2023/04/exterior-ballpark-chinabasin.jpg"
-              alt="Dragon Lady cruising past Oracle Park and China Basin"
-              className="h-[320px] w-full object-cover sm:h-[420px] lg:h-[520px]"
+              src="/boat/bow-sunset-bridge.jpg"
+              alt="Three builders on the bow of the Dragon Lady at sunset under the Bay Bridge, San Francisco skyline behind"
+              className="h-[320px] w-full object-cover sm:h-[420px] lg:h-[560px]"
               loading="eager"
             />
           </div>
-          <div className="mt-4 grid grid-cols-2 gap-4 lg:grid-cols-4">
+          <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-3">
             {[
               {
-                src: "https://jerrysfaeries.com/wp-content/uploads/2018/11/dragonlady1-scaled.jpeg",
-                alt: "Dragon Lady in profile at the dock",
-                caption: "80 feet long, 20 ft beam",
+                src: "/boat/rainbow-cruising.jpg",
+                alt: "Dragon Lady cruising with rainbow flag flying",
+                caption: "Pride flag flying off the mast",
               },
               {
-                src: "https://jerrysfaeries.com/wp-content/uploads/2023/04/topdeck-2.jpg",
-                alt: "Top deck with hot tub and tender",
-                caption: "Top deck — hot tub, tender, sunset views",
+                src: "/boat/bay-profile.jpg",
+                alt: "Dragon Lady out on the bay between sailboats",
+                caption: "Out on the bay",
               },
               {
-                src: "https://jerrysfaeries.com/wp-content/uploads/2023/04/interior-mainlounge-kitchen-1.jpg",
-                alt: "Main salon and galley",
+                src: "/boat/night-lights.jpg",
+                alt: "Dragon Lady docked at night with colorful underwater and deck lights",
+                caption: "After-party glow",
+              },
+              {
+                src: "/boat/aerial-docked.jpg",
+                alt: "Top-down aerial of Dragon Lady at the dock",
+                caption: "Aerial — 80ft on her berth",
+              },
+              {
+                src: "/boat/galley-interior.jpg",
+                alt: "Main salon and galley with wood paneling and bar stools",
                 caption: "Main salon and galley",
               },
               {
-                src: "https://jerrysfaeries.com/wp-content/uploads/2023/04/interior-dinner-2nd-interior-captians-chair.jpg",
-                alt: "Dining salon and captain's chair",
-                caption: "Dining salon — networking on the cruise",
+                src: "/boat/marina-sunset.jpg",
+                alt: "Sunset over the marina, masts silhouetted against orange sky",
+                caption: "Marina sunset, demo time",
               },
             ].map((p) => (
               <figure key={p.src} className="overflow-hidden rounded-card border border-ink-200 bg-white">
@@ -341,13 +369,9 @@ export default function HackJackLondonSquarePage() {
                 <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-ink-500">{v.role}</p>
                 <p className="mt-3 text-sm leading-relaxed text-ink-700">{v.blurb}</p>
                 <div className="mt-auto flex flex-wrap gap-2 pt-6">
-                  {v.href !== "#" ? (
-                    <Link href={v.href} className="btn-outline text-xs" target="_blank" rel="noreferrer">
-                      {v.cta} ↗
-                    </Link>
-                  ) : (
-                    <span className="pill-outline text-xs">{v.cta}</span>
-                  )}
+                  <Link href={v.href} className="btn-outline text-xs" target="_blank" rel="noreferrer">
+                    {v.cta} ↗
+                  </Link>
                   {"secondary" in v && v.secondary ? (
                     <Link
                       href={v.secondary.href}
@@ -364,23 +388,33 @@ export default function HackJackLondonSquarePage() {
           </div>
         </Section>
 
-        {/* Includes */}
+        {/* Perks */}
         <Section>
-          <div className="grid gap-12 lg:grid-cols-[1fr_1.2fr] lg:items-start">
-            <SectionHeader
-              eyebrow="What's included"
-              title="Free for builders. Sponsors picked up the tab."
-              body="Apply, get accepted, show up at South Beach with a laptop. Everything below is on the house."
-            />
-            <ul className="grid gap-3 sm:grid-cols-2">
-              {includes.map((line) => (
-                <li key={line} className="flex items-start gap-3 rounded-card border border-ink-200 bg-white p-4">
+          <SectionHeader
+            eyebrow="Awesome perks"
+            title="Free for builders. Sponsors picked up the tab."
+            body="Apply, get accepted, show up at South Beach with a laptop. Six perks on the house, plus the SDKs."
+          />
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {perks.map((p) => (
+              <div key={p.title} className="card flex flex-col">
+                <span className="pill-lime self-start">{p.tag}</span>
+                <h3 className="h-display mt-4 text-2xl font-bold text-ink-900">{p.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-700">{p.body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 rounded-card border border-ink-200 bg-white p-6">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-ink-500">And the SDKs</p>
+            <ul className="grid gap-3 sm:grid-cols-3">
+              {sdkPerks.map((line) => (
+                <li key={line} className="flex items-start gap-3 text-sm text-ink-800">
                   <span className="mt-0.5 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-lime text-navy-700">
                     <svg viewBox="0 0 20 20" fill="none" className="h-3 w-3">
                       <path d="M4 10l4 4 8-8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </span>
-                  <span className="text-sm text-ink-800">{line}</span>
+                  <span>{line}</span>
                 </li>
               ))}
             </ul>

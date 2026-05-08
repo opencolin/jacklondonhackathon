@@ -1,6 +1,6 @@
 # Hack Jack London Square — Nebius Builders Boat Hackathon
 
-A one-day Oakland hackathon staged across Jack London Square partners, anchored by the **Dragon Lady** boat. Builders cross the bay from South Beach in the morning, hack at Plank, take a sunset networking cruise, sit down to dinner and project presentations at Farmhouse Kitchen Thai, and after-party at Heinold's.
+A one-day Oakland hackathon staged across Jack London Square partners, anchored by the **Dragon Lady** boat. Builders cross the bay from South Beach in the morning, hack at Plank, take a sunset networking cruise, sit down to dinner and project presentations at Farmhouse Kitchen Thai, and after-party back on the docked yacht with the hot tub running.
 
 **Status:** planning
 **Headcount cap:** 50 (Dragon Lady max)
@@ -25,7 +25,6 @@ Working name: **Hack Jack London Square** (a.k.a. "Hack Jack").
 |---|---|---|
 | **Dragon Lady** (marina at Jack London Sq) | Transport across bay, sunset networking cruise, on-board dinner, hackathon space | Captain contact: captain@dragonladysf.com. Harbor master ask in flight to dock 50–100 yards from Plank |
 | **Plank Restaurant** | Lunch + hackathon space (indoor + covered/heated outdoor patio), bowling, arcade | Quote requested from Angelica; event guide to come via events@agenthack.ai |
-| **Heinold's First and Last Chance Saloon** | After-party / cocktails | Intro pending |
 | **Bicycle Coffee** | Coffee tickets — builders redeem at the shop, get to walk Jack London Sq | Intro pending |
 | **Farmhouse Kitchen Thai** ([oakland](https://farmhousethai.com/oakland)) | Dinner + project presentations after the sunset cruise | Intro pending |
 
@@ -43,7 +42,7 @@ Working name: **Hack Jack London Square** (a.k.a. "Hack Jack").
 | ~3:30 PM | Back to hacking | Plank |
 | 6:00–8:00 PM | Sunset networking cruise | Dragon Lady |
 | 8:15 PM | Dinner + project presentations + judging | Farmhouse Kitchen Thai |
-| late | After-party | Heinold's |
+| late | After-party on the docked yacht (hot tub running) | Dragon Lady |
 
 Hacking happens at Plank's indoor tables, the covered/heated outdoor patio, the arcade rooms, and inside the Dragon Lady when docked. Bring our own Starlink for outdoor connectivity — Plank confirmed an outside cable run is feasible.
 
@@ -69,7 +68,7 @@ Hacking happens at Plank's indoor tables, the covered/heated outdoor patio, the 
 - **Coffee:** Bicycle Coffee tickets, redeemable for free coffee
 - **Lunch:** at Plank (covered by Plank package)
 - **Dinner:** at Farmhouse Kitchen Thai after the sunset cruise (also venue for presentations + judging)
-- **Alcohol:** self-pay at Plank and Farmhouse. BYO on the boat (cheaper). Optional: one free pre-boarding drink, possibly a small bar tab
+- **Alcohol:** self-pay at Plank and Farmhouse. BYO on the boat (cheaper). After-party drinks on the docked yacht — sponsors covering. Optional: one free pre-boarding drink
 - **Note:** SF hackers don't drink heavily — plan light
 
 ---
@@ -81,7 +80,7 @@ Hacking happens at Plank's indoor tables, the covered/heated outdoor patio, the 
 - Networking time = sunset cruise
 - Dinner + presentations on screens at Farmhouse Kitchen Thai
 - Judging + winners at Farmhouse
-- After-party at Heinold's
+- After-party back on the docked Dragon Lady (hot tub, top deck)
 
 ---
 
@@ -94,7 +93,6 @@ Hacking happens at Plank's indoor tables, the covered/heated outdoor patio, the 
 
 **To do:**
 - [ ] Pick Saturday vs Sunday and confirm date with Plank for accurate pricing
-- [ ] Intro to Heinold's First and Last Chance Saloon
 - [ ] Intro to Bicycle Coffee — coffee ticket arrangement
 - [ ] Intro to Farmhouse Kitchen Thai — dinner for ~50 + screens for presentations
 - [ ] Confirm sponsor list and budget ceiling
