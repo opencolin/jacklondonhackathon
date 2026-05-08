@@ -298,6 +298,21 @@ export default function HackJackLondonSquarePage() {
               Best builders of the bay. 30 of you on the boat — building, bowling, beer, beluga caviar, sunset cruise.
               Winner takes home $10k in credits and a DGX Spark.
             </p>
+            <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">Sponsored by</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/brand/nebius-wordmark.svg"
+                alt="Nebius"
+                className="h-8 w-auto"
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/brand/composio-wordmark.svg"
+                alt="Composio"
+                className="h-7 w-auto invert dark:invert-0"
+              />
+            </div>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link href="#apply" className="btn-lime px-6 py-3.5 text-sm">
                 Show us your claws →
