@@ -114,28 +114,6 @@ const sponsorDocs: SponsorDoc[] = [
   },
 ];
 
-const platformDocs = [
-  {
-    title: "Builders",
-    pages: [
-      { slug: "quickstart", title: "Quickstart" },
-      { slug: "builders/install-openclaw", title: "Install OpenClaw" },
-      { slug: "builders/create-a-team", title: "Create a team" },
-      { slug: "builders/submit-a-project", title: "Submit a project" },
-    ],
-  },
-  {
-    title: "Event managers",
-    pages: [
-      { slug: "event-managers/create-an-event", title: "Create an event" },
-      { slug: "event-managers/host-an-event", title: "Manage an event" },
-      { slug: "event-managers/manage-prizes", title: "Manage prizes" },
-      { slug: "event-managers/capture-live-demos", title: "Capture live demos" },
-      { slug: "event-managers/post-event-summary", title: "Post-event summary" },
-    ],
-  },
-];
-
 export default function DocsHome() {
   return (
     <>
@@ -220,34 +198,6 @@ export default function DocsHome() {
           </div>
         </section>
 
-        <section className="border-t border-ink-200 bg-white py-16 dark:border-ink-800 dark:bg-ink-900 sm:py-20">
-          <div className="container-page">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">Platform</p>
-            <h2 className="h-display text-3xl font-bold tracking-tight text-ink-900 dark:text-ink-50">BuilderShip platform docs.</h2>
-            <p className="mt-4 max-w-2xl text-base text-ink-600 dark:text-ink-300">
-              How to register, form a team, submit a project, and (if you're hosting an event) run the show.
-            </p>
-            <div className="mt-8 grid gap-8 md:grid-cols-2">
-              {platformDocs.map((s) => (
-                <div key={s.title} className="card">
-                  <h3 className="text-lg font-semibold text-ink-900 dark:text-ink-50">{s.title}</h3>
-                  <ul className="mt-4 space-y-2 text-sm">
-                    {s.pages.map((p) => (
-                      <li key={p.slug}>
-                        <Link
-                          href={`/docs/${p.slug}`}
-                          className="block rounded-md px-2 py-1 text-ink-700 hover:bg-ink-100 hover:text-ink-900 dark:text-ink-200 dark:hover:bg-ink-800 dark:hover:text-ink-50"
-                        >
-                          → {p.title}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
       </main>
       <Footer />
     </>

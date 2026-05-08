@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" width="720" height="220" role="img" aria-label="BuilderShip">
+  <defs>
+    <linearGradient id="builderGradNebius" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0E3F5C"/>
+      <stop offset="55%" stop-color="#073149"/>
+      <stop offset="100%" stop-color="#052B42"/>
+    </linearGradient>
+    <linearGradient id="shipGradNebius" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EFFF92"/>
+      <stop offset="55%" stop-color="#E0FF4F"/>
+      <stop offset="100%" stop-color="#D6F73A"/>
+    </linearGradient>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Lobster&amp;display=swap');
+    </style>
+  </defs>
+
+  <text x="360" y="150" text-anchor="middle"
+    font-family="'Lobster', 'Pacifico', 'Brush Script MT', cursive"
+    font-size="150"
+    font-weight="400"
+    stroke="#ffffff"
+    stroke-width="14"
+    stroke-linejoin="round"
+    stroke-miterlimit="2"
+    paint-order="stroke">
+    <tspan fill="url(#builderGradNebius)">Builder</tspan><tspan fill="url(#shipGradNebius)">Ship</tspan>
+  </text>
+</svg>

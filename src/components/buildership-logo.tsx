@@ -14,11 +14,20 @@ export function BuilderShipLogo({
       aria-label={`BuilderShip ${subtitle}`.trim()}
     >
       <span className="relative inline-block h-12 w-[180px] md:h-[72px] md:w-[260px]">
+        {/* Composio (default) — visible unless [data-theme="composio"] is missing on <html>. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/brand/buildership-wordmark.svg"
+          src="/brand/buildership-wordmark-composio.svg"
           alt="BuilderShip"
-          className="absolute inset-0 h-full w-full object-contain"
+          className="absolute inset-0 h-full w-full object-contain bs-logo-composio"
+        />
+        {/* Nebius — visible only when the data-theme attribute is absent. */}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img
+          src="/brand/buildership-wordmark-nebius.svg"
+          alt=""
+          aria-hidden
+          className="absolute inset-0 h-full w-full object-contain bs-logo-nebius"
         />
       </span>
       {subtitle ? (
