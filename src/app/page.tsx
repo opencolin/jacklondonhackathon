@@ -289,7 +289,7 @@ export default function HackJackLondonSquarePage() {
         <Section id="office-hours">
           <SectionHeader
             eyebrow="Office hours"
-            title="Stuck? We're online every day until May 28."
+            title="Stuck? We're online every day until May 30."
             body="Office hours run daily — online and in person — for the whole three weeks. Drop in, ask anything, ship faster. Sponsor teams cycle through across the day."
           />
           <div className="grid gap-6 md:grid-cols-3">
@@ -304,7 +304,7 @@ export default function HackJackLondonSquarePage() {
             <div>
               <p className="text-xs font-semibold uppercase tracking-widest text-ink-500">Schedule</p>
               <p className="mt-1 text-base font-medium text-ink-900">
-                Daily through May 28 — online plus in person across SF and Oakland.
+                Daily through May 30 — online plus in person across SF and Oakland.
               </p>
             </div>
             <Link href="/builders/login" className="btn-lime text-xs px-5 py-2.5">
