@@ -38,7 +38,7 @@ export function ClawCruiseLogo({
       className="inline-flex items-center gap-3"
       aria-label={`${logo.alt} ${subtitle}`.trim()}
     >
-      <span className="relative inline-block h-[72px] w-[280px]">
+      <span className="relative inline-block h-12 w-[180px] md:h-[72px] md:w-[280px]">
         {LOGOS.map((l, i) => (
           // eslint-disable-next-line @next/next/no-img-element
           <img

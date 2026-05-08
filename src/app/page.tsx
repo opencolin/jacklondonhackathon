@@ -270,7 +270,7 @@ export default function HackJackLondonSquarePage() {
       <TopNav />
       <main>
         {/* Hero */}
-        <section className="relative -mt-[72px] overflow-hidden border-b border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900">
+        <section className="relative -mt-16 overflow-hidden border-b border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900 md:-mt-[72px]">
           <img
             src="/boat/bow-sunset-bridge.jpg"
             alt=""

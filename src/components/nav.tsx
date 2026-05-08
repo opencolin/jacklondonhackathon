@@ -13,7 +13,7 @@ const links = [
 export function TopNav() {
   return (
     <header className="sticky top-0 z-40 border-b border-transparent bg-white/30 backdrop-blur-md dark:bg-ink-900/30">
-      <div className="container-page flex h-[72px] items-center justify-between">
+      <div className="container-page flex h-16 items-center justify-between md:h-[72px]">
         <div className="flex items-center gap-8">
           <ClawCruiseLogo />
           <nav className="hidden gap-1 md:flex">
@@ -30,7 +30,7 @@ export function TopNav() {
         </div>
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <Link href="/builders/login" className="btn-ghost">Log in</Link>
+          <Link href="/builders/login" className="btn-ghost hidden sm:inline-flex">Log in</Link>
           <Link href="/builders/login" className="btn-lime">Start building</Link>
         </div>
       </div>
