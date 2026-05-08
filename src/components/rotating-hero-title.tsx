@@ -12,7 +12,7 @@ type Title = {
 const titles: Title[] = [
   { prefix: "Builders on the ", highlight: "Bay" },
   { prefix: "Hack the ", highlight: "High Seas" },
-  { highlight: "Treasure", suffix: " Hack" },
+  { prefix: "Agents at ", highlight: "Sea" },
   { prefix: "Code on the ", highlight: "Cruise" },
   { highlight: "Yachts", suffix: " & Bots" },
   { highlight: "AI", suffix: " on the Bay" },
