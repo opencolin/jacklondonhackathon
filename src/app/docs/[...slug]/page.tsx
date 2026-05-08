@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { TopNav } from "@/components/nav";
+import { SiteHeader } from "@/components/site-header";
 import { Footer } from "@/components/footer";
 import { docSections } from "@/lib/data";
 import { notFound } from "next/navigation";
@@ -64,7 +64,7 @@ export default function DocPage({ params }: { params: { slug: string[] } }) {
 
   return (
     <>
-      <TopNav />
+      <SiteHeader />
       <main className="bg-white dark:bg-ink-900">
         <div className="container-page grid gap-10 py-10 lg:grid-cols-[260px_1fr]">
           <aside className="hidden lg:block">

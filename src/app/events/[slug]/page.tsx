@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { TopNav } from "@/components/nav";
+import { SiteHeader } from "@/components/site-header";
 import { Footer } from "@/components/footer";
 import { events, eventPrizes, eventSpeakers } from "@/lib/data";
 import { formatDate, formatTime } from "@/lib/utils";
@@ -15,7 +15,7 @@ export default function EventDetail({ params }: { params: { slug: string } }) {
 
   return (
     <>
-      <TopNav />
+      <SiteHeader />
       <main>
         <section className={`relative overflow-hidden border-b border-ink-200 bg-gradient-to-br ${event.cover}`}>
           <div className="container-page py-20 text-navy-700">

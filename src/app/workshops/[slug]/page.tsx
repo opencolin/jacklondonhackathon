@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { TopNav } from "@/components/nav";
+import { SiteHeader } from "@/components/site-header";
 import { Footer } from "@/components/footer";
 import { workshops } from "@/lib/data";
 import { formatDate, formatDuration } from "@/lib/utils";
@@ -21,7 +21,7 @@ export default function WorkshopDetail({ params }: { params: { slug: string } })
 
   return (
     <>
-      <TopNav />
+      <SiteHeader />
       <main className="bg-white dark:bg-ink-900">
         <section className="container-page pt-12 pb-6">
           <Link href="/workshops" className="text-sm text-ink-500 hover:text-ink-700 dark:text-ink-400 dark:hover:text-ink-200">← All workshops</Link>

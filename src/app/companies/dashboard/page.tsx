@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AppHeader } from "@/components/app-chrome";
+import { MarkLoggedIn } from "@/components/mark-logged-in";
 import { events } from "@/lib/data";
 import { formatDate } from "@/lib/utils";
 
@@ -14,6 +15,7 @@ export default function CompanyDashboard() {
   const ourEvents = events.slice(0, 4);
   return (
     <>
+      <MarkLoggedIn />
       <AppHeader links={companyNav} />
       <main className="bg-ink-50">
         <section className="border-b border-ink-200 bg-white">

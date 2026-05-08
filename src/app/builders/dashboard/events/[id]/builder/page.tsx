@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AppHeader } from "@/components/app-chrome";
+import { MarkLoggedIn } from "@/components/mark-logged-in";
 import { events, eventBlasts, eventPrizes } from "@/lib/data";
 import { formatDate, formatTime } from "@/lib/utils";
 
@@ -24,6 +25,7 @@ export default function BuilderEventHub({ params }: { params: { id: string } }) 
 
   return (
     <>
+      <MarkLoggedIn />
       <AppHeader links={builderNav} />
       <main className="bg-ink-50 dark:bg-ink-800">
         <section className={`relative overflow-hidden border-b border-ink-200 bg-gradient-to-br ${event.cover}`}>

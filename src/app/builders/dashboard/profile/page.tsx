@@ -1,4 +1,5 @@
 import { AppHeader } from "@/components/app-chrome";
+import { MarkLoggedIn } from "@/components/mark-logged-in";
 import { currentUser } from "@/lib/data";
 import Link from "next/link";
 
@@ -13,6 +14,7 @@ const builderNav = [
 export default function ProfilePage() {
   return (
     <>
+      <MarkLoggedIn />
       <AppHeader links={builderNav} />
       <main className="bg-ink-50 dark:bg-ink-800">
         <section className="border-b border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900">

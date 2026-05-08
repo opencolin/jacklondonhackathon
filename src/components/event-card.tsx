@@ -5,7 +5,6 @@ import { formatDate, formatTime } from "@/lib/utils";
 const formatLabel: Record<Event["format"], string> = {
   HACKATHON: "Hackathon",
   HACK_DAY: "Hack day",
-  HACK_NIGHT: "Hack night",
   MEETUP: "Meetup",
   MINI_CONFERENCE: "Mini conference",
   DEMO_NIGHT: "Demo night",
@@ -46,7 +45,7 @@ export function EventCard({ event, href }: { event: Event; href?: string }) {
         <p className="mb-1.5 text-xs font-medium uppercase tracking-wider text-ink-500 dark:text-ink-400">
           {formatLabel[event.format]} · {formatDate(event.startDateTime)} · {formatTime(event.startDateTime)}
         </p>
-        <h3 className="mb-2 text-base font-semibold leading-snug text-ink-900 dark:text-ink-50 group-hover:text-navy-700">{event.title}</h3>
+        <h3 className="mb-2 text-base font-semibold leading-snug text-ink-900 dark:text-ink-50 group-hover:text-navy-700 dark:group-hover:text-lime">{event.title}</h3>
         <p className="mb-4 line-clamp-2 text-sm text-ink-600 dark:text-ink-300">{event.description}</p>
         <div className="mt-auto flex items-center justify-between text-xs text-ink-500 dark:text-ink-400">
           <span className="truncate pr-4">{event.isOnline ? "Online" : event.venue.split(",")[0]}</span>

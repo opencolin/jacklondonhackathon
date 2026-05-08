@@ -2,6 +2,7 @@ import Link from "next/link";
 import { AppHeader } from "@/components/app-chrome";
 import { EventCard } from "@/components/event-card";
 import { WorkshopCard } from "@/components/workshop-card";
+import { MarkLoggedIn } from "@/components/mark-logged-in";
 import { events, workshops, currentUser, liveStats } from "@/lib/data";
 
 const builderNav = [
@@ -17,6 +18,7 @@ export default function BuilderDashboard() {
   const past = events.filter((e) => e.state === "COMPLETED");
   return (
     <>
+      <MarkLoggedIn />
       <AppHeader links={builderNav} />
       <main className="bg-ink-50 dark:bg-ink-800">
         <section className="border-b border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900">

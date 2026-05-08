@@ -1,4 +1,4 @@
-import { TopNav } from "@/components/nav";
+import { SiteHeader } from "@/components/site-header";
 import { Footer } from "@/components/footer";
 import { WorkshopCard } from "@/components/workshop-card";
 import { workshops } from "@/lib/data";
@@ -9,7 +9,7 @@ export default function WorkshopsIndex() {
   const [featured, ...rest] = workshops;
   return (
     <>
-      <TopNav />
+      <SiteHeader />
       <main>
         <section className="border-b border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900">
           <div className="container-page py-16">

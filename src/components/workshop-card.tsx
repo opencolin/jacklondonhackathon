@@ -18,7 +18,7 @@ export function WorkshopCard({ workshop, featured = false }: { workshop: Worksho
         <p className="text-xs font-medium uppercase tracking-wider text-ink-500 dark:text-ink-400">
           Workshop · {formatDate(workshop.recordedAt)}
         </p>
-        <h3 className={`mt-2 font-semibold leading-snug text-ink-900 dark:text-ink-50 group-hover:text-navy-700 ${featured ? "text-2xl" : "text-base"}`}>
+        <h3 className={`mt-2 font-semibold leading-snug text-ink-900 dark:text-ink-50 group-hover:text-navy-700 dark:group-hover:text-lime ${featured ? "text-2xl" : "text-base"}`}>
           {workshop.title}
         </h3>
         <p className={`mt-3 text-sm text-ink-600 dark:text-ink-300 ${featured ? "line-clamp-4" : "line-clamp-2"}`}>

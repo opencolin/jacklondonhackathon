@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { AppHeader } from "@/components/app-chrome";
+import { MarkLoggedIn } from "@/components/mark-logged-in";
 import { teamsAsLeader, teamsAsMember, pendingInvitations } from "@/lib/data";
 import { formatDate } from "@/lib/utils";
 
@@ -14,6 +15,7 @@ const builderNav = [
 export default function TeamsPage() {
   return (
     <>
+      <MarkLoggedIn />
       <AppHeader links={builderNav} />
       <main className="bg-ink-50 dark:bg-ink-800">
         <section className="border-b border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900">

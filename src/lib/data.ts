@@ -4,7 +4,6 @@
 export type EventFormat =
   | "HACKATHON"
   | "HACK_DAY"
-  | "HACK_NIGHT"
   | "MEETUP"
   | "MINI_CONFERENCE"
   | "DEMO_NIGHT"
@@ -180,25 +179,6 @@ export const events: Event[] = [
     partners: ["Nebius", "Composio", "Tavily"],
   },
   {
-    id: "evt_om1",
-    slug: "openmind-om1-build-night",
-    title: "OpenMind OM1 Build Night w/ OpenAI Codex",
-    format: "HACK_NIGHT",
-    state: "LIVE",
-    startDateTime: "2026-05-06T18:00:00-07:00",
-    endDateTime: "2026-05-06T22:00:00-07:00",
-    city: "SF",
-    venue: "Wordware HQ, 625 2nd St, San Francisco, CA",
-    isOnline: false,
-    cover: "from-lime-200 via-lime-300 to-lime-400",
-    description:
-      "Ship a working OM1 agent in three hours. Token Factory keys provided; Wordware will demo their planner stack at the top of the hour.",
-    capacity: 80,
-    registered: 74,
-    partners: ["OpenMind", "OpenAI", "Wordware", "Nebius"],
-    prizePool: "$5,000",
-  },
-  {
     id: "evt_clash",
     slug: "clash-of-prompts-symbiotic",
     title: "Clash of Prompts by Symbiotic ($25K + in prizes)",
@@ -233,22 +213,6 @@ export const events: Event[] = [
     capacity: 500,
     registered: 312,
     partners: ["Nebius", "OpenClaw"],
-  },
-  {
-    id: "evt_tessl",
-    slug: "hack-night-at-tessl",
-    title: "Hack Night at Tessl",
-    format: "HACK_NIGHT",
-    state: "UPCOMING",
-    startDateTime: "2026-05-13T15:00:00+00:00",
-    city: "London",
-    venue: "Tessl, EC2A, London",
-    isOnline: false,
-    cover: "from-lime-100 via-ink-100 to-navy-700",
-    description: "Fly through three sponsor tracks. Pizza, prizes, and a Token Factory leaderboard.",
-    capacity: 60,
-    registered: 41,
-    partners: ["Tessl", "Nebius"],
   },
   {
     id: "evt_clawcamp",

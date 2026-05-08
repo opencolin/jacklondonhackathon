@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { CodeCruiseLogo } from "./code-cruise-logo";
 import { ThemeToggle } from "./theme-toggle";
+import { ShareButton } from "./share-button";
+import { SignOutButton } from "./sign-out-button";
 
 export function AppHeader({ links }: { links: { label: string; href: string }[] }) {
   return (
@@ -22,7 +24,8 @@ export function AppHeader({ links }: { links: { label: string; href: string }[] 
         </div>
         <div className="flex items-center gap-3">
           <ThemeToggle />
-          <Link href="/" className="btn-ghost text-sm">Marketing site</Link>
+          <ShareButton />
+          <SignOutButton />
           <button className="inline-flex items-center gap-2 rounded-full border border-ink-200 bg-white py-1 pl-1 pr-3 text-sm text-ink-900 dark:border-ink-700 dark:bg-ink-900 dark:text-ink-50">
             <span className="inline-flex h-7 w-7 items-center justify-center rounded-full bg-lime text-xs font-bold text-navy-700">CL</span>
             Colin
