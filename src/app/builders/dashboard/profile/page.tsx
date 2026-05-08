@@ -24,14 +24,14 @@ export default async function ProfilePage() {
 
   const name = session.user.name ?? user?.name ?? "Builder";
   const email = session.user.email ?? user?.email ?? "";
-  const image = session.user.image ?? user?.image ?? "";
+  const image = session.user.image ?? user?.imageUrl ?? "";
   const phone = user?.phone ?? "";
   const githubUrl = user?.githubUrl ?? "";
-  const linkedInUrl = user?.linkedInUrl ?? "";
-  const discordHandle = user?.discordHandle ?? "";
-  const twitterHandle = user?.twitterHandle ?? "";
-  const memberSince = user?.createdAt
-    ? new Date(user.createdAt).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" })
+  const linkedinUrl = user?.linkedinUrl ?? "";
+  const discordId = user?.discordId ?? "";
+  const twitterUrl = user?.twitterUrl ?? "";
+  const memberSince = user?.memberSince
+    ? new Date(user.memberSince).toLocaleDateString(undefined, { year: "numeric", month: "long", day: "numeric" })
     : "—";
 
   return (
@@ -82,15 +82,15 @@ export default async function ProfilePage() {
                 </div>
                 <div>
                   <label className="label" htmlFor="linkedin">LinkedIn</label>
-                  <input id="linkedin" className="input" placeholder="https://linkedin.com/in/..." defaultValue={linkedInUrl} />
+                  <input id="linkedin" className="input" placeholder="https://linkedin.com/in/..." defaultValue={linkedinUrl} />
                 </div>
                 <div>
                   <label className="label" htmlFor="discord">Discord handle</label>
-                  <input id="discord" className="input" placeholder="username" defaultValue={discordHandle} />
+                  <input id="discord" className="input" placeholder="username" defaultValue={discordId} />
                 </div>
                 <div>
                   <label className="label" htmlFor="twitter">X / Twitter</label>
-                  <input id="twitter" className="input" placeholder="@handle" defaultValue={twitterHandle} />
+                  <input id="twitter" className="input" placeholder="@handle" defaultValue={twitterUrl} />
                 </div>
               </div>
               <div className="mt-6 flex justify-end gap-2">
