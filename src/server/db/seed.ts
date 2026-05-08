@@ -61,7 +61,7 @@ async function main() {
       slug: "buildership",
       title: "BuilderShip",
       description:
-        "Three-week remote hackathon culminating in a finals day on the Dragon Lady, May 30. Top 30 builders earn the boat day. Winner takes home $10k in credits and a DGX Spark.",
+        "Three-week remote hackathon culminating in a finals day on the bay, May 30. Top 30 builders earn the boat day. Winner takes home $10k in credits and a DGX Spark.",
       format: "HACKATHON",
       state: "live",
       startsAt: new Date("2026-05-07T09:00:00-07:00"),

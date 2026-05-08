@@ -18,18 +18,18 @@ const formats = [
 ] as const;
 
 const finalsDaySchedule = [
-  { time: "9:00 AM", title: "Depart on Dragon Lady", where: "South Beach, SF" },
+  { time: "9:00 AM", title: "Depart by yacht", where: "South Beach, SF" },
   { time: "10:00 AM", title: "Arrive in Oakland", where: "Jack London Square dock" },
-  { time: "10:30 AM", title: "Coffee + first 1:1s with judges", where: "Bicycle Coffee" },
-  { time: "11:00 AM", title: "Lunch + 1:1 conversations begin", where: "Plank" },
-  { time: "1:00 PM", title: "1:1s · pitch refinement · bowling · arcade", where: "Plank" },
-  { time: "3:00 PM", title: "Coffee break", where: "Bicycle Coffee" },
+  { time: "10:30 AM", title: "Coffee + first 1:1s with judges", where: "Jack London Square" },
+  { time: "11:00 AM", title: "Lunch + 1:1 conversations begin", where: "Hackathon HQ" },
+  { time: "1:00 PM", title: "1:1s · pitch refinement · bowling · arcade", where: "Hackathon HQ" },
+  { time: "3:00 PM", title: "Coffee break", where: "Jack London Square" },
   { time: "3:30 PM", title: "Kayak race · open to everyone", where: "Jack London Square waterfront" },
-  { time: "4:30 PM", title: "Final presentations", where: "Plank" },
-  { time: "6:00 – 8:00 PM", title: "Sunset cruise · celebration", where: "Dragon Lady" },
-  { time: "8:15 PM", title: "Dinner · winners announced", where: "Farmhouse Kitchen Thai" },
-  { time: "9:30 PM", title: "Winner walks the plank", where: "Dragon Lady (back at the dock)" },
-  { time: "Late", title: "After-party on the yacht", where: "Dragon Lady (docked)" },
+  { time: "4:30 PM", title: "Final presentations", where: "Hackathon HQ" },
+  { time: "6:00 – 8:00 PM", title: "Sunset cruise · celebration", where: "On the bay" },
+  { time: "8:15 PM", title: "Dinner · winners announced", where: "Waterfront restaurant" },
+  { time: "9:30 PM", title: "Winner walks the plank", where: "Back at the dock" },
+  { time: "Late", title: "After-party on the yacht", where: "Docked yacht" },
 ] as const;
 
 function items<T>(result: { items: T[] } | T[]): T[] {
@@ -83,7 +83,7 @@ export default async function EventsIndex() {
           <div className="container-page">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-navy-700 dark:text-lime">Finals day · May 30</p>
             <h2 className="h-display text-3xl font-bold tracking-tight text-ink-900 md:text-4xl dark:text-ink-50">Cruise from South Beach to Jack London Square. Demos at dinner.</h2>
-            <p className="mt-4 max-w-3xl text-base text-ink-600 dark:text-ink-300">The boat day is for the top 30 builders. Bay crossing, all-day 1:1 conversations and pitch refinement at Plank, final presentations before the sunset cruise, dinner at Farmhouse where winners are announced, after-party on the docked yacht. Times are firm — the boat doesn't wait.</p>
+            <p className="mt-4 max-w-3xl text-base text-ink-600 dark:text-ink-300">The boat day is for the top 30 builders. Bay crossing, all-day 1:1 conversations and pitch refinement on the waterfront, final presentations before the sunset cruise, dinner at a Jack London Square restaurant where winners are announced, after-party on the docked yacht. Times are firm — the boat doesn't wait.</p>
             <ol className="mt-10 overflow-hidden rounded-card border border-ink-200 bg-white dark:border-ink-700 dark:bg-ink-900">
               {finalsDaySchedule.map((row, i) => (
                 <li

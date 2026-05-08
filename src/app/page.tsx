@@ -8,7 +8,7 @@ import { RotatingHeroTitle } from "@/components/rotating-hero-title";
 export const metadata: Metadata = {
   title: "BuilderShip — Three-week hackathon, finals on the bay",
   description:
-    "BuilderShip: a three-week remote hackathon with daily office hours. Submit by May 28. Top 30 builders earn a boat day on the Dragon Lady, May 30 — bay crossing, all-day 1:1 pitches at Plank, final presentations, sunset cruise, dinner at Farmhouse, the winner takes home $10k in credits and a DGX Spark, after-party on the yacht. Hosted by Composio, Nebius, Tavily, and OpenClaw.",
+    "BuilderShip: a three-week remote hackathon with daily office hours. Submit by May 28. Top 30 builders earn a boat day on the bay, May 30 — bay crossing, all-day 1:1 pitches in Jack London Square, final presentations, sunset cruise, waterfront dinner, the winner takes home $10k in credits and a DGX Spark, after-party on the yacht. Hosted by Composio, Nebius, Tavily, and OpenClaw.",
 };
 
 const timeline = [
@@ -34,7 +34,7 @@ const timeline = [
     num: "04",
     date: "May 30",
     title: "Boat day",
-    body: "Bay crossing, polish at Plank, an open kayak race on the Oakland waterfront, sunset cruise, dinner at Farmhouse, demos, judging, after-party on the yacht.",
+    body: "Bay crossing, polish on the waterfront, an open kayak race on the Oakland waterfront, sunset cruise, dinner at a Jack London Square restaurant, demos, judging, after-party on the yacht.",
   },
 ] as const;
 
@@ -52,7 +52,7 @@ const judges = [
   {
     who: "Angel investors",
     when: "On the boat, May 30",
-    body: "Real checks, real conversations. 1:1 sessions with every builder at Plank — between bowling frames, in the lounge, on the patio. Their reaction lands in your final score.",
+    body: "Real checks, real conversations. 1:1 sessions with every builder all day — between bowling frames, in the lounge, on the patio. Their reaction lands in your final score.",
   },
   {
     who: "VCs",
@@ -119,35 +119,35 @@ const perks = [
   {
     tag: "On the water",
     title: "Sunset cruise",
-    body: "Two hours on the bay aboard the 80-foot Dragon Lady. The calmest networking time you will ever have.",
+    body: "Two hours on the bay aboard an 80-foot yacht. The calmest networking time you will ever have.",
   },
   {
-    tag: "Plank",
+    tag: "Hackathon HQ",
     title: "Free bowling",
-    body: "Plank's lanes are part of the takeover. Strikes between commits, frame counters by the pizza.",
+    body: "Bowling lanes are part of the takeover. Strikes between commits, frame counters by the pizza.",
   },
   {
-    tag: "Plank",
+    tag: "Hackathon HQ",
     title: "Arcade games",
     body: "Fifteen dollars in arcade credits per builder. Skee-ball-driven development, officially endorsed.",
   },
   {
     tag: "All day",
     title: "Amazing food",
-    body: "Lunch at Plank, dinner at Farmhouse Kitchen Thai. Real meals, no pizza fatigue.",
+    body: "Real meals all day — lunch at HQ, dinner at a waterfront restaurant. No pizza fatigue.",
   },
   {
-    tag: "Bicycle Coffee",
+    tag: "Coffee tickets",
     title: "Coffee on tap",
     body: "Tickets you can redeem any time you need to walk and think. Oakland-roasted, ten minutes from the dock.",
   },
   {
     tag: "Open to everyone",
     title: "Kayak race",
-    body: "Open-water sprint between Jack London Square and the Dragon Lady's mooring. Builders, judges, sponsors — anyone can paddle. Winning team takes a bonus prize.",
+    body: "Open-water sprint between Jack London Square and the yacht's mooring. Builders, judges, sponsors — anyone can paddle. Winning team takes a bonus prize.",
   },
   {
-    tag: "Dragon Lady",
+    tag: "Docked yacht",
     title: "After-party on the yacht",
     body: "Boat stays docked. Top deck, hot tub running, sunset still in your eyes — and someone always brings a bottle.",
   },
@@ -161,18 +161,18 @@ const sdkPerks = [
 ] as const;
 
 const schedule = [
-  { time: "9:00 AM", title: "Depart on Dragon Lady", where: "South Beach, SF" },
+  { time: "9:00 AM", title: "Depart by yacht", where: "South Beach, SF" },
   { time: "10:00 AM", title: "Arrive in Oakland", where: "Jack London Square dock" },
-  { time: "10:30 AM", title: "Coffee + first 1:1s with judges", where: "Bicycle Coffee" },
-  { time: "11:00 AM", title: "Lunch + 1:1 conversations begin", where: "Plank" },
-  { time: "1:00 PM", title: "1:1s · pitch refinement · bowling · arcade", where: "Plank" },
-  { time: "3:00 PM", title: "Coffee break", where: "Bicycle Coffee" },
+  { time: "10:30 AM", title: "Coffee + first 1:1s with judges", where: "Jack London Square" },
+  { time: "11:00 AM", title: "Lunch + 1:1 conversations begin", where: "Hackathon HQ" },
+  { time: "1:00 PM", title: "1:1s · pitch refinement · bowling · arcade", where: "Hackathon HQ" },
+  { time: "3:00 PM", title: "Coffee break", where: "Jack London Square" },
   { time: "3:30 PM", title: "Kayak race · open to everyone", where: "Jack London Square waterfront" },
-  { time: "4:30 PM", title: "Final presentations", where: "Plank" },
-  { time: "6:00 – 8:00 PM", title: "Sunset cruise · celebration", where: "Dragon Lady" },
-  { time: "8:15 PM", title: "Dinner · winners announced", where: "Farmhouse Kitchen Thai" },
-  { time: "9:30 PM", title: "Winner walks the plank", where: "Dragon Lady (back at the dock)" },
-  { time: "Late", title: "After-party on the yacht", where: "Dragon Lady (docked)" },
+  { time: "4:30 PM", title: "Final presentations", where: "Hackathon HQ" },
+  { time: "6:00 – 8:00 PM", title: "Sunset cruise · celebration", where: "On the bay" },
+  { time: "8:15 PM", title: "Dinner · winners announced", where: "Waterfront restaurant" },
+  { time: "9:30 PM", title: "Winner walks the plank", where: "Back at the dock" },
+  { time: "Late", title: "After-party on the yacht", where: "Docked yacht" },
 ] as const;
 
 const faqs = [
@@ -190,11 +190,11 @@ const faqs = [
   },
   {
     q: "What happens on May 30?",
-    a: "Finals day in Jack London Square — and there's no five-minute stage pitch. You spend the whole day in 1:1 conversations: angels and VCs over breakfast at Plank, sponsor judges over lunch and bowling, more 1:1s through the afternoon. A kayak race on the Oakland waterfront — open to anyone who shows up — runs before final presentations. Sunset cruise, dinner at Farmhouse, winners announced, the winner takes home $10k in credits and a DGX Spark. After-party back on the docked yacht.",
+    a: "Finals day in Jack London Square — and there's no five-minute stage pitch. You spend the whole day in 1:1 conversations: angels and VCs over breakfast at HQ, sponsor judges over lunch and bowling, more 1:1s through the afternoon. A kayak race on the Oakland waterfront — open to anyone who shows up — runs before final presentations. Sunset cruise, dinner waterside, winners announced, the winner takes home $10k in credits and a DGX Spark. After-party back on the docked yacht.",
   },
   {
     q: "What does \"walking the plank\" mean?",
-    a: "Exactly what it sounds like. The winner of the hackathon walks the plank off the Dragon Lady and jumps into the water. Towels and a hot tub on standby.",
+    a: "Exactly what it sounds like. The winner of the hackathon walks the plank off the yacht and jumps into the water. Towels and a hot tub on standby.",
   },
   {
     q: "What if I can't make it to the boat?",
@@ -202,11 +202,11 @@ const faqs = [
   },
   {
     q: "What should I bring on May 30?",
-    a: "Laptop, charger, jacket for the cruise. We'll have power, Wi-Fi, and our own Starlink running on Plank's patio. No hardware projects this time.",
+    a: "Laptop, charger, jacket for the cruise. We'll have power, Wi-Fi, and our own Starlink running at HQ. No hardware projects this time.",
   },
   {
     q: "Drinks?",
-    a: "Self-pay at Plank and Farmhouse. BYOB on the boat (cheaper that way). After-party drinks back on the docked Dragon Lady — sponsors picking up that tab.",
+    a: "Self-pay at the venues. BYOB on the boat (cheaper that way). After-party drinks back on the docked yacht — sponsors picking up that tab.",
   },
 ] as const;
 
@@ -413,14 +413,14 @@ export default function HackJackLondonSquarePage() {
         <Section>
           <SectionHeader
             eyebrow="The boat"
-            title="Meet the Dragon Lady."
-            body="80 feet of motor yacht docked at the Jack London Square marina. Five staterooms, six heads, hot tub on the top deck, and a main salon big enough to host the cruise crowd. Built 1979 in Long Beach. Chartered through Jerry's Faeries."
+            title="Meet the yacht."
+            body="80 feet of motor yacht docked at the Jack London Square marina. Five staterooms, six heads, hot tub on the top deck, and a main salon big enough to host the cruise crowd."
           />
           <div className="overflow-hidden rounded-card border border-ink-200 bg-white dark:border-ink-700 dark:bg-ink-900">
             {/* Hero photo */}
             <img
               src="/boat/bow-sunset-bridge.jpg"
-              alt="Three builders on the bow of the Dragon Lady at sunset under the Bay Bridge, San Francisco skyline behind"
+              alt="Three builders on the bow of the yacht at sunset under the Bay Bridge, San Francisco skyline behind"
               className="h-[320px] w-full object-cover sm:h-[420px] lg:h-[560px]"
               loading="eager"
             />
@@ -429,22 +429,22 @@ export default function HackJackLondonSquarePage() {
             {[
               {
                 src: "/boat/rainbow-cruising.jpg",
-                alt: "Dragon Lady cruising with rainbow flag flying",
+                alt: "Yacht cruising with rainbow flag flying",
                 caption: "Pride flag flying off the mast",
               },
               {
                 src: "/boat/bay-profile.jpg",
-                alt: "Dragon Lady out on the bay between sailboats",
+                alt: "Yacht out on the bay between sailboats",
                 caption: "Out on the bay",
               },
               {
                 src: "/boat/night-lights.jpg",
-                alt: "Dragon Lady docked at night with colorful underwater and deck lights",
+                alt: "Yacht docked at night with colorful underwater and deck lights",
                 caption: "After-party glow",
               },
               {
                 src: "/boat/aerial-docked.jpg",
-                alt: "Top-down aerial of Dragon Lady at the dock",
+                alt: "Top-down aerial of the yacht at the dock",
                 caption: "Aerial — 80ft on her berth",
               },
               {
@@ -499,7 +499,7 @@ export default function HackJackLondonSquarePage() {
           <SectionHeader
             eyebrow="Sponsors & organizers"
             title="Build something real."
-            body="Each sponsor is an organizer — their teams are on the boat, in the room at Plank, and judging at the end. Bring an idea, leave with credits and a working agent."
+            body="Each sponsor is an organizer — their teams are on the boat, in the room with builders, and judging at the end. Bring an idea, leave with credits and a working agent."
           />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {sponsors.map((s) => (
@@ -537,7 +537,7 @@ export default function HackJackLondonSquarePage() {
           <SectionHeader
             eyebrow="Who's scoring you"
             title="Not just a 5-minute pitch. Demo and connect one-on-one with conversations all day."
-            body="The score on May 30 is a blend. AI judges read your code over the three weeks. Sponsor teams, angels, and VCs do 1:1s with every builder all day at Plank — your pitch sharpens with each conversation. Final presentations before the sunset cruise. Everyone's vote counts."
+            body="The score on May 30 is a blend. AI judges read your code over the three weeks. Sponsor teams, angels, and VCs do 1:1s with every builder all day on the waterfront — your pitch sharpens with each conversation. Final presentations before the sunset cruise. Everyone's vote counts."
           />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {judges.map((j) => (
@@ -555,7 +555,7 @@ export default function HackJackLondonSquarePage() {
           <SectionHeader
             eyebrow="Finals day · May 30"
             title="Cruise from South Beach to Jack London Square. Demos at dinner."
-            body="The boat day is for the top 30 builders. Bay crossing, all-day 1:1 conversations and pitch refinement at Plank, final presentations before the sunset cruise, dinner at Farmhouse where winners are announced, after-party on the docked yacht. Times are firm — the boat doesn't wait."
+            body="The boat day is for the top 30 builders. Bay crossing, all-day 1:1 conversations and pitch refinement on the waterfront, final presentations before the sunset cruise, dinner at a Jack London Square restaurant where winners are announced, after-party on the docked yacht. Times are firm — the boat doesn't wait."
           />
           <ol className="overflow-hidden rounded-card border border-ink-200 bg-white dark:border-ink-700 dark:bg-ink-900">
             {schedule.map((row, i) => (
