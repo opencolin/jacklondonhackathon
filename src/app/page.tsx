@@ -226,7 +226,7 @@ const faqs = [
   },
   {
     q: "What if I can't make it to the boat?",
-    a: "Submissions are still welcome — you can build remotely and skip the boat day. If you make the top 30 and can't travel, we'll route a remote slot for your final presentation. Boat capacity caps the in-person cohort.",
+    a: "Submissions are still welcome — you can build remotely and skip the boat day. If you make the top 30 and can't travel, we'll provide a land route to your final presentation. Boat capacity caps the in-person cohort.",
   },
   {
     q: "What should I bring on May 30?",
