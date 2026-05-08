@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BuilderShipLogo } from "./buildership-logo";
+import { ThemeToggleComposio } from "./theme-toggle-composio";
 
 const cols = [
   {
@@ -75,7 +76,10 @@ export function Footer() {
         </div>
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-ink-200 pt-6 md:flex-row md:items-center dark:border-ink-800">
           <p className="text-xs text-ink-500 dark:text-ink-400">© 2026 Nebius B.V. — Builders is a Nebius product. All rights reserved.</p>
-          <p className="text-xs text-ink-500 dark:text-ink-400">Response time &lt; 24 hours · builders@nebius.com</p>
+          <div className="flex flex-col items-start gap-1 md:flex-row md:items-center md:gap-4">
+            <ThemeToggleComposio />
+            <p className="text-xs text-ink-500 dark:text-ink-400">Response time &lt; 24 hours · builders@nebius.com</p>
+          </div>
         </div>
       </div>
     </footer>

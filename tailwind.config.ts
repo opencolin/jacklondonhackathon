@@ -44,6 +44,26 @@ const config: Config = {
           800: "#13140F",
           900: "#0B0E0C",
         },
+        // Composio brand tokens (used by the [data-theme="composio"] override)
+        accent: {
+          blue: "#0089FF",
+          sky: "#51A2FF",
+          deep: "#0007CD",
+          green: "#5BD17A",
+          red: "#FF5F57",
+          navy: "#060D18",
+        },
+        surface: {
+          0: "#0F0F0F",
+          1: "#141414",
+          2: "#1A1A1A",
+          3: "#1E1E1E",
+          4: "#2C2C2C",
+        },
+        hairline: {
+          dark: "rgba(255,255,255,0.08)",
+          light: "#E8E8E8",
+        },
       },
       fontFamily: {
         sans: ["Inter", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "sans-serif"],
