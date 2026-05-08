@@ -11,8 +11,8 @@ export default function DocsHome() {
         <section className="border-b border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900">
           <div className="container-page py-16">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">Docs</p>
-            <h1 className="h-display text-4xl font-bold tracking-tight text-ink-900 md:text-5xl dark:text-ink-50">Build with Nebius Builders.</h1>
-            <p className="mt-4 max-w-2xl text-lg text-ink-600 dark:text-ink-300">From your first OpenClaw install through your first hackathon win — and how to host one of your own.</p>
+            <h1 className="h-display text-4xl font-bold tracking-tight text-ink-900 md:text-5xl dark:text-ink-50">CodeCruise docs.</h1>
+            <p className="mt-4 max-w-2xl text-lg text-ink-600 dark:text-ink-300">Wire up the sponsor stack, ship your project, prep for finals day on the bay.</p>
             <div className="mt-6 max-w-xl">
               <input type="search" className="input" placeholder="Search docs… (⌘K)" />
             </div>
