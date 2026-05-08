@@ -8,7 +8,7 @@ import { RotatingHeroTitle } from "@/components/rotating-hero-title";
 export const metadata: Metadata = {
   title: "CodeCruise — Three-week hackathon, finals on the bay",
   description:
-    "CodeCruise: a three-week remote hackathon with daily office hours. Submit by May 28. Top 30 builders earn a boat day on the Dragon Lady, May 30 — bay crossing, all-day 1:1 pitches at Plank, final presentations, sunset cruise, dinner at Farmhouse, the winner takes home $10k in credits and a DGX Spark, after-party on the yacht. Sponsored by Nebius, Composio, and Tavily.",
+    "CodeCruise: a three-week remote hackathon with daily office hours. Submit by May 28. Top 30 builders earn a boat day on the Dragon Lady, May 30 — bay crossing, all-day 1:1 pitches at Plank, final presentations, sunset cruise, dinner at Farmhouse, the winner takes home $10k in credits and a DGX Spark, after-party on the yacht. Sponsored by Nebius, Composio, Tavily, and OpenClaw.",
 };
 
 const timeline = [
@@ -34,7 +34,7 @@ const timeline = [
     num: "04",
     date: "May 30",
     title: "Boat day",
-    body: "Bay crossing, polish at Plank, sunset cruise, dinner at Farmhouse, demos, judging, after-party on the yacht.",
+    body: "Bay crossing, polish at Plank, an open kayak race on the Oakland waterfront, sunset cruise, dinner at Farmhouse, demos, judging, after-party on the yacht.",
   },
 ] as const;
 
@@ -47,7 +47,7 @@ const judges = [
   {
     who: "Sponsor teams",
     when: "Office hours, then on the boat",
-    body: "Nebius, Composio, and Tavily engineers have been at office hours all month — by May 30 they know your codebase. They stress-test the integration and weigh in on the score.",
+    body: "Nebius, Composio, Tavily, and OpenClaw engineers have been at office hours all month — by May 30 they know your codebase. They stress-test the integration and weigh in on the score.",
   },
   {
     who: "Angel investors",
@@ -103,6 +103,15 @@ const sponsors = [
     site: "https://www.tavily.com",
     docs: "https://docs.tavily.com",
     accent: "navy",
+  },
+  {
+    name: "OpenClaw",
+    role: "Open agent runtime",
+    blurb:
+      "Open-source agent framework for building, deploying, and operating agents on your terms. Local-first install, ships to Nebius Serverless in one command, plays nicely with Composio and Tavily out of the box.",
+    site: "https://github.com/opencolin/openclaw-deploy",
+    docs: "https://github.com/opencolin/openclaw-deploy#readme",
+    accent: "lime",
   },
 ] as const;
 
@@ -195,6 +204,7 @@ const perks = [
 const sdkPerks = [
   "Contree workspace + Token Factory keys",
   "Nebius GPU credits for inference & deploy",
+  "OpenClaw runtime preinstalled in your workspace",
   "Composio + Tavily API access for the day",
 ] as const;
 
@@ -224,7 +234,7 @@ const faqs = [
   },
   {
     q: "What happens on May 30?",
-    a: "Finals day in Jack London Square — and there's no five-minute stage pitch. You spend the whole day in 1:1 conversations: angels and VCs over breakfast at Plank, sponsor judges over lunch and bowling, more 1:1s through the afternoon. Final presentations before the sunset cruise. Dinner at Farmhouse, winners announced, the winner takes home $10k in credits and a DGX Spark. After-party back on the docked yacht.",
+    a: "Finals day in Jack London Square — and there's no five-minute stage pitch. You spend the whole day in 1:1 conversations: angels and VCs over breakfast at Plank, sponsor judges over lunch and bowling, more 1:1s through the afternoon. A kayak race on the Oakland waterfront — open to anyone who shows up — runs before final presentations. Sunset cruise, dinner at Farmhouse, winners announced, the winner takes home $10k in credits and a DGX Spark. After-party back on the docked yacht.",
   },
   {
     q: "What does \"walking the plank\" mean?",
@@ -439,7 +449,7 @@ export default function HackJackLondonSquarePage() {
         <Section id="sponsors" bg="tint">
           <SectionHeader
             eyebrow="Sponsors & organizers"
-            title="One cloud. Two APIs. Build something real."
+            title="One cloud. Two APIs. One runtime. Build something real."
             body="Each sponsor is an organizer — their teams are on the boat, in the room at Plank, and judging at the end. Bring an idea, leave with credits and a working agent."
           />
           <div className="grid gap-6 lg:grid-cols-3">
