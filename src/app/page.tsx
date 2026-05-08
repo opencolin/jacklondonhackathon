@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { TopNav } from "@/components/nav";
 import { Footer } from "@/components/footer";
 import { Section, SectionHeader } from "@/components/section";
+import { RotatingHeroTitle } from "@/components/rotating-hero-title";
 
 export const metadata: Metadata = {
   title: "Hack Jack London Square — Nebius Builders Boat Hackathon",
@@ -255,14 +256,7 @@ export default function HackJackLondonSquarePage() {
               <span className="pill-outline">Submit by May 28</span>
               <span className="pill-outline">Boat day May 30</span>
             </div>
-            <h1 className="h-display mt-6 max-w-4xl text-5xl font-bold leading-[1.05] tracking-tight text-ink-900 sm:text-6xl lg:text-7xl">
-              Hack{" "}
-              <span className="relative inline-block">
-                <span className="absolute inset-x-0 bottom-1 -z-0 h-3 bg-lime/80" aria-hidden />
-                <span className="relative">Jack London Square</span>
-              </span>
-              .
-            </h1>
+            <RotatingHeroTitle className="mt-6" />
             <p className="mt-7 max-w-2xl text-xl text-ink-600">
               Three weeks of building with daily office hours. Submit your project by May 28. Only the
               top 30 — best of the best — earn a day on the Dragon Lady, May 30. 1:1 conversations
