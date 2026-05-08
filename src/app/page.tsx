@@ -489,7 +489,7 @@ export default function HackJackLondonSquarePage() {
         <Section id="schedule">
           <SectionHeader
             eyebrow="Finals day · May 30"
-            title="One ride across the bay. One sunset. Demos at dinner."
+            title="Cruise from South Beach to Jack London Square. Demos at dinner."
             body="The boat day is for the top 30 builders. Bay crossing, all-day 1:1 conversations and pitch refinement at Plank, final presentations before the sunset cruise, dinner at Farmhouse where winners are announced, after-party on the docked yacht. Times are firm — the boat doesn't wait."
           />
           <ol className="overflow-hidden rounded-card border border-ink-200 bg-white dark:border-ink-700 dark:bg-ink-900">
