@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { AppHeader } from "@/components/app-chrome";
-import { MarkLoggedIn } from "@/components/mark-logged-in";
-import { events } from "@/lib/data";
+import type { Event } from "@/lib/data";
 import { formatDate } from "@/lib/utils";
+import { auth } from "@/server/auth";
+import { api } from "@/lib/trpc/server";
 
 const companyNav = [
   { label: "Dashboard", href: "/companies/dashboard" },
@@ -11,12 +13,30 @@ const companyNav = [
   { label: "Plan", href: "/companies/dashboard#plan" },
 ];
 
-export default function CompanyDashboard() {
-  const ourEvents = events.slice(0, 4);
+function items<T>(result: { items: T[] } | T[]): T[] {
+  return Array.isArray(result) ? result : result.items;
+}
+
+export default async function CompanyDashboard() {
+  const session = await auth();
+  if (!session?.user) redirect("/companies/login");
+
+  const trpc = await api();
+  const [liveRes, publishedRes, completedRes] = await Promise.all([
+    trpc.events.list({ state: "live", limit: 50 }),
+    trpc.events.list({ state: "published", limit: 50 }),
+    trpc.events.list({ state: "completed", limit: 50 }),
+  ]);
+  const all: Event[] = [
+    ...items<Event>(liveRes),
+    ...items<Event>(publishedRes),
+    ...items<Event>(completedRes),
+  ];
+  const ourEvents = all.slice(0, 4);
+
   return (
     <>
-      <MarkLoggedIn />
-      <AppHeader links={companyNav} />
+      <AppHeader subtitle="Builders for Business" links={companyNav} />
       <main className="bg-ink-50">
         <section className="border-b border-ink-200 bg-white">
           <div className="container-page py-10">

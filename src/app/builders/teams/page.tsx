@@ -1,8 +1,10 @@
 import Link from "next/link";
+import { redirect } from "next/navigation";
 import { AppHeader } from "@/components/app-chrome";
 import { MarkLoggedIn } from "@/components/mark-logged-in";
 import { teamsAsLeader, teamsAsMember, pendingInvitations } from "@/lib/data";
 import { formatDate } from "@/lib/utils";
+import { auth } from "@/server/auth";
 
 const builderNav = [
   { label: "Console", href: "/builders/dashboard" },
@@ -12,7 +14,10 @@ const builderNav = [
   { label: "Profile", href: "/builders/dashboard/profile" },
 ];
 
-export default function TeamsPage() {
+export default async function TeamsPage() {
+  const session = await auth();
+  if (!session?.user) redirect("/builders/login");
+
   return (
     <>
       <MarkLoggedIn />

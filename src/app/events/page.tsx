@@ -3,15 +3,34 @@ import { SiteHeader } from "@/components/site-header";
 import { Footer } from "@/components/footer";
 import { EventCard } from "@/components/event-card";
 import { EventFilters } from "@/components/event-filters";
-import { events } from "@/lib/data";
+import { api } from "@/lib/trpc/server";
+import type { Event } from "@/lib/data";
 
 const cities = ["All", "SF", "NYC", "LA", "London", "Berlin", "Remote"] as const;
-const formats = ["All", "Office hours", "Hackathon", "Hack day", "Meetup", "Mini conference", "Demo night"] as const;
+const formats = [
+  "All",
+  "Office hours",
+  "Hackathon",
+  "Hack day",
+  "Meetup",
+  "Mini conference",
+  "Demo night",
+] as const;
 
-export default function EventsIndex() {
-  const live = events.filter((e) => e.state === "LIVE");
-  const upcoming = events.filter((e) => e.state === "UPCOMING");
-  const past = events.filter((e) => e.state === "COMPLETED");
+function items<T>(result: { items: T[] } | T[]): T[] {
+  return Array.isArray(result) ? result : result.items;
+}
+
+export default async function EventsIndex() {
+  const trpc = await api();
+  const [liveRes, upcomingRes, pastRes] = await Promise.all([
+    trpc.events.list({ state: "live", limit: 50 }),
+    trpc.events.list({ state: "published", limit: 50 }),
+    trpc.events.list({ state: "completed", limit: 50 }),
+  ]);
+  const live = items<Event>(liveRes);
+  const upcoming = items<Event>(upcomingRes);
+  const past = items<Event>(pastRes);
 
   return (
     <>
@@ -45,7 +64,7 @@ export default function EventsIndex() {
           </div>
         </section>
 
-        <section className="section bg-ink-50">
+        <section className="section bg-ink-50 dark:bg-ink-800">
           <div className="container-page">
             <h2 className="mb-8 h-display text-3xl font-bold text-ink-900 dark:text-ink-50">Past events</h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{past.map((e) => <EventCard key={e.id} event={e} />)}</div>

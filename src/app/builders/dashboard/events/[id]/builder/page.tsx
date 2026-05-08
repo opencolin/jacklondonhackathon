@@ -1,9 +1,10 @@
 import Link from "next/link";
-import { notFound } from "next/navigation";
+import { notFound, redirect } from "next/navigation";
 import { AppHeader } from "@/components/app-chrome";
-import { MarkLoggedIn } from "@/components/mark-logged-in";
-import { events, eventBlasts, eventPrizes } from "@/lib/data";
+import { eventBlasts, eventPrizes } from "@/lib/data";
 import { formatDate, formatTime } from "@/lib/utils";
+import { auth } from "@/server/auth";
+import { api } from "@/lib/trpc/server";
 
 const builderNav = [
   { label: "Console", href: "/builders/dashboard" },
@@ -13,21 +14,20 @@ const builderNav = [
   { label: "Profile", href: "/builders/dashboard/profile" },
 ];
 
-export function generateStaticParams() {
-  return events.map((e) => ({ id: e.id }));
-}
-
 const tabs = ["Overview", "Team", "Project", "IDE", "Feedback", "Volunteer"] as const;
 
-export default function BuilderEventHub({ params }: { params: { id: string } }) {
-  const event = events.find((e) => e.id === params.id);
+export default async function BuilderEventHub({ params }: { params: { id: string } }) {
+  const session = await auth();
+  if (!session?.user) redirect("/builders/login");
+
+  const trpc = await api();
+  const event = await trpc.events.byId({ id: params.id });
   if (!event) return notFound();
 
   return (
     <>
-      <MarkLoggedIn />
       <AppHeader links={builderNav} />
-      <main className="bg-ink-50 dark:bg-ink-800">
+      <main className="bg-ink-50">
         <section className={`relative overflow-hidden border-b border-ink-200 bg-gradient-to-br ${event.cover}`}>
           <div className="container-page py-10 text-navy-700">
             <Link href="/builders/dashboard" className="text-sm hover:underline">← Console</Link>
@@ -117,12 +117,12 @@ export default function BuilderEventHub({ params }: { params: { id: string } }) 
               </div>
               <div className="lg:col-span-2">
                 <label className="label" htmlFor="pdesc">Description</label>
-                <textarea id="pdesc" rows={4} className="input" defaultValue="An OpenClaw-driven coffee-shop concierge agent that books, reorders, and routes loyalty perks across chains." />
+                <textarea id="pdesc" rows={4} className="input" defaultValue="A Nebius-powered coffee-shop concierge agent that books, reorders, and routes loyalty perks across chains." />
                 <p className="mt-1 text-xs text-ink-500">Clear descriptions make it much easier for organizers and judges to review your work.</p>
               </div>
               <div>
                 <label className="label" htmlFor="techs">Technologies</label>
-                <input id="techs" className="input" defaultValue="OpenClaw, Token Factory, Tavily, Stripe" />
+                <input id="techs" className="input" defaultValue="Token Factory, Contree, Tavily, Stripe" />
               </div>
               <div>
                 <label className="label" htmlFor="other">Other technologies</label>
@@ -173,7 +173,7 @@ export default function BuilderEventHub({ params }: { params: { id: string } }) 
             <h2 className="h-display text-2xl font-bold">Feedback to partners</h2>
             <p className="mt-2 max-w-2xl text-ink-600">Bonus: thoughtful feedback enters you in the raffle. AI-grading filters low-effort responses.</p>
             <div className="mt-8 grid gap-4 md:grid-cols-2">
-              {event.partners.map((p) => (
+              {event.partners.map((p: string) => (
                 <div key={p} className="card">
                   <div className="flex items-center justify-between">
                     <p className="font-semibold">{p}</p>
