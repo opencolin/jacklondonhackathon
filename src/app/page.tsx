@@ -290,7 +290,7 @@ export default function HackJackLondonSquarePage() {
               Winner takes home $10k in credits and a DGX Spark.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
-              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">Sponsored by</span>
+              <span className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">Hosted by</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
                 src="/brand/composio-wordmark.svg"
