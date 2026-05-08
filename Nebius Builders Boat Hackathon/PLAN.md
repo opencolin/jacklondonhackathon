@@ -1,11 +1,14 @@
 # Hack Jack London Square — Nebius Builders Boat Hackathon
 
-A one-day Oakland hackathon staged across Jack London Square partners, anchored by the **Dragon Lady** boat. Builders cross the bay from South Beach in the morning, hack at Plank, take a sunset networking cruise, sit down to dinner and project presentations at Farmhouse Kitchen Thai, and after-party back on the docked yacht with the hot tub running.
+A three-week remote hackathon culminating in a finals day at Jack London Square. Anyone can build during the three-week window with daily office hours from sponsor teams. Submissions close **May 28**. AI judges score every entry; optional human-judge live demos can be scheduled before the deadline. Top **50 finalists** are announced **May 29** and earn a spot on the **May 30** boat day — bay crossing on the Dragon Lady, lunch at Plank, sponsor breakouts, sunset cruise, dinner and demos at Farmhouse Kitchen Thai, and an after-party back on the docked yacht.
 
-**Status:** planning
-**Headcount cap:** 50 (Dragon Lady max)
-**Target date:** Saturday or Sunday — May 30 is a candidate but may carry premium pricing
-**Working budget:** ~$5k for Plank half-day takeover; sponsor-funded
+**Status:** office hours running, submissions open
+**Boat day:** May 30, 2026 (50 finalists, capped by Dragon Lady)
+**Submissions close:** May 28, 2026
+**Finalists announced:** May 29, 2026
+**Office hours:** daily through May 28, online + in person across SF and Oakland
+**Working budget:** ~$5k for Plank half-day takeover on May 30; sponsor-funded
+**Sponsors / organizers:** Nebius (compute + Token Factory), Composio (agent tools SDK), Tavily (search API)
 **Operator:** AgentHack (also runs events at Shack15, Frontier Tower, Founders Inc.)
 **Contact email:** events@agenthack.ai
 

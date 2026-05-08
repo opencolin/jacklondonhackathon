@@ -7,8 +7,50 @@ import { Section, SectionHeader } from "@/components/section";
 export const metadata: Metadata = {
   title: "Hack Jack London Square — Nebius Builders Boat Hackathon",
   description:
-    "A one-day boat hackathon across Jack London Square. Sponsored by Nebius, Composio, and Tavily. Cross the bay on the Dragon Lady, hack at Plank, dinner at Farmhouse, after-party back on the yacht.",
+    "Three-week remote hackathon with daily office hours. Submit by May 28. Top 50 finalists win a boat day on the Dragon Lady, May 30 — bay crossing, Plank, sunset cruise, dinner at Farmhouse, after-party on the yacht. Sponsored by Nebius, Composio, and Tavily.",
 };
+
+const timeline = [
+  {
+    num: "01",
+    date: "Now → May 28",
+    title: "Build remotely",
+    body: "Three weeks to ship. Daily office hours online and in person. Sponsor credits and APIs available from day one.",
+  },
+  {
+    num: "02",
+    date: "Anytime → May 28",
+    title: "Submit on GitHub",
+    body: "Push your repo. AI judges review every submission. Want a deeper read? Schedule a live demo with human judges any time before the 28th.",
+  },
+  {
+    num: "03",
+    date: "May 29",
+    title: "Finalists announced",
+    body: "Top 50 named the night before. Twenty-four hours to polish your demo and pack a jacket for the bay.",
+  },
+  {
+    num: "04",
+    date: "May 30",
+    title: "Boat day",
+    body: "Bay crossing, polish at Plank, sunset cruise, dinner at Farmhouse, demos, judging, after-party on the yacht.",
+  },
+] as const;
+
+const officeHourRoles = [
+  {
+    who: "Developer advocates",
+    body: "Full-stack help: getting the SDKs running, code review, debugging your agent loop end-to-end.",
+  },
+  {
+    who: "Solution architects",
+    body: "Architecture sanity-check: how to wire compute, agent tools, and search for what you're actually trying to build.",
+  },
+  {
+    who: "Field engineers",
+    body: "When something's broken at the edge. They live in the issue tracker so you don't have to.",
+  },
+] as const;
 
 const sponsors = [
   {
@@ -131,7 +173,8 @@ const schedule = [
   { time: "9:00 AM", title: "Depart on Dragon Lady", where: "South Beach, SF" },
   { time: "10:00 AM", title: "Arrive in Oakland", where: "Jack London Square dock" },
   { time: "10:30 AM", title: "Coffee tickets redeem", where: "Bicycle Coffee" },
-  { time: "11:00 AM", title: "Lunch · hackathon kickoff", where: "Plank" },
+  { time: "11:00 AM", title: "Lunch + last polish on demos", where: "Plank" },
+  { time: "1:00 PM", title: "Sponsor breakouts · bowling · arcade", where: "Plank" },
   { time: "3:00 PM", title: "Coffee break", where: "Bicycle Coffee" },
   { time: "6:00 – 8:00 PM", title: "Sunset networking cruise", where: "Dragon Lady" },
   { time: "8:15 PM", title: "Dinner · demos · judging", where: "Farmhouse Kitchen Thai" },
@@ -140,16 +183,24 @@ const schedule = [
 
 const faqs = [
   {
-    q: "How big is the event?",
-    a: "Capped at 50 builders — that's the Dragon Lady's max. If you'd rather skip the boat and meet us at Plank, that's fine; we just need a confirmed headcount on the manifest.",
-  },
-  {
-    q: "What should I bring?",
-    a: "Laptop, charger, jacket for the cruise. We'll have power, Wi-Fi, and our own Starlink running on Plank's patio. No hardware projects this time.",
-  },
-  {
     q: "What's the format?",
-    a: "Solo or teams of up to 4. Build something on the day using one or more of the sponsor stack — Nebius Token Factory for inference, Composio for agent tools, Tavily for search. Demos are 3 minutes after the sunset cruise.",
+    a: "Solo or teams of up to 4. Three weeks to build remotely, with daily office hours from sponsor teams. Submit your GitHub repo any time before May 28 — AI judges read every entry, and you can schedule a live demo with human judges before the deadline if you want a deeper read.",
+  },
+  {
+    q: "How are finalists picked?",
+    a: "AI judges score every submission against the rubric — usefulness, integration depth across the sponsor stack, and how working the working demo actually is. Sponsor humans review the top tier and pick the 50 finalists, announced May 29.",
+  },
+  {
+    q: "What happens on May 30?",
+    a: "Finals day in Jack London Square. Boat leaves South Beach at 9 AM on the Dragon Lady — bay crossing, lunch and polish at Plank, sponsor breakouts, sunset cruise, dinner and 3-minute demos at Farmhouse Kitchen Thai, judging, after-party on the docked yacht.",
+  },
+  {
+    q: "What if I can't make it to the boat?",
+    a: "Submissions are still welcome — you can build remotely, win prizes, and skip the boat day. If you make finals and can't travel, we'll route a remote slot for your demo and ship the swag. Boat capacity is 50.",
+  },
+  {
+    q: "What should I bring on May 30?",
+    a: "Laptop, charger, jacket for the cruise. We'll have power, Wi-Fi, and our own Starlink running on Plank's patio. No hardware projects this time.",
   },
   {
     q: "Drinks?",
@@ -170,10 +221,10 @@ export default function HackJackLondonSquarePage() {
           <div className="container-page relative pt-20 pb-24 sm:pt-28 sm:pb-28 lg:pt-36">
             <div className="flex flex-wrap items-center gap-2">
               <span className="pill-lime">
-                <span className="live-dot" /> Applications open
+                <span className="live-dot" /> Office hours running
               </span>
-              <span className="pill-outline">Boat hackathon · Oakland</span>
-              <span className="pill-outline">50 builders · 1 day</span>
+              <span className="pill-outline">Submit by May 28</span>
+              <span className="pill-outline">Boat day May 30</span>
             </div>
             <h1 className="h-display mt-6 max-w-4xl text-5xl font-bold leading-[1.05] tracking-tight text-ink-900 sm:text-6xl lg:text-7xl">
               Hack{" "}
@@ -184,16 +235,16 @@ export default function HackJackLondonSquarePage() {
               .
             </h1>
             <p className="mt-7 max-w-2xl text-xl text-ink-600">
-              Cross the bay on an 80-foot yacht. Build all day at Plank. Ship something with Nebius,
-              Composio, and Tavily. Sunset networking cruise, dinner at Farmhouse Kitchen Thai, demos,
-              and an after-party back on the docked yacht with the hot tub running.
+              Three weeks of building with daily office hours. Submit your project by May 28. The top
+              50 finalists win a day on the Dragon Lady, May 30 — bay crossing, Plank, sunset cruise,
+              dinner at Farmhouse Kitchen Thai, and an after-party back on the docked yacht.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link href="/builders/login" className="btn-lime px-6 py-3.5 text-sm">
-                Apply to build →
+                Start building →
               </Link>
-              <Link href="#schedule" className="btn-outline px-6 py-3.5 text-sm">
-                See the day
+              <Link href="#how-it-works" className="btn-outline px-6 py-3.5 text-sm">
+                How it works
               </Link>
               <Link href="#sponsors" className="btn-ghost text-sm">
                 Sponsors & stack →
@@ -201,10 +252,10 @@ export default function HackJackLondonSquarePage() {
             </div>
             <dl className="mt-16 grid grid-cols-2 gap-y-8 sm:grid-cols-4 sm:gap-y-0">
               {[
-                ["Where", "Jack London Sq, Oakland"],
-                ["Capacity", "50 builders"],
-                ["Format", "Solo or teams ≤ 4"],
-                ["Cost", "Free for builders"],
+                ["Build", "3 weeks remote"],
+                ["Submit by", "May 28"],
+                ["Boat day", "May 30"],
+                ["Finalists", "50 max"],
               ].map(([label, value]) => (
                 <div key={label}>
                   <dt className="text-xs font-semibold uppercase tracking-widest text-ink-500">{label}</dt>
@@ -214,6 +265,53 @@ export default function HackJackLondonSquarePage() {
             </dl>
           </div>
         </section>
+
+        {/* How it works */}
+        <Section id="how-it-works" bg="tint">
+          <SectionHeader
+            eyebrow="How it works"
+            title="Three weeks. One submission. Fifty finalists. One day on the bay."
+            body="The hackathon is mostly remote. The boat day is the celebration — and the finals."
+          />
+          <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {timeline.map((s) => (
+              <li key={s.num} className="card flex h-full flex-col">
+                <span className="font-mono text-xs font-semibold text-navy-700">{s.num}</span>
+                <span className="pill-lime mt-3 self-start">{s.date}</span>
+                <h3 className="h-display mt-3 text-xl font-bold text-ink-900">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-700">{s.body}</p>
+              </li>
+            ))}
+          </ol>
+        </Section>
+
+        {/* Office hours */}
+        <Section id="office-hours">
+          <SectionHeader
+            eyebrow="Office hours"
+            title="Stuck? We're online every day until May 28."
+            body="Office hours run daily — online and in person — for the whole three weeks. Drop in, ask anything, ship faster. Sponsor teams cycle through across the day."
+          />
+          <div className="grid gap-6 md:grid-cols-3">
+            {officeHourRoles.map((p) => (
+              <div key={p.who} className="card">
+                <h3 className="text-lg font-semibold text-ink-900">{p.who}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-700">{p.body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-card border border-ink-200 bg-white px-6 py-5">
+            <div>
+              <p className="text-xs font-semibold uppercase tracking-widest text-ink-500">Schedule</p>
+              <p className="mt-1 text-base font-medium text-ink-900">
+                Daily through May 28 — online plus in person across SF and Oakland.
+              </p>
+            </div>
+            <Link href="/builders/login" className="btn-lime text-xs px-5 py-2.5">
+              RSVP for office hours →
+            </Link>
+          </div>
+        </Section>
 
         {/* Boat gallery */}
         <Section>
@@ -338,12 +436,12 @@ export default function HackJackLondonSquarePage() {
           </div>
         </Section>
 
-        {/* Schedule */}
+        {/* Finals day schedule */}
         <Section id="schedule">
           <SectionHeader
-            eyebrow="The day"
-            title="One ride across the bay, eight hours of building, one sunset."
-            body="Hack on the boat, hack at Plank, demo on the water. Times are firm; the boat doesn't wait."
+            eyebrow="Finals day · May 30"
+            title="One ride across the bay. One sunset. Demos at dinner."
+            body="The boat day is for the 50 finalists. Bay crossing in the morning, sponsor breakouts and last-mile polish at Plank, sunset cruise, dinner and demos at Farmhouse, after-party on the docked yacht. Times are firm — the boat doesn't wait."
           />
           <ol className="overflow-hidden rounded-card border border-ink-200 bg-white">
             {schedule.map((row, i) => (
@@ -408,9 +506,9 @@ export default function HackJackLondonSquarePage() {
         {/* Perks */}
         <Section>
           <SectionHeader
-            eyebrow="Awesome perks"
-            title="Free for builders. Sponsors picked up the tab."
-            body="Apply, get accepted, show up at South Beach with a laptop. Six perks on the house, plus the sponsor stack."
+            eyebrow="Finalist perks"
+            title="Make finals, win the boat day."
+            body="Top 50 submissions earn the trip. Six experience perks on the house — plus the sponsor stack, which every builder gets from day one."
           />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {perks.map((p) => (
@@ -439,7 +537,7 @@ export default function HackJackLondonSquarePage() {
         </Section>
 
         {/* FAQ */}
-        <Section bg="tint">
+        <Section id="faq" bg="tint">
           <SectionHeader eyebrow="Logistics" title="Things to know before you board." />
           <div className="grid gap-4 md:grid-cols-2">
             {faqs.map((f) => (
@@ -455,18 +553,20 @@ export default function HackJackLondonSquarePage() {
         <Section bg="navy">
           <div className="grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
             <div>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-lime">Apply now</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-lime">Start building</p>
               <h2 className="h-display text-3xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl">
-                50 seats. One yacht. Bring something to ship.
+                Three weeks. Fifty finalists. One day on the bay.
               </h2>
               <p className="mt-5 max-w-xl text-lg text-ink-100">
-                Applications close two weeks before the event or when the manifest fills, whichever
-                comes first. Sponsors review every submission.
+                Submissions close <strong className="font-semibold text-white">May 28</strong>.
+                Finalists announced <strong className="font-semibold text-white">May 29</strong>. Boat
+                leaves South Beach at 9 AM <strong className="font-semibold text-white">May 30</strong>.
+                Build starts whenever you do.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
               <Link href="/builders/login" className="btn-lime px-6 py-3.5 text-sm">
-                Apply to build →
+                Start building →
               </Link>
               <Link
                 href="mailto:events@agenthack.ai"

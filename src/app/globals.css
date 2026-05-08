@@ -34,7 +34,7 @@
     letter-spacing: -0.02em;
   }
   .btn {
-    @apply inline-flex items-center justify-center gap-2 rounded-lg font-semibold transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-navy-700;
+    @apply inline-flex items-center justify-center gap-2 rounded-full font-semibold transition-all duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-navy-700;
   }
   .btn-lime {
     @apply btn bg-lime text-navy-700 hover:bg-lime-300 px-5 py-3 text-sm;
