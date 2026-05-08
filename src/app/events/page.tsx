@@ -1,13 +1,12 @@
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { Footer } from "@/components/footer";
-import { EventCard } from "@/components/event-card";
+import { EventList } from "@/components/event-list";
 import { EventFilters } from "@/components/event-filters";
 import { api } from "@/lib/trpc/server";
 import type { Event } from "@/lib/data";
 
 export const dynamic = "force-dynamic";
-
 
 const cities = ["All", "SF", "NYC", "LA", "London", "Berlin", "Remote"] as const;
 const formats = [
@@ -39,9 +38,9 @@ export default async function EventsIndex() {
       <main>
         <section className="border-b border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900">
           <div className="container-page pt-16 pb-10">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">Events</p>
-            <h1 className="h-display text-4xl font-bold tracking-tight text-ink-900 md:text-5xl dark:text-ink-50">Find an event. Show up. Ship.</h1>
-            <p className="mt-4 max-w-2xl text-lg text-ink-600 dark:text-ink-300">Every event below has a Contree workspace ready, Token Factory keys loaded, and a base station for live demos.</p>
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">Schedule</p>
+            <h1 className="h-display text-4xl font-bold tracking-tight text-ink-900 md:text-5xl dark:text-ink-50">Every session, in order.</h1>
+            <p className="mt-4 max-w-2xl text-lg text-ink-600 dark:text-ink-300">Office hours, ClawCamp, and the May 30 boat day — RSVP via Luma where it's linked, or just show up.</p>
             <EventFilters cities={cities} formats={formats} />
           </div>
         </section>
@@ -53,27 +52,29 @@ export default async function EventsIndex() {
                 <h2 className="h-display text-3xl font-bold text-ink-900 dark:text-ink-50">Live now</h2>
                 <span className="pill-lime"><span className="live-dot" /> {live.length} live</span>
               </div>
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{live.map((e) => <EventCard key={e.id} event={e} />)}</div>
+              <EventList events={live} />
             </div>
           </section>
         ) : null}
 
         <section className="bg-white pb-20 pt-10 dark:bg-ink-900 sm:pb-24 lg:pb-28">
           <div className="container-page">
-            <h2 className="mb-8 h-display text-3xl font-bold text-ink-900 dark:text-ink-50">Upcoming events</h2>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{upcoming.map((e) => <EventCard key={e.id} event={e} />)}</div>
+            <h2 className="mb-8 h-display text-3xl font-bold text-ink-900 dark:text-ink-50">Upcoming sessions</h2>
+            <EventList events={upcoming} emptyLabel="No upcoming sessions." />
           </div>
         </section>
 
-        <section className="section bg-ink-50 dark:bg-ink-800">
-          <div className="container-page">
-            <h2 className="mb-8 h-display text-3xl font-bold text-ink-900 dark:text-ink-50">Past events</h2>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{past.map((e) => <EventCard key={e.id} event={e} />)}</div>
-            <p className="mt-10 text-sm text-ink-500 dark:text-ink-400">
-              Hosting an event? <Link className="underline-offset-4 hover:underline text-navy-700 font-medium dark:text-lime" href="/companies/login">Apply to host →</Link>
-            </p>
-          </div>
-        </section>
+        {past.length ? (
+          <section className="section bg-ink-50 dark:bg-ink-800">
+            <div className="container-page">
+              <h2 className="mb-8 h-display text-3xl font-bold text-ink-900 dark:text-ink-50">Past sessions</h2>
+              <EventList events={past} />
+              <p className="mt-10 text-sm text-ink-500 dark:text-ink-400">
+                Hosting an event? <Link className="underline-offset-4 hover:underline text-navy-700 font-medium dark:text-lime" href="/companies/login">Apply to host →</Link>
+              </p>
+            </div>
+          </section>
+        ) : null}
       </main>
       <Footer />
     </>

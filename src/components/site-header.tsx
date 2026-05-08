@@ -5,7 +5,7 @@ import { AppHeader } from "./app-chrome";
 
 const builderNav = [
   { label: "Console", href: "/builders/dashboard" },
-  { label: "Events", href: "/events" },
+  { label: "Schedule", href: "/events" },
   { label: "Teams", href: "/builders/teams" },
   { label: "Workshops", href: "/workshops" },
   { label: "Profile", href: "/builders/dashboard/profile" },
