@@ -140,7 +140,7 @@ const faqs = [
   },
   {
     q: "What's the format?",
-    a: "Solo or teams of up to 4. Build something on the day using one or more of the sponsor SDKs (Nebius Token Factory, Composio, Tavily). Demos are 3 minutes after the sunset cruise.",
+    a: "Solo or teams of up to 4. Build something on the day using one or more of the sponsor stack — Nebius Token Factory for inference, Composio for agent tools, Tavily for search. Demos are 3 minutes after the sunset cruise.",
   },
   {
     q: "Drinks?",
@@ -187,7 +187,7 @@ export default function HackJackLondonSquarePage() {
                 See the day
               </Link>
               <Link href="#sponsors" className="btn-ghost text-sm">
-                Sponsors & SDKs →
+                Sponsors & stack →
               </Link>
             </div>
             <dl className="mt-16 grid grid-cols-2 gap-y-8 sm:grid-cols-4 sm:gap-y-0">
@@ -295,7 +295,7 @@ export default function HackJackLondonSquarePage() {
         <Section id="sponsors" bg="tint">
           <SectionHeader
             eyebrow="Sponsors & organizers"
-            title="Three SDKs. One day. Build something real."
+            title="One cloud. Two APIs. Build something real."
             body="Each sponsor is an organizer — their teams are on the boat, in the room at Plank, and judging at the end. Bring an idea, leave with credits and a working agent."
           />
           <div className="grid gap-6 lg:grid-cols-3">
@@ -393,7 +393,7 @@ export default function HackJackLondonSquarePage() {
           <SectionHeader
             eyebrow="Awesome perks"
             title="Free for builders. Sponsors picked up the tab."
-            body="Apply, get accepted, show up at South Beach with a laptop. Six perks on the house, plus the SDKs."
+            body="Apply, get accepted, show up at South Beach with a laptop. Six perks on the house, plus the sponsor stack."
           />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {perks.map((p) => (
@@ -405,7 +405,7 @@ export default function HackJackLondonSquarePage() {
             ))}
           </div>
           <div className="mt-8 rounded-card border border-ink-200 bg-white p-6">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-ink-500">And the SDKs</p>
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-ink-500">And the sponsor stack</p>
             <ul className="grid gap-3 sm:grid-cols-3">
               {sdkPerks.map((line) => (
                 <li key={line} className="flex items-start gap-3 text-sm text-ink-800">
