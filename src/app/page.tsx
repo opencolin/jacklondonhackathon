@@ -8,7 +8,7 @@ import { RotatingHeroTitle } from "@/components/rotating-hero-title";
 export const metadata: Metadata = {
   title: "BuilderShip — Three-week hackathon, finals on the bay",
   description:
-    "BuilderShip: a three-week remote hackathon with daily office hours. Submit by May 28. Top 30 builders earn a boat day on the Dragon Lady, May 30 — bay crossing, all-day 1:1 pitches at Plank, final presentations, sunset cruise, dinner at Farmhouse, the winner takes home $10k in credits and a DGX Spark, after-party on the yacht. Sponsored by Nebius, Composio, Tavily, OpenClaw, CopilotKit, and Contree.",
+    "BuilderShip: a three-week remote hackathon with daily office hours. Submit by May 28. Top 30 builders earn a boat day on the Dragon Lady, May 30 — bay crossing, all-day 1:1 pitches at Plank, final presentations, sunset cruise, dinner at Farmhouse, the winner takes home $10k in credits and a DGX Spark, after-party on the yacht. Sponsored by Nebius, Composio, Tavily, OpenClaw, and Contree.",
 };
 
 const timeline = [
@@ -47,7 +47,7 @@ const judges = [
   {
     who: "Sponsor teams",
     when: "Office hours, then on the boat",
-    body: "Nebius, Composio, Tavily, OpenClaw, CopilotKit, and Contree engineers have been at office hours all month — by May 30 they know your codebase. They stress-test the integration and weigh in on the score.",
+    body: "Nebius, Composio, Tavily, OpenClaw, and Contree engineers have been at office hours all month — by May 30 they know your codebase. They stress-test the integration and weigh in on the score.",
   },
   {
     who: "Angel investors",
@@ -112,15 +112,6 @@ const sponsors = [
     site: "https://github.com/opencolin/openclaw-deploy",
     docs: "https://github.com/opencolin/openclaw-deploy#readme",
     accent: "lime",
-  },
-  {
-    name: "CopilotKit",
-    role: "In-app copilots & agents",
-    blurb:
-      "React-first framework for shipping AI copilots and agents directly into your product UI. Generative UI, shared state, and human-in-the-loop hooks — wire your agent to a working interface in an afternoon.",
-    site: "https://www.copilotkit.ai",
-    docs: "https://docs.copilotkit.ai",
-    accent: "navy",
   },
   {
     name: "Contree",
@@ -222,7 +213,6 @@ const sdkPerks = [
   "Contree workspace + Token Factory keys",
   "Nebius GPU credits for inference & deploy",
   "OpenClaw runtime preinstalled in your workspace",
-  "CopilotKit React components ready to drop into your demo UI",
   "Composio + Tavily API access for the day",
 ] as const;
 
