@@ -6,7 +6,7 @@ import { events, workshops, currentUser, liveStats } from "@/lib/data";
 
 const builderNav = [
   { label: "Console", href: "/builders/dashboard" },
-  { label: "Office hours", href: "/#office-hours" },
+  { label: "Events", href: "/events" },
   { label: "Teams", href: "/builders/teams" },
   { label: "Workshops", href: "/workshops" },
   { label: "Profile", href: "/builders/dashboard/profile" },

@@ -8,7 +8,7 @@ import { RotatingHeroTitle } from "@/components/rotating-hero-title";
 export const metadata: Metadata = {
   title: "CodeCruise — Three-week hackathon, finals on the bay",
   description:
-    "CodeCruise: a three-week remote hackathon with daily office hours. Submit by May 28. Top 30 builders earn a boat day on the Dragon Lady, May 30 — bay crossing, all-day 1:1 pitches at Plank, final presentations, sunset cruise, dinner at Farmhouse, the winner takes home $10k, after-party on the yacht. Sponsored by Nebius, Composio, and Tavily.",
+    "CodeCruise: a three-week remote hackathon with daily office hours. Submit by May 28. Top 30 builders earn a boat day on the Dragon Lady, May 30 — bay crossing, all-day 1:1 pitches at Plank, final presentations, sunset cruise, dinner at Farmhouse, the winner takes home $10k and a DGX Spark, after-party on the yacht. Sponsored by Nebius, Composio, and Tavily.",
 };
 
 const timeline = [
@@ -218,7 +218,7 @@ const faqs = [
   },
   {
     q: "What happens on May 30?",
-    a: "Finals day in Jack London Square — and there's no five-minute stage pitch. You spend the whole day in 1:1 conversations: angels and VCs over breakfast at Plank, sponsor judges over lunch and bowling, more 1:1s through the afternoon. Final presentations before the sunset cruise. Dinner at Farmhouse, winners announced, the winner takes home $10k. After-party back on the docked yacht.",
+    a: "Finals day in Jack London Square — and there's no five-minute stage pitch. You spend the whole day in 1:1 conversations: angels and VCs over breakfast at Plank, sponsor judges over lunch and bowling, more 1:1s through the afternoon. Final presentations before the sunset cruise. Dinner at Farmhouse, winners announced, the winner takes home $10k and a DGX Spark. After-party back on the docked yacht.",
   },
   {
     q: "What does \"walking the plank\" mean?",
@@ -268,7 +268,7 @@ export default function HackJackLondonSquarePage() {
             <RotatingHeroTitle className="mt-6" />
             <p className="mt-7 max-w-2xl text-xl text-ink-600 dark:text-ink-300">
               Three weeks of building. Best of the best win a day on the yacht — 1:1s with angels,
-              VCs, and sponsors, sunset cruise, and the winner takes home $10k.
+              VCs, and sponsors, sunset cruise, and the winner takes home $10k and a DGX Spark.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link href="/builders/login" className="btn-lime px-6 py-3.5 text-sm">
