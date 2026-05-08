@@ -5,7 +5,7 @@ import { EventCard } from "@/components/event-card";
 import { events } from "@/lib/data";
 
 const cities = ["All", "SF", "NYC", "LA", "London", "Berlin", "Remote"];
-const formats = ["All", "Hackathon", "Hack day", "Hack night", "Meetup", "Mini conference", "Demo night"];
+const formats = ["All", "Office hours", "Hackathon", "Hack day", "Hack night", "Meetup", "Mini conference", "Demo night"];
 
 export default function EventsIndex() {
   const live = events.filter((e) => e.state === "LIVE");

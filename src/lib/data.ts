@@ -7,7 +7,8 @@ export type EventFormat =
   | "HACK_NIGHT"
   | "MEETUP"
   | "MINI_CONFERENCE"
-  | "DEMO_NIGHT";
+  | "DEMO_NIGHT"
+  | "OFFICE_HOURS";
 
 export type EventState = "LIVE" | "UPCOMING" | "COMPLETED";
 
@@ -88,6 +89,96 @@ export const partners: { name: string; tag?: string }[] = [
 ];
 
 export const events: Event[] = [
+  {
+    id: "evt_oh_mon",
+    slug: "office-hours-monday-zoom",
+    title: "Office Hours · Monday Zoom",
+    format: "OFFICE_HOURS",
+    state: "UPCOMING",
+    startDateTime: "2026-05-11T12:00:00-07:00",
+    endDateTime: "2026-05-11T13:00:00-07:00",
+    city: "Remote",
+    venue: "Online (Zoom)",
+    isOnline: true,
+    cover: "from-lime-100 via-lime-200 to-lime-300",
+    description:
+      "One-hour Zoom drop-in with sponsor developer advocates and solution architects. Bring your blockers. Every Monday at noon Pacific through May 30.",
+    capacity: 100,
+    registered: 32,
+    partners: ["Nebius", "Composio", "Tavily"],
+  },
+  {
+    id: "evt_oh_tue",
+    slug: "office-hours-tuesday-frontier-tower",
+    title: "Office Hours · Tuesday at Frontier Tower",
+    format: "OFFICE_HOURS",
+    state: "UPCOMING",
+    startDateTime: "2026-05-12T12:00:00-07:00",
+    endDateTime: "2026-05-12T14:00:00-07:00",
+    city: "SF",
+    venue: "Frontier Tower, San Francisco",
+    isOnline: false,
+    cover: "from-navy-300 via-navy-500 to-navy-700",
+    description:
+      "Two hours of in-person office hours at Frontier Tower. Drop in for whiteboard sessions, code review, and a sandwich. Every Tuesday 12–2pm through May 30.",
+    capacity: 40,
+    registered: 18,
+    partners: ["Nebius", "Composio", "Tavily"],
+  },
+  {
+    id: "evt_oh_wed",
+    slug: "office-hours-wednesday-homebrew",
+    title: "Office Hours · Wednesday at Homebrew",
+    format: "OFFICE_HOURS",
+    state: "UPCOMING",
+    startDateTime: "2026-05-13T12:00:00-07:00",
+    endDateTime: "2026-05-13T14:00:00-07:00",
+    city: "SF",
+    venue: "Homebrew, San Francisco",
+    isOnline: false,
+    cover: "from-lime-200 via-lime-300 to-navy-500",
+    description:
+      "Two hours of in-person office hours at Homebrew. Drop in for whiteboard sessions, code review, and a sandwich. Every Wednesday 12–2pm through May 30.",
+    capacity: 30,
+    registered: 12,
+    partners: ["Nebius", "Composio", "Tavily"],
+  },
+  {
+    id: "evt_oh_thu",
+    slug: "office-hours-thursday-frontier-tower",
+    title: "Office Hours · Thursday at Frontier Tower",
+    format: "OFFICE_HOURS",
+    state: "UPCOMING",
+    startDateTime: "2026-05-14T12:00:00-07:00",
+    endDateTime: "2026-05-14T14:00:00-07:00",
+    city: "SF",
+    venue: "Frontier Tower, San Francisco",
+    isOnline: false,
+    cover: "from-navy-300 via-navy-500 to-navy-700",
+    description:
+      "Two hours of in-person office hours at Frontier Tower. Drop in for whiteboard sessions, code review, and a sandwich. Every Thursday 12–2pm through May 30.",
+    capacity: 40,
+    registered: 21,
+    partners: ["Nebius", "Composio", "Tavily"],
+  },
+  {
+    id: "evt_oh_fri",
+    slug: "office-hours-friday-zoom",
+    title: "Office Hours · Friday Zoom",
+    format: "OFFICE_HOURS",
+    state: "UPCOMING",
+    startDateTime: "2026-05-15T12:00:00-07:00",
+    endDateTime: "2026-05-15T13:00:00-07:00",
+    city: "Remote",
+    venue: "Online (Zoom)",
+    isOnline: true,
+    cover: "from-lime-100 via-lime-200 to-lime-300",
+    description:
+      "One-hour Zoom drop-in with sponsor developer advocates and solution architects. Bring your blockers. Every Friday at noon Pacific through May 30.",
+    capacity: 100,
+    registered: 27,
+    partners: ["Nebius", "Composio", "Tavily"],
+  },
   {
     id: "evt_om1",
     slug: "openmind-om1-build-night",

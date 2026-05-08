@@ -9,6 +9,7 @@ const formatLabel: Record<Event["format"], string> = {
   MEETUP: "Meetup",
   MINI_CONFERENCE: "Mini conference",
   DEMO_NIGHT: "Demo night",
+  OFFICE_HOURS: "Office hours",
 };
 
 function StatePill({ state, startDateTime }: { state: Event["state"]; startDateTime: string }) {
