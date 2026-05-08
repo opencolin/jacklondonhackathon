@@ -1,4 +1,4 @@
-# ClawCruise / CodeCruise
+# BuilderShip
 
 A three-week remote AI hackathon culminating in finals on the bay aboard the Dragon Lady — May 30, 2026. This repo is the marketing site, builder dashboard, and (in progress) backend that runs it.
 
@@ -19,7 +19,7 @@ src/
 │   ├── events/                    Public events index + detail
 │   ├── workshops/                 Workshop library
 │   ├── docs/                      Builder docs
-│   └── page.tsx                   ClawCruise homepage
+│   └── page.tsx                   BuilderShip homepage
 ├── components/                    UI components (TopNav, AppHeader, cards, …)
 │   └── auth/                      Login card
 ├── lib/                           Client-side utils + tRPC client
@@ -56,19 +56,19 @@ npm install
 # AUTH_GITHUB_ID=
 # AUTH_GITHUB_SECRET=
 # RESEND_API_KEY=
-# RESEND_FROM_EMAIL="ClawCruise <hello@mail.codecruise.events>"
+# RESEND_FROM_EMAIL="BuilderShip <hello@mail.buildership.events>"
 # NEXT_PUBLIC_APP_URL=           e.g. http://localhost:3030
 
 # Database
 npm run db:generate     # generate migrations from schema diff
 npm run db:migrate      # apply migrations
-npm run db:seed         # seed sponsors, venues, CodeCruise event, office hours
+npm run db:seed         # seed sponsors, venues, BuilderShip event, office hours
 
 # Run
 npm run dev             # http://localhost:3030
 ```
 
-That's it for M1. You can sign in with GitHub, you'll auto-register for CodeCruise, you'll see the events page and the office hours.
+That's it for M1. You can sign in with GitHub, you'll auto-register for BuilderShip, you'll see the events page and the office hours.
 
 ## What's NOT wired up at M1
 
@@ -96,7 +96,7 @@ npm run lint            # next lint
 npm run db:generate     # drizzle-kit generate
 npm run db:migrate      # apply migrations
 npm run db:push         # quick dev sync (skips migrations)
-npm run db:seed         # seed CodeCruise + office hours + sponsors
+npm run db:seed         # seed BuilderShip + office hours + sponsors
 npm run db:studio       # drizzle-kit studio
 
 npm run worker          # run the BullMQ worker locally (M2+)
