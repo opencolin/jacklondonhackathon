@@ -2,9 +2,7 @@ import Link from "next/link";
 import { NebiusLogo } from "./nebius-logo";
 
 const links = [
-  { href: "/events", label: "Events" },
   { href: "/workshops", label: "Workshops" },
-  { href: "/ide", label: "IDE" },
   { href: "/pricing", label: "Pricing" },
   { href: "/docs", label: "Docs" },
 ];
@@ -24,7 +22,6 @@ export function TopNav() {
           </nav>
         </div>
         <div className="flex items-center gap-2">
-          <Link href="/companies/login" className="hidden text-sm font-medium text-ink-700 hover:text-ink-900 md:inline">For businesses</Link>
           <Link href="/builders/login" className="btn-ghost">Log in</Link>
           <Link href="/builders/login" className="btn-lime">Start building</Link>
         </div>

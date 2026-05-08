@@ -45,7 +45,7 @@ const venues = [
     name: "Dragon Lady",
     role: "Bay crossing · sunset cruise · floating workshop",
     blurb:
-      "Charter sailboat in the Jack London Square marina. Morning crossing from South Beach, sunset networking cruise with dinner on board, and hacking space when docked.",
+      "80-foot motor yacht docked at the Jack London Square marina. Five staterooms, hot tub on the top deck, and a salon big enough to host the cruise crowd. Morning bay crossing from South Beach, sunset networking cruise, and hacking space when she's docked.",
     href: "https://jerrysfaeries.com/toi-toi-toi/",
     cta: "Boat listing",
   },
@@ -157,9 +157,9 @@ export default function HackJackLondonSquarePage() {
               .
             </h1>
             <p className="mt-7 max-w-2xl text-xl text-ink-600">
-              Cross the bay on a sailboat. Build all day at Plank. Ship something with Nebius, Composio,
-              and Tavily. Sunset networking cruise, dinner at Farmhouse Kitchen Thai, demos, and an
-              after-party at the oldest saloon on the waterfront.
+              Cross the bay on an 80-foot yacht. Build all day at Plank. Ship something with Nebius,
+              Composio, and Tavily. Sunset networking cruise, dinner at Farmhouse Kitchen Thai, demos,
+              and an after-party at the oldest saloon on the waterfront.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link href="/builders/login" className="btn-lime px-6 py-3.5 text-sm">
@@ -187,6 +187,81 @@ export default function HackJackLondonSquarePage() {
             </dl>
           </div>
         </section>
+
+        {/* Boat gallery */}
+        <Section>
+          <SectionHeader
+            eyebrow="The boat"
+            title="Meet the Dragon Lady."
+            body="80 feet of motor yacht docked at the Jack London Square marina. Five staterooms, six heads, hot tub on the top deck, and a main salon big enough to host the cruise crowd. Built 1979 in Long Beach. Chartered through Jerry's Faeries."
+          />
+          <div className="overflow-hidden rounded-card border border-ink-200 bg-white">
+            {/* Hero photo */}
+            <img
+              src="https://jerrysfaeries.com/wp-content/uploads/2023/04/exterior-ballpark-chinabasin.jpg"
+              alt="Dragon Lady cruising past Oracle Park and China Basin"
+              className="h-[320px] w-full object-cover sm:h-[420px] lg:h-[520px]"
+              loading="eager"
+            />
+          </div>
+          <div className="mt-4 grid grid-cols-2 gap-4 lg:grid-cols-4">
+            {[
+              {
+                src: "https://jerrysfaeries.com/wp-content/uploads/2018/11/dragonlady1-scaled.jpeg",
+                alt: "Dragon Lady in profile at the dock",
+                caption: "80 feet long, 20 ft beam",
+              },
+              {
+                src: "https://jerrysfaeries.com/wp-content/uploads/2023/04/topdeck-2.jpg",
+                alt: "Top deck with hot tub and tender",
+                caption: "Top deck — hot tub, tender, sunset views",
+              },
+              {
+                src: "https://jerrysfaeries.com/wp-content/uploads/2023/04/interior-mainlounge-kitchen-1.jpg",
+                alt: "Main salon and galley",
+                caption: "Main salon and galley",
+              },
+              {
+                src: "https://jerrysfaeries.com/wp-content/uploads/2023/04/interior-dinner-2nd-interior-captians-chair.jpg",
+                alt: "Dining salon and captain's chair",
+                caption: "Dining salon — networking on the cruise",
+              },
+            ].map((p) => (
+              <figure key={p.src} className="overflow-hidden rounded-card border border-ink-200 bg-white">
+                <img
+                  src={p.src}
+                  alt={p.alt}
+                  className="aspect-[4/3] w-full object-cover"
+                  loading="lazy"
+                />
+                <figcaption className="px-4 py-3 text-xs text-ink-600">{p.caption}</figcaption>
+              </figure>
+            ))}
+          </div>
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-card border border-ink-200 bg-white px-6 py-5">
+            <dl className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
+              {[
+                ["80 ft", "Length"],
+                ["20 ft", "Beam"],
+                ["5", "Staterooms"],
+                ["1979", "Built · Long Beach"],
+              ].map(([value, label]) => (
+                <div key={label} className="flex items-baseline gap-2">
+                  <dt className="font-bold text-navy-700">{value}</dt>
+                  <dd className="text-ink-500">{label}</dd>
+                </div>
+              ))}
+            </dl>
+            <Link
+              href="https://jerrysfaeries.com/toi-toi-toi/"
+              className="btn-outline text-xs"
+              target="_blank"
+              rel="noreferrer"
+            >
+              More on Jerry's Faeries ↗
+            </Link>
+          </div>
+        </Section>
 
         {/* Sponsors */}
         <Section id="sponsors" bg="tint">
@@ -331,7 +406,7 @@ export default function HackJackLondonSquarePage() {
             <div>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-lime">Apply now</p>
               <h2 className="h-display text-3xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl">
-                50 seats. One sailboat. Bring something to ship.
+                50 seats. One yacht. Bring something to ship.
               </h2>
               <p className="mt-5 max-w-xl text-lg text-ink-100">
                 Applications close two weeks before the event or when the manifest fills, whichever
