@@ -37,6 +37,29 @@ const timeline = [
   },
 ] as const;
 
+const judges = [
+  {
+    who: "AI judges",
+    when: "Reading every submission, May 8 → May 28",
+    body: "Score every GitHub repo on usefulness, integration depth across the sponsor stack, and how working the working demo actually is.",
+  },
+  {
+    who: "Sponsor teams",
+    when: "Office hours, then on the boat",
+    body: "Nebius, Composio, and Tavily engineers have been at office hours all month — by May 30 they know your codebase. They stress-test the integration and weigh in on the score.",
+  },
+  {
+    who: "Angel investors",
+    when: "On the boat, May 30",
+    body: "Real checks, real conversations. Pitch them between bowling frames, on the cruise, over dinner. Their reaction lands in your final score.",
+  },
+  {
+    who: "VCs",
+    when: "On the boat, May 30",
+    body: "Bay Area funds in the room. Demo, network, follow up later. The boat day doubles as a soft pitch tour — and their vote counts toward who wins.",
+  },
+] as const;
+
 const officeHourRoles = [
   {
     who: "Developer advocates",
@@ -172,12 +195,12 @@ const sdkPerks = [
 const schedule = [
   { time: "9:00 AM", title: "Depart on Dragon Lady", where: "South Beach, SF" },
   { time: "10:00 AM", title: "Arrive in Oakland", where: "Jack London Square dock" },
-  { time: "10:30 AM", title: "Coffee tickets redeem", where: "Bicycle Coffee" },
-  { time: "11:00 AM", title: "Lunch + last polish on demos", where: "Plank" },
-  { time: "1:00 PM", title: "Sponsor breakouts · bowling · arcade", where: "Plank" },
+  { time: "10:30 AM", title: "Coffee + first pitches", where: "Bicycle Coffee" },
+  { time: "11:00 AM", title: "Lunch + open pitch round", where: "Plank" },
+  { time: "1:00 PM", title: "Investor pitches · sponsor breakouts · bowling · arcade", where: "Plank" },
   { time: "3:00 PM", title: "Coffee break", where: "Bicycle Coffee" },
-  { time: "6:00 – 8:00 PM", title: "Sunset networking cruise", where: "Dragon Lady" },
-  { time: "8:15 PM", title: "Dinner · demos · judging", where: "Farmhouse Kitchen Thai" },
+  { time: "6:00 – 8:00 PM", title: "Sunset cruise · investors aboard", where: "Dragon Lady" },
+  { time: "8:15 PM", title: "Dinner · final pitches · judging", where: "Farmhouse Kitchen Thai" },
   { time: "Late", title: "After-party on the yacht", where: "Dragon Lady (docked)" },
 ] as const;
 
@@ -187,12 +210,12 @@ const faqs = [
     a: "Solo or teams of up to 4. Three weeks to build remotely, with daily office hours from sponsor teams. Submit your GitHub repo any time before May 28 — AI judges read every entry, and you can schedule a live demo with human judges before the deadline if you want a deeper read.",
   },
   {
-    q: "How are finalists picked?",
-    a: "AI judges score every submission against the rubric — usefulness, integration depth across the sponsor stack, and how working the working demo actually is. Sponsor humans review the top tier and pick the 50 finalists, announced May 29.",
+    q: "How does scoring work?",
+    a: "Two phases. AI judges read every GitHub submission during the three weeks and pick the top 50. On May 30, your score is a blend: AI judges, sponsor teams, plus the angel investors and VCs in the room. Everyone you talk to that day is voting.",
   },
   {
     q: "What happens on May 30?",
-    a: "Finals day in Jack London Square. Boat leaves South Beach at 9 AM on the Dragon Lady — bay crossing, lunch and polish at Plank, sponsor breakouts, sunset cruise, dinner and 3-minute demos at Farmhouse Kitchen Thai, judging, after-party on the docked yacht.",
+    a: "Finals day in Jack London Square — and it's not a five-minute stage pitch. You spend the whole day pitching: angels and VCs over breakfast at Plank, sponsor judges over lunch and bowling, more angels on the sunset cruise, final pitches and judging at dinner. After-party back on the docked yacht.",
   },
   {
     q: "What if I can't make it to the boat?",
@@ -236,8 +259,9 @@ export default function HackJackLondonSquarePage() {
             </h1>
             <p className="mt-7 max-w-2xl text-xl text-ink-600">
               Three weeks of building with daily office hours. Submit your project by May 28. The top
-              50 finalists win a day on the Dragon Lady, May 30 — bay crossing, Plank, sunset cruise,
-              dinner at Farmhouse Kitchen Thai, and an after-party back on the docked yacht.
+              50 finalists earn a day on the Dragon Lady, May 30 — pitching angels, VCs, and sponsors
+              all day across Plank, the sunset cruise, and dinner at Farmhouse Kitchen Thai.
+              After-party back on the docked yacht.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link href="/builders/login" className="btn-lime px-6 py-3.5 text-sm">
@@ -431,6 +455,24 @@ export default function HackJackLondonSquarePage() {
                     Read the docs →
                   </Link>
                 </div>
+              </div>
+            ))}
+          </div>
+        </Section>
+
+        {/* Who's in the room */}
+        <Section id="judges">
+          <SectionHeader
+            eyebrow="Who's scoring you"
+            title="No five-minute stage pitch. All day, pitching everyone."
+            body="The score on May 30 is a blend. AI judges read your code over the three weeks. Sponsor teams stress-test your integration. The room is full of angels and VCs talking to you between bowling frames, on the cruise, and at dinner. Everyone's vote counts."
+          />
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {judges.map((j) => (
+              <div key={j.who} className="card flex h-full flex-col">
+                <h3 className="h-display text-xl font-bold text-ink-900">{j.who}</h3>
+                <p className="mt-2 text-xs font-semibold uppercase tracking-widest text-ink-500">{j.when}</p>
+                <p className="mt-3 text-sm leading-relaxed text-ink-700">{j.body}</p>
               </div>
             ))}
           </div>
