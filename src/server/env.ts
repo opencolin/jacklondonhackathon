@@ -19,7 +19,7 @@ const serverSchema = z.object({
   AUTH_LINKEDIN_SECRET: z.string().optional(),
 
   RESEND_API_KEY: z.string().optional(),
-  RESEND_FROM_EMAIL: z.string().min(1).default("BuilderShip <hello@mail.buildership.events>"),
+  RESEND_FROM_EMAIL: z.string().min(1).default("BuilderShip <hello@mail.ship.builders>"),
 
   NEBIUS_TOKEN_FACTORY_KEY: z.string().optional(),
   NEBIUS_TOKEN_FACTORY_BASE_URL: z
@@ -89,7 +89,7 @@ if (isServer) {
         process.env.DATABASE_URL ?? "postgres://placeholder@localhost/codecruise",
       RESEND_FROM_EMAIL:
         process.env.RESEND_FROM_EMAIL ??
-        "BuilderShip <hello@mail.buildership.events>",
+        "BuilderShip <hello@mail.ship.builders>",
     }) as z.infer<typeof serverSchema>;
   }
 }

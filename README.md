@@ -56,7 +56,7 @@ npm install
 # AUTH_GITHUB_ID=
 # AUTH_GITHUB_SECRET=
 # RESEND_API_KEY=
-# RESEND_FROM_EMAIL="BuilderShip <hello@mail.buildership.events>"
+# RESEND_FROM_EMAIL="BuilderShip <hello@mail.ship.builders>"
 # NEXT_PUBLIC_APP_URL=           e.g. http://localhost:3030
 
 # Database

@@ -471,7 +471,7 @@ R2 access: presigned URLs for upload, public-read for delivery. No private bucke
 | Nebius Token Factory | LLM calls for AI judge | Rate limits; pre-warm during heavy submission window. |
 | Composio | Verify integrations claimed in submissions | Optional in v0. |
 | Tavily | Sanity-check claims in submissions | Optional in v0. |
-| Resend | All email | Domain auth (SPF/DKIM/DMARC) on `mail.codecruise.events` before May 14. |
+| Resend | All email | Domain auth (SPF/DKIM/DMARC) on `mail.ship.builders` before May 14. |
 | Discord | Builder community, notifications | Server invite link in welcome email. |
 | Stripe | Sponsor invoicing | Out of scope for CodeCruise (sponsors paying via wire). |
 
@@ -515,10 +515,10 @@ Stored as `audit_log` rows, also mirrored to Axiom for fast search. PostHog wire
 - **Database:** Neon Postgres, prod + branch-per-PR.
 - **Redis:** Upstash, regional pair.
 - **Storage:** Cloudflare R2.
-- **Domain:** `codecruise.events`. Subdomain layout:
-  - `codecruise.events` — marketing + app
-  - `mail.codecruise.events` — Resend
-  - `cdn.codecruise.events` → R2 worker
+- **Domain:** `ship.builders`. Subdomain layout:
+  - `ship.builders` — marketing + app
+  - `mail.ship.builders` — Resend
+  - `cdn.ship.builders` → R2 worker
 - **Secrets:** Vercel env vars for app, Railway env vars for worker, both pulled from 1Password vault on rotation.
 - **Backups:** Neon nightly snapshot retained 7 days. Plus a manual `pg_dump` to R2 weekly during the build period.
 - **Disaster recovery:** documented runbook in `RUNBOOK.md` (TODO before May 14).
