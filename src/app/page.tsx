@@ -181,6 +181,11 @@ const perks = [
     body: "Tickets you can redeem any time you need to walk and think. Oakland-roasted, ten minutes from the dock.",
   },
   {
+    tag: "Open to everyone",
+    title: "Kayak race",
+    body: "Open-water sprint between Jack London Square and the Dragon Lady's mooring. Builders, judges, sponsors — anyone can paddle. Winning team takes a bonus prize.",
+  },
+  {
     tag: "Dragon Lady",
     title: "After-party on the yacht",
     body: "Boat stays docked. Top deck, hot tub running, sunset still in your eyes — and someone always brings a bottle.",
@@ -200,7 +205,8 @@ const schedule = [
   { time: "11:00 AM", title: "Lunch + 1:1 conversations begin", where: "Plank" },
   { time: "1:00 PM", title: "1:1s · pitch refinement · bowling · arcade", where: "Plank" },
   { time: "3:00 PM", title: "Coffee break", where: "Bicycle Coffee" },
-  { time: "4:00 PM", title: "Final presentations", where: "Plank" },
+  { time: "3:30 PM", title: "Kayak race · open to everyone", where: "Jack London Square waterfront" },
+  { time: "4:30 PM", title: "Final presentations", where: "Plank" },
   { time: "6:00 – 8:00 PM", title: "Sunset cruise · celebration", where: "Dragon Lady" },
   { time: "8:15 PM", title: "Dinner · winners announced", where: "Farmhouse Kitchen Thai" },
   { time: "9:30 PM", title: "Winner walks the plank", where: "Dragon Lady (back at the dock)" },
