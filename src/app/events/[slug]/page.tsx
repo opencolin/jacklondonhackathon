@@ -28,7 +28,13 @@ export default function EventDetail({ params }: { params: { slug: string } }) {
             <h1 className="h-display mt-5 max-w-4xl text-4xl font-bold leading-tight tracking-tight md:text-6xl">{event.title}</h1>
             <p className="mt-5 max-w-2xl text-lg">{event.description}</p>
             <div className="mt-8 flex flex-wrap items-center gap-3">
-              <Link href="/builders/login" className="btn-navy">Register →</Link>
+              {event.rsvpUrl ? (
+                <a href={event.rsvpUrl} target="_blank" rel="noreferrer" className="btn-navy">
+                  RSVP on Luma →
+                </a>
+              ) : (
+                <Link href="/builders/login" className="btn-navy">Register →</Link>
+              )}
               <Link href={`/builders/dashboard/events/${event.id}/builder`} className="btn-outline">View builder hub</Link>
               <Link href={`/events/${event.slug}#share`} className="btn-ghost">Share event link</Link>
             </div>

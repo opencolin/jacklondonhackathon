@@ -28,6 +28,8 @@ export type Event = {
   registered: number;
   partners: string[];
   prizePool?: string;
+  /** External RSVP page (Luma, Eventbrite, etc.). When set, the UI links here instead of an in-app RSVP. */
+  rsvpUrl?: string;
 };
 
 export type Workshop = {
@@ -195,6 +197,7 @@ export const events: Event[] = [
     capacity: 250,
     registered: 142,
     partners: ["You.com", "Apify", "Venn.ai", "Cline", "Fetch.ai", "Nebius", "HackerSquad", "STAK Ventures"],
+    rsvpUrl: "https://luma.com/clawcamp-human-tech",
   },
   {
     id: "evt_clawcamp_518",
@@ -213,6 +216,7 @@ export const events: Event[] = [
     capacity: 80,
     registered: 47,
     partners: ["Nebius", "You.com", "Apify", "Fetch.ai", "ASI:One", "HackerSquad", "STAK Ventures"],
+    rsvpUrl: "https://luma.com/clawcamp-5-18",
   },
   {
     id: "evt_clawcamp",
