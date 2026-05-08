@@ -6,6 +6,9 @@ import { db } from "@/server/db";
 import { users } from "@/server/db/schema";
 import { eq } from "drizzle-orm";
 
+export const dynamic = "force-dynamic";
+
+
 const builderNav = [
   { label: "Console", href: "/builders/dashboard" },
   { label: "Events", href: "/events" },

@@ -8,6 +8,9 @@ import type { Event } from "@/lib/data";
 import { auth } from "@/server/auth";
 import { api } from "@/lib/trpc/server";
 
+export const dynamic = "force-dynamic";
+
+
 const builderNav = [
   { label: "Console", href: "/builders/dashboard" },
   { label: "Events", href: "/events" },

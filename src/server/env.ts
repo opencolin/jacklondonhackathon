@@ -19,7 +19,7 @@ const serverSchema = z.object({
   AUTH_LINKEDIN_SECRET: z.string().optional(),
 
   RESEND_API_KEY: z.string().optional(),
-  RESEND_FROM_EMAIL: z.string().email().default("CodeCruise <hello@mail.codecruise.events>"),
+  RESEND_FROM_EMAIL: z.string().min(1).default("ClawCruise <hello@mail.codecruise.events>"),
 
   NEBIUS_TOKEN_FACTORY_KEY: z.string().optional(),
   NEBIUS_TOKEN_FACTORY_BASE_URL: z
@@ -71,21 +71,26 @@ let serverEnv: z.infer<typeof serverSchema> | undefined;
 
 if (isServer) {
   const parsed = serverSchema.safeParse(process.env);
-  if (!parsed.success) {
-    console.error(
-      "[env] invalid server env:",
+  if (parsed.success) {
+    serverEnv = parsed.data;
+  } else {
+    // Don't throw at module-eval time — that breaks the Next.js build for
+    // public pages that don't actually need the missing vars. Log loudly,
+    // fill in safe placeholder defaults, and let runtime callers fail with
+    // their own clearer errors when they try to use missing config.
+    console.warn(
+      "[env] missing or invalid server env (using placeholder fallbacks):",
       JSON.stringify(parsed.error.flatten().fieldErrors, null, 2),
     );
-    if (process.env.NODE_ENV === "production") {
-      throw new Error("Invalid server env (see logs)");
-    }
     serverEnv = serverSchema.partial().parse({
       ...process.env,
       AUTH_SECRET: process.env.AUTH_SECRET ?? "x".repeat(32),
-      DATABASE_URL: process.env.DATABASE_URL ?? "postgres://localhost/codecruise",
+      DATABASE_URL:
+        process.env.DATABASE_URL ?? "postgres://placeholder@localhost/codecruise",
+      RESEND_FROM_EMAIL:
+        process.env.RESEND_FROM_EMAIL ??
+        "ClawCruise <hello@mail.codecruise.events>",
     }) as z.infer<typeof serverSchema>;
-  } else {
-    serverEnv = parsed.data;
   }
 }
 

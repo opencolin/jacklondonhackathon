@@ -6,6 +6,9 @@ import { formatDate } from "@/lib/utils";
 import { auth } from "@/server/auth";
 import { api } from "@/lib/trpc/server";
 
+export const dynamic = "force-dynamic";
+
+
 const companyNav = [
   { label: "Dashboard", href: "/companies/dashboard" },
   { label: "Events", href: "/companies/dashboard" },

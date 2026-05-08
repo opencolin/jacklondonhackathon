@@ -6,6 +6,9 @@ import { eventPrizes, eventSpeakers } from "@/lib/data";
 import { formatDate, formatTime } from "@/lib/utils";
 import { api } from "@/lib/trpc/server";
 
+export const dynamic = "force-dynamic";
+
+
 export default async function EventDetail({ params }: { params: { slug: string } }) {
   const trpc = await api();
   const event = await trpc.events.bySlug({ slug: params.slug });

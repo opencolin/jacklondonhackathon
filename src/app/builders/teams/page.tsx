@@ -6,6 +6,9 @@ import { teamsAsLeader, teamsAsMember, pendingInvitations } from "@/lib/data";
 import { formatDate } from "@/lib/utils";
 import { auth } from "@/server/auth";
 
+export const dynamic = "force-dynamic";
+
+
 const builderNav = [
   { label: "Console", href: "/builders/dashboard" },
   { label: "Events", href: "/events" },

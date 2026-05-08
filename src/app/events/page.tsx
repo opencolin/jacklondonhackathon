@@ -6,6 +6,9 @@ import { EventFilters } from "@/components/event-filters";
 import { api } from "@/lib/trpc/server";
 import type { Event } from "@/lib/data";
 
+export const dynamic = "force-dynamic";
+
+
 const cities = ["All", "SF", "NYC", "LA", "London", "Berlin", "Remote"] as const;
 const formats = [
   "All",
