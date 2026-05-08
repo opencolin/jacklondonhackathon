@@ -3,22 +3,23 @@
 import { useEffect, useState } from "react";
 
 export function ThemeToggleComposio() {
-  const [active, setActive] = useState(false);
+  // Composio is the default — `bs-theme-default` is the opt-out flag.
+  const [composio, setComposio] = useState(true);
 
   useEffect(() => {
-    setActive(localStorage.getItem("bs-theme-composio") === "1");
+    setComposio(localStorage.getItem("bs-theme-default") !== "1");
   }, []);
 
-  function flip(next: boolean) {
-    if (next) {
-      localStorage.setItem("bs-theme-composio", "1");
+  function flip(useComposio: boolean) {
+    if (useComposio) {
+      localStorage.removeItem("bs-theme-default");
       document.documentElement.setAttribute("data-theme", "composio");
       document.documentElement.classList.add("dark");
     } else {
-      localStorage.removeItem("bs-theme-composio");
+      localStorage.setItem("bs-theme-default", "1");
       document.documentElement.removeAttribute("data-theme");
     }
-    setActive(next);
+    setComposio(useComposio);
   }
 
   return (
@@ -28,7 +29,7 @@ export function ThemeToggleComposio() {
         type="button"
         onClick={() => flip(false)}
         className={
-          !active
+          !composio
             ? "font-medium text-ink-700 underline underline-offset-2 dark:text-ink-200"
             : "hover:underline"
         }
@@ -40,7 +41,7 @@ export function ThemeToggleComposio() {
         type="button"
         onClick={() => flip(true)}
         className={
-          active
+          composio
             ? "font-medium text-ink-700 underline underline-offset-2 dark:text-ink-200"
             : "hover:underline"
         }

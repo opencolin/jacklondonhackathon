@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const themeScript = `(function(){try{var t=localStorage.getItem('nb-theme');var dark=t==='dark'||((!t||t==='system')&&window.matchMedia('(prefers-color-scheme:dark)').matches);var url=new URL(window.location.href);var qp=url.searchParams.get('theme');if(qp==='composio'){localStorage.setItem('bs-theme-composio','1');}else if(qp==='default'||qp===''){localStorage.removeItem('bs-theme-composio');}var composio=localStorage.getItem('bs-theme-composio')==='1';var html=document.documentElement;if(composio){html.setAttribute('data-theme','composio');dark=true;}if(dark){html.classList.add('dark');}html.style.colorScheme=dark?'dark':'light';}catch(e){}})();`;
+  const themeScript = `(function(){try{var t=localStorage.getItem('nb-theme');var dark=t==='dark'||((!t||t==='system')&&window.matchMedia('(prefers-color-scheme:dark)').matches);var url=new URL(window.location.href);var qp=url.searchParams.get('theme');if(qp==='composio'){localStorage.removeItem('bs-theme-default');}else if(qp==='default'){localStorage.setItem('bs-theme-default','1');}localStorage.removeItem('bs-theme-composio');var composio=localStorage.getItem('bs-theme-default')!=='1';var html=document.documentElement;if(composio){html.setAttribute('data-theme','composio');dark=true;}if(dark){html.classList.add('dark');}html.style.colorScheme=dark?'dark':'light';}catch(e){}})();`;
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
