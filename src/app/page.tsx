@@ -293,15 +293,15 @@ export default function HackJackLondonSquarePage() {
               <span className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">Sponsored by</span>
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img
-                src="/brand/nebius-wordmark.svg"
-                alt="Nebius"
-                className="h-8 w-auto"
-              />
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img
                 src="/brand/composio-wordmark.svg"
                 alt="Composio"
                 className="h-7 w-auto invert dark:invert-0"
+              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/brand/nebius-wordmark.svg"
+                alt="Nebius"
+                className="h-8 w-auto"
               />
             </div>
             <div className="mt-10 flex flex-wrap items-center gap-3">
