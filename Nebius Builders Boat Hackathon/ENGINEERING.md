@@ -533,7 +533,7 @@ Stored as `audit_log` rows, also mirrored to Axiom for fast search. PostHog wire
 | **W2: May 15 – 21** | Submissions, GitHub App, AI judge worker, leaderboard | Backend lead + AI eng | A builder submits a repo and sees an AI score within 5 minutes. |
 | **W3: May 22 – 28** | Sponsor judge UI, finalist selection, boat manifest, sign-up flows | Backend lead + Frontend | Submission deadline holds; sponsor judges can read and override AI scores. |
 | **May 29** | Top-30 cut, finalist notifications, manifest open | Whole team | 30 builders notified; manifest filled out by EOD. |
-| **May 30** | Boat-day live leaderboard, demos, judging UI, winner finalization | Whole team | Winner picked, $10k + DGX Spark dispatched. |
+| **May 30** | Boat-day live leaderboard, demos, judging UI, winner finalization | Whole team | Winner picked, $10k in credits issued, DGX Spark claim link from Composio sent. |
 | **Post-event** | Telemetry rollups, public leaderboard, post-event blog auto-recap | Backend + DevRel | Everyone can see who won and why. |
 
 ---
@@ -555,11 +555,14 @@ Stored as `audit_log` rows, also mirrored to Axiom for fast search. PostHog wire
 ## 17. Open questions
 
 1. **Project ownership when a team member leaves.** Default: leader keeps it. Need a flow.
-2. **Multi-event** support during this build cycle. Recommend: hardcode `code-cruise` as the active event everywhere; add a query param later.
-3. **Public leaderboard** before May 30 — yes/no? Lean yes, top 50 visible after submission deadline. Sponsors might have opinions.
-4. **DGX Spark fulfillment** — manual for v0, but who's holding the SKU?
-5. **Time zones** — show Pacific everywhere, or auto-detect? Lean Pacific (event is in SF/Oakland) with explicit TZ label.
-6. **Builders outside the US** — taxes, legal release for prize money. Punt to legal review before May 28.
+2. **Time zones** — show Pacific everywhere, or auto-detect? Lean Pacific (event is in SF/Oakland) with explicit TZ label.
+
+## 17a. Resolved decisions (2026-05-07)
+
+- **Public leaderboard before May 30 — YES.** Top 50 visible immediately after the May 28 submission deadline. Implementation note: gate the public leaderboard route on `events.scoring_config_json.public_leaderboard_at` so the moment is configurable.
+- **Multi-event support — required from day one.** Several office-hours events ship before CodeCruise itself; the schema is already event-keyed and we should never hardcode `code-cruise` anywhere. Active event resolved per request from URL slug or session context.
+- **DGX Spark fulfillment — Composio owns it.** They hold the SKU and ship to the winner. Backend just needs to record winner contact + Composio's claim link in `audit_log`. No inventory tracking on our side.
+- **Prize money — $10k in credits, not cash.** Drop the prize-money tax / international-builder legal release problem entirely. Credits are issued through the sponsor stack (Nebius / Composio / Tavily) and don't trigger 1099/W-8BEN handling. Schema impact: `events.prize_pool_cents` becomes `events.prize_summary text` (or jsonb if we want structured credits per sponsor). Lighter weight, more flexible.
 
 ---
 
