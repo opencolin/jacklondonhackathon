@@ -34,7 +34,6 @@ const cols = [
     links: [
       { href: "/docs", label: "Docs" },
       { href: "/docs/openclaw/token-factory", label: "Token Factory" },
-      { href: "https://docs.contree.dev/", label: "Contree" },
       { href: "https://github.com/opencolin/openclaw-deploy", label: "openclaw-deploy" },
     ],
   },

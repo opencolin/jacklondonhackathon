@@ -20,7 +20,7 @@ export function Hero() {
           .
         </h1>
         <p className="mt-7 max-w-2xl text-xl text-ink-600">
-          Builders ship. Sponsors see real integration telemetry. Workshops on tap. Powered by Token Factory and Contree.
+          Builders ship. Sponsors see real integration telemetry. Workshops on tap. Powered by Nebius Token Factory.
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-3">
           <Link href="/builders/login" className="btn-lime px-6 py-3.5 text-sm">Ship it →</Link>

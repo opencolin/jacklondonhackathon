@@ -9,8 +9,8 @@ export function DualPitch() {
           <span className="pill-lime self-start">For builders</span>
           <h3 className="h-display text-3xl font-bold tracking-tight">A league for shippers.</h3>
           <p className="text-ink-600">
-            Live events every week. A Contree workspace with OpenClaw preinstalled. Token Factory keys waiting in the
-            terminal. Ranked standings by what you ship, not who you know.
+            Live events every week. OpenClaw preinstalled and Token Factory keys ready in the terminal.
+            Ranked standings by what you ship, not who you know.
           </p>
           <ul className="mt-2 grid gap-2 text-sm text-ink-700">
             {[

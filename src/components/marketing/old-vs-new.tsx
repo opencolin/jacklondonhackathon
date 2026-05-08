@@ -2,7 +2,7 @@ import { Section, SectionHeader } from "@/components/section";
 
 const rows = [
   { axis: "How a sponsor sees ROI", old: "Badge scans, post-event guesses", neu: "Per-project SDK call counts, model usage, deploy events" },
-  { axis: "What builders bring", old: "Their laptop, half-set-up SDKs", neu: "Nothing — Contree workspace + Token Factory load on click" },
+  { axis: "What builders bring", old: "Their laptop, half-set-up SDKs", neu: "Nothing — Token Factory keys and SDKs ready on click" },
   { axis: "Demo capture", old: "A friend's iPhone footage", neu: "Wireless base station — webcam + screen + post-production" },
   { axis: "Feedback quality", old: "Survey forms few people fill out", neu: "AI-graded feedback with LLM-score and AI-detection metrics" },
   { axis: "Post-event content", old: "A blog post months later", neu: "Auto-generated public recap with projects, demos, prize winners" },

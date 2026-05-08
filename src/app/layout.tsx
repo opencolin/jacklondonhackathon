@@ -4,7 +4,7 @@ import "./globals.css";
 export const metadata: Metadata = {
   title: "Nebius Builders — The operating layer for OpenClaw events",
   description:
-    "Hackathons, hack nights, demo nights, and workshops for OpenClaw builders — powered by Nebius Token Factory, Contree workspaces, and Nebius Serverless deploys.",
+    "Hackathons, hack nights, demo nights, and workshops for OpenClaw builders — powered by Nebius Token Factory and Nebius Serverless deploys.",
   metadataBase: new URL("https://builders.nebius.com"),
   openGraph: {
     title: "Nebius Builders",

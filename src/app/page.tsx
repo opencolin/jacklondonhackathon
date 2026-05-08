@@ -8,7 +8,7 @@ import { RotatingHeroTitle } from "@/components/rotating-hero-title";
 export const metadata: Metadata = {
   title: "BuilderShip — Three-week hackathon, finals on the bay",
   description:
-    "BuilderShip: a three-week remote hackathon with daily office hours. Submit by May 28. Top 30 builders earn a boat day on the Dragon Lady, May 30 — bay crossing, all-day 1:1 pitches at Plank, final presentations, sunset cruise, dinner at Farmhouse, the winner takes home $10k in credits and a DGX Spark, after-party on the yacht. Sponsored by Nebius, Composio, Tavily, OpenClaw, and Contree.",
+    "BuilderShip: a three-week remote hackathon with daily office hours. Submit by May 28. Top 30 builders earn a boat day on the Dragon Lady, May 30 — bay crossing, all-day 1:1 pitches at Plank, final presentations, sunset cruise, dinner at Farmhouse, the winner takes home $10k in credits and a DGX Spark, after-party on the yacht. Sponsored by Nebius, Composio, Tavily, and OpenClaw.",
 };
 
 const timeline = [
@@ -47,7 +47,7 @@ const judges = [
   {
     who: "Sponsor teams",
     when: "Office hours, then on the boat",
-    body: "Nebius, Composio, Tavily, OpenClaw, and Contree engineers have been at office hours all month — by May 30 they know your codebase. They stress-test the integration and weigh in on the score.",
+    body: "Nebius, Composio, Tavily, and OpenClaw engineers have been at office hours all month — by May 30 they know your codebase. They stress-test the integration and weigh in on the score.",
   },
   {
     who: "Angel investors",
@@ -81,7 +81,7 @@ const sponsors = [
     name: "Nebius",
     role: "Compute & Token Factory",
     blurb:
-      "AI cloud built for builders. GPU instances, Token Factory inference, and Nebius Serverless deploys. Every team gets credits and a warm Contree workspace pre-loaded with keys.",
+      "AI cloud built for builders. GPU instances, Token Factory inference, and Nebius Serverless deploys. Every team gets credits and Token Factory keys ready to go.",
     site: "https://nebius.com",
     docs: "https://docs.nebius.com",
     accent: "navy",
@@ -111,15 +111,6 @@ const sponsors = [
       "Open-source agent framework for building, deploying, and operating agents on your terms. Local-first install, ships to Nebius Serverless in one command, plays nicely with Composio and Tavily out of the box.",
     site: "https://github.com/opencolin/openclaw-deploy",
     docs: "https://github.com/opencolin/openclaw-deploy#readme",
-    accent: "lime",
-  },
-  {
-    name: "Contree",
-    role: "Sandboxed cloud workspaces",
-    blurb:
-      "Code-server in your browser with Token Factory keys preloaded, Git-like branching across sandboxes, and one-command deploy to Nebius Serverless. Spin up a fresh workspace per idea — never pollute your laptop.",
-    site: "https://contree.dev",
-    docs: "https://docs.contree.dev",
     accent: "lime",
   },
 ] as const;
@@ -210,9 +201,9 @@ const perks = [
 ] as const;
 
 const sdkPerks = [
-  "Contree workspace + Token Factory keys",
+  "Nebius Token Factory keys for the full three weeks",
   "Nebius GPU credits for inference & deploy",
-  "OpenClaw runtime preinstalled in your workspace",
+  "OpenClaw runtime ready to install",
   "Composio + Tavily API access for the day",
 ] as const;
 
