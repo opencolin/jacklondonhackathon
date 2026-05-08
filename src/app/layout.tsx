@@ -2,16 +2,26 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Nebius Builders — The operating layer for OpenClaw events",
+  title: {
+    default: "BuilderShip — Three-week hackathon, finals on the bay",
+    template: "%s — BuilderShip",
+  },
   description:
-    "Hackathons, hack nights, demo nights, and workshops for OpenClaw builders — powered by Nebius Token Factory and Nebius Serverless deploys.",
-  metadataBase: new URL("https://builders.nebius.com"),
+    "BuilderShip: a three-week remote AI hackathon hosted by Composio and Nebius. Submit by May 28. Top 30 builders earn a boat day on the bay, May 30. Winner takes home $10k in credits and a DGX Spark.",
+  metadataBase: new URL("https://ship.builders"),
   openGraph: {
-    title: "Nebius Builders",
-    description: "The operating layer for OpenClaw developer events.",
-    url: "https://builders.nebius.com",
-    siteName: "Nebius Builders",
+    title: "BuilderShip — Three-week hackathon, finals on the bay",
+    description:
+      "30 hand-picked builders. Three weeks of daily office hours. One boat day on May 30. Hosted by Composio, Nebius, Tavily, and OpenClaw.",
+    url: "https://ship.builders",
+    siteName: "BuilderShip",
     type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "BuilderShip — Three-week hackathon, finals on the bay",
+    description:
+      "30 hand-picked builders. Three weeks of daily office hours. One boat day on May 30. Hosted by Composio, Nebius, Tavily, and OpenClaw.",
   },
 };
 

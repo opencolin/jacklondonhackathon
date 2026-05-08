@@ -6,7 +6,7 @@ import { Section, SectionHeader } from "@/components/section";
 import { RotatingHeroTitle } from "@/components/rotating-hero-title";
 
 export const metadata: Metadata = {
-  title: "BuilderShip — Three-week hackathon, finals on the bay",
+  title: { absolute: "BuilderShip — Three-week hackathon, finals on the bay" },
   description:
     "BuilderShip: a three-week remote hackathon with daily office hours. Submit by May 28. Top 30 builders earn a boat day on the bay, May 30 — bay crossing, all-day 1:1 pitches in Jack London Square, final presentations, sunset cruise, waterfront dinner, the winner takes home $10k in credits and a DGX Spark, after-party on the yacht. Hosted by Composio, Nebius, Tavily, and OpenClaw.",
 };
