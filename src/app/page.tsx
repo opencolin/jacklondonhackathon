@@ -7,7 +7,7 @@ import { Section, SectionHeader } from "@/components/section";
 export const metadata: Metadata = {
   title: "Hack Jack London Square — Nebius Builders Boat Hackathon",
   description:
-    "Three-week remote hackathon with daily office hours. Submit by May 28. Top 50 finalists win a boat day on the Dragon Lady, May 30 — bay crossing, Plank, sunset cruise, dinner at Farmhouse, after-party on the yacht. Sponsored by Nebius, Composio, and Tavily.",
+    "Three-week remote hackathon with daily office hours. Submit by May 28. Top 30 builders earn a boat day on the Dragon Lady, May 30 — bay crossing, all-day 1:1 pitches at Plank, final presentations, sunset cruise, dinner at Farmhouse, the winner walks the plank, after-party on the yacht. Sponsored by Nebius, Composio, and Tavily.",
 };
 
 const timeline = [
@@ -27,7 +27,7 @@ const timeline = [
     num: "03",
     date: "May 29",
     title: "Finalists announced",
-    body: "Top 50 named the night before. Twenty-four hours to polish your demo and pack a jacket for the bay.",
+    body: "Top 30 builders named the night before. Twenty-four hours to polish your pitch and pack a jacket for the bay.",
   },
   {
     num: "04",
@@ -51,12 +51,12 @@ const judges = [
   {
     who: "Angel investors",
     when: "On the boat, May 30",
-    body: "Real checks, real conversations. Pitch them between bowling frames, on the cruise, over dinner. Their reaction lands in your final score.",
+    body: "Real checks, real conversations. 1:1 sessions with every builder at Plank — between bowling frames, in the lounge, on the patio. Their reaction lands in your final score.",
   },
   {
     who: "VCs",
     when: "On the boat, May 30",
-    body: "Bay Area funds in the room. Demo, network, follow up later. The boat day doubles as a soft pitch tour — and their vote counts toward who wins.",
+    body: "Bay Area funds in the room. 1:1s rolling all day, plus you'll see them at the final presentations. The boat day doubles as a soft pitch tour — and their vote counts toward who wins.",
   },
 ] as const;
 
@@ -195,12 +195,14 @@ const sdkPerks = [
 const schedule = [
   { time: "9:00 AM", title: "Depart on Dragon Lady", where: "South Beach, SF" },
   { time: "10:00 AM", title: "Arrive in Oakland", where: "Jack London Square dock" },
-  { time: "10:30 AM", title: "Coffee + first pitches", where: "Bicycle Coffee" },
-  { time: "11:00 AM", title: "Lunch + open pitch round", where: "Plank" },
-  { time: "1:00 PM", title: "Investor pitches · sponsor breakouts · bowling · arcade", where: "Plank" },
+  { time: "10:30 AM", title: "Coffee + first 1:1s with judges", where: "Bicycle Coffee" },
+  { time: "11:00 AM", title: "Lunch + 1:1 conversations begin", where: "Plank" },
+  { time: "1:00 PM", title: "1:1s · pitch refinement · bowling · arcade", where: "Plank" },
   { time: "3:00 PM", title: "Coffee break", where: "Bicycle Coffee" },
-  { time: "6:00 – 8:00 PM", title: "Sunset cruise · investors aboard", where: "Dragon Lady" },
-  { time: "8:15 PM", title: "Dinner · final pitches · judging", where: "Farmhouse Kitchen Thai" },
+  { time: "4:00 PM", title: "Final presentations", where: "Plank" },
+  { time: "6:00 – 8:00 PM", title: "Sunset cruise · celebration", where: "Dragon Lady" },
+  { time: "8:15 PM", title: "Dinner · winners announced", where: "Farmhouse Kitchen Thai" },
+  { time: "9:30 PM", title: "Winner walks the plank", where: "Dragon Lady (back at the dock)" },
   { time: "Late", title: "After-party on the yacht", where: "Dragon Lady (docked)" },
 ] as const;
 
@@ -211,15 +213,19 @@ const faqs = [
   },
   {
     q: "How does scoring work?",
-    a: "Two phases. AI judges read every GitHub submission during the three weeks and pick the top 50. On May 30, your score is a blend: AI judges, sponsor teams, plus the angel investors and VCs in the room. Everyone you talk to that day is voting.",
+    a: "Two phases. AI judges read every GitHub submission during the three weeks and pick the top 30 builders. On May 30, your score is a blend: AI judges, sponsor teams, plus the angel investors and VCs in the room. Everyone you talk to that day is voting.",
   },
   {
     q: "What happens on May 30?",
-    a: "Finals day in Jack London Square — and it's not a five-minute stage pitch. You spend the whole day pitching: angels and VCs over breakfast at Plank, sponsor judges over lunch and bowling, more angels on the sunset cruise, final pitches and judging at dinner. After-party back on the docked yacht.",
+    a: "Finals day in Jack London Square — and there's no five-minute stage pitch. You spend the whole day in 1:1 conversations: angels and VCs over breakfast at Plank, sponsor judges over lunch and bowling, more 1:1s through the afternoon. Final presentations at Plank in the late afternoon. Sunset cruise, dinner at Farmhouse, winners announced. The winner walks the plank into the bay. After-party back on the docked yacht.",
+  },
+  {
+    q: "What does \"walking the plank\" mean?",
+    a: "Exactly what it sounds like. The winner of the hackathon walks the plank off the Dragon Lady and jumps into the water. Towels and a hot tub on standby.",
   },
   {
     q: "What if I can't make it to the boat?",
-    a: "Submissions are still welcome — you can build remotely, win prizes, and skip the boat day. If you make finals and can't travel, we'll route a remote slot for your demo and ship the swag. Boat capacity is 50.",
+    a: "Submissions are still welcome — you can build remotely and skip the boat day. If you make the top 30 and can't travel, we'll route a remote slot for your final presentation. Boat capacity caps the in-person cohort.",
   },
   {
     q: "What should I bring on May 30?",
@@ -259,9 +265,9 @@ export default function HackJackLondonSquarePage() {
             </h1>
             <p className="mt-7 max-w-2xl text-xl text-ink-600">
               Three weeks of building with daily office hours. Submit your project by May 28. The top
-              50 finalists earn a day on the Dragon Lady, May 30 — pitching angels, VCs, and sponsors
-              all day across Plank, the sunset cruise, and dinner at Farmhouse Kitchen Thai.
-              After-party back on the docked yacht.
+              30 builders earn a day on the Dragon Lady, May 30 — 1:1 conversations with angels, VCs,
+              and sponsors all day at Plank, final presentations late afternoon, sunset cruise, dinner
+              at Farmhouse, and the winner walks the plank into the bay.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link href="/builders/login" className="btn-lime px-6 py-3.5 text-sm">
@@ -279,7 +285,7 @@ export default function HackJackLondonSquarePage() {
                 ["Build", "3 weeks remote"],
                 ["Submit by", "May 28"],
                 ["Boat day", "May 30"],
-                ["Finalists", "50 max"],
+                ["Finalists", "30 max"],
               ].map(([label, value]) => (
                 <div key={label}>
                   <dt className="text-xs font-semibold uppercase tracking-widest text-ink-500">{label}</dt>
@@ -294,7 +300,7 @@ export default function HackJackLondonSquarePage() {
         <Section id="how-it-works" bg="tint">
           <SectionHeader
             eyebrow="How it works"
-            title="Three weeks. One submission. Fifty finalists. One day on the bay."
+            title="Three weeks. One submission. Thirty builders. One day on the bay."
             body="The hackathon is mostly remote. The boat day is the celebration — and the finals."
           />
           <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -464,8 +470,8 @@ export default function HackJackLondonSquarePage() {
         <Section id="judges">
           <SectionHeader
             eyebrow="Who's scoring you"
-            title="No five-minute stage pitch. All day, pitching everyone."
-            body="The score on May 30 is a blend. AI judges read your code over the three weeks. Sponsor teams stress-test your integration. The room is full of angels and VCs talking to you between bowling frames, on the cruise, and at dinner. Everyone's vote counts."
+            title="No five-minute stage pitch. 1:1 conversations all day."
+            body="The score on May 30 is a blend. AI judges read your code over the three weeks. Sponsor teams, angels, and VCs do 1:1s with every builder all day at Plank — your pitch sharpens with each conversation. Final presentations at Plank in the late afternoon. Everyone's vote counts."
           />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {judges.map((j) => (
@@ -483,7 +489,7 @@ export default function HackJackLondonSquarePage() {
           <SectionHeader
             eyebrow="Finals day · May 30"
             title="One ride across the bay. One sunset. Demos at dinner."
-            body="The boat day is for the 50 finalists. Bay crossing in the morning, sponsor breakouts and last-mile polish at Plank, sunset cruise, dinner and demos at Farmhouse, after-party on the docked yacht. Times are firm — the boat doesn't wait."
+            body="The boat day is for the top 30 builders. Bay crossing, all-day 1:1 conversations and pitch refinement at Plank, final presentations late afternoon, sunset cruise, dinner at Farmhouse, the winner walks the plank, after-party on the docked yacht. Times are firm — the boat doesn't wait."
           />
           <ol className="overflow-hidden rounded-card border border-ink-200 bg-white">
             {schedule.map((row, i) => (
@@ -550,7 +556,7 @@ export default function HackJackLondonSquarePage() {
           <SectionHeader
             eyebrow="Finalist perks"
             title="Make finals, win the boat day."
-            body="Top 50 submissions earn the trip. Six experience perks on the house — plus the sponsor stack, which every builder gets from day one."
+            body="Top 30 builders earn the trip. Six experience perks on the house — plus the sponsor stack, which every builder gets from day one. Win the whole thing and you walk the plank."
           />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {perks.map((p) => (
@@ -597,7 +603,7 @@ export default function HackJackLondonSquarePage() {
             <div>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-lime">Start building</p>
               <h2 className="h-display text-3xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl">
-                Three weeks. Fifty finalists. One day on the bay.
+                Three weeks. Thirty builders. One walk off the plank.
               </h2>
               <p className="mt-5 max-w-xl text-lg text-ink-100">
                 Submissions close <strong className="font-semibold text-white">May 28</strong>.
