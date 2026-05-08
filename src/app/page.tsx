@@ -259,9 +259,9 @@ export default function HackJackLondonSquarePage() {
             <RotatingHeroTitle className="mt-6" />
             <p className="mt-7 max-w-2xl text-xl text-ink-600">
               Three weeks of building with daily office hours. Submit your project by May 28. Only the
-              top 30 — best of the best — earn a day on the Dragon Lady, May 30. 1:1 conversations
-              with angels, VCs, and sponsors all day at Plank, final presentations late afternoon,
-              sunset cruise, dinner at Farmhouse, and the winner walks the plank into the bay.
+              best of the best earn a day on the Dragon Lady, May 30. 1:1 conversations with angels,
+              VCs, and sponsors all day at Plank, final presentations late afternoon, sunset cruise,
+              dinner at Farmhouse, and the winner walks the plank into the bay.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link href="/builders/login" className="btn-lime px-6 py-3.5 text-sm">
