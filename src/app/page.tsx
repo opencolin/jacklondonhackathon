@@ -243,6 +243,10 @@ const schedule = [
 
 const faqs = [
   {
+    q: "How do I apply?",
+    a: "Post something you've built — agent, demo, repo, video, weird side project — publicly on X, LinkedIn, or wherever you live. Tag @openclaw and the sponsor stack so we see it. We're picking the best builders of the bay, and the post is the whole signal: no essay, no resume. Drop the link in our Discord too if you want a deeper read.",
+  },
+  {
     q: "What's the format?",
     a: "Solo or teams of up to 4. Three weeks to build remotely, with daily office hours from sponsor teams. Submit your GitHub repo any time before May 28 — AI judges read every entry, and you can schedule a live demo with human judges before the deadline if you want a deeper read.",
   },
@@ -301,12 +305,12 @@ export default function HackJackLondonSquarePage() {
             </div>
             <RotatingHeroTitle className="mt-6" />
             <p className="mt-7 max-w-2xl text-xl text-ink-600 dark:text-ink-300">
-              Best of the best earn a day on the yacht — building, bowling, beer, beluga caviar, and a
-              sunset cruise. The winner takes home $10k in credits and a DGX Spark.
+              Best builders of the bay. 30 of you on the boat — building, bowling, beer, beluga caviar, sunset cruise.
+              Winner takes home $10k in credits and a DGX Spark.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
-              <Link href="/builders/login" className="btn-lime px-6 py-3.5 text-sm">
-                Start building →
+              <Link href="#apply" className="btn-lime px-6 py-3.5 text-sm">
+                Show us your claws →
               </Link>
               <Link href="#how-it-works" className="btn-outline px-6 py-3.5 text-sm">
                 Schedule
@@ -330,6 +334,51 @@ export default function HackJackLondonSquarePage() {
             </dl>
           </div>
         </section>
+
+        {/* Apply */}
+        <Section id="apply">
+          <SectionHeader
+            eyebrow="Show us your claws"
+            title={<>Post something cool you've built.<br />Tag us. That's your application.</>}
+            body="No essay, no resume, no five-paragraph cover letter. Show us why we should take you by showing us something you've already shipped — an agent, a demo, a weird side project. We're picking the best builders of the bay. Local-ish preference but anyone can fly in."
+          />
+          <div className="grid gap-6 lg:grid-cols-[1.3fr_1fr]">
+            <div className="card flex flex-col gap-5">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-widest text-navy-700 dark:text-lime">How to apply</p>
+                <ol className="mt-3 grid gap-3 text-sm leading-relaxed text-ink-700 dark:text-ink-200">
+                  <li><span className="font-mono font-semibold text-navy-700 dark:text-lime">01.</span> Post something you built — an agent, demo, repo, video, anything. Public post on X, LinkedIn, or wherever you live.</li>
+                  <li><span className="font-mono font-semibold text-navy-700 dark:text-lime">02.</span> Tag <span className="font-semibold">@openclaw</span> and the sponsor stack so we see it. That's the whole signal.</li>
+                  <li><span className="font-mono font-semibold text-navy-700 dark:text-lime">03.</span> If you want a deeper read, drop the link in our Discord too.</li>
+                </ol>
+              </div>
+              <div className="flex flex-wrap gap-2 pt-1">
+                <Link href="https://x.com/intent/tweet?text=Show%20us%20your%20claws%20%40openclaw" className="btn-lime text-sm" target="_blank" rel="noreferrer">
+                  Post on X →
+                </Link>
+                <Link href="https://www.linkedin.com/" className="btn-outline text-sm" target="_blank" rel="noreferrer">
+                  Post on LinkedIn →
+                </Link>
+                <Link href="#" className="btn-ghost text-sm">
+                  Drop in Discord →
+                </Link>
+              </div>
+            </div>
+            <div className="card bg-navy-700 text-white">
+              <p className="text-xs font-semibold uppercase tracking-widest text-lime">The bar</p>
+              <p className="mt-3 text-base leading-relaxed text-ink-100">
+                We pick 30 builders for the boat. Selection is on-going as posts come in — no deadline drama.
+                If you make the cut, you're already the best of the bay. Plus-ones can meet you on the dock at sunset.
+              </p>
+              <ul className="mt-5 grid gap-2 text-sm text-ink-100">
+                <li>· 30 builders. That's it.</li>
+                <li>· Submissions read continuously through May 28.</li>
+                <li>· Finalists announced May 29.</li>
+                <li>· Boat leaves South Beach 9 AM May 30.</li>
+              </ul>
+            </div>
+          </div>
+        </Section>
 
         {/* Schedule */}
         <Section id="how-it-works" bg="tint">
@@ -636,20 +685,20 @@ export default function HackJackLondonSquarePage() {
         <Section bg="navy">
           <div className="grid items-center gap-8 lg:grid-cols-[1.4fr_1fr]">
             <div>
-              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-lime">Start building</p>
+              <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-lime">Show us your claws</p>
               <h2 className="h-display text-3xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl">
                 Three weeks. Thirty finalists. One walk off the plank.
               </h2>
               <p className="mt-5 max-w-xl text-lg text-ink-100">
-                Submissions close <strong className="font-semibold text-white">May 28</strong>.
-                Best of the best announced <strong className="font-semibold text-white">May 29</strong>.
+                Post something you built, tag <strong className="font-semibold text-white">@openclaw</strong> and the sponsors,
+                and we'll see it. Submissions close <strong className="font-semibold text-white">May 28</strong>.
+                Finalists announced <strong className="font-semibold text-white">May 29</strong>.
                 Boat leaves South Beach at 9 AM <strong className="font-semibold text-white">May 30</strong>.
-                Build starts whenever you do.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-              <Link href="/builders/login" className="btn-lime px-6 py-3.5 text-sm">
-                Start building →
+              <Link href="#apply" className="btn-lime px-6 py-3.5 text-sm">
+                Show us your claws →
               </Link>
               <Link
                 href="mailto:events@agenthack.ai"
