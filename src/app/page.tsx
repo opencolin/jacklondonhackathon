@@ -127,11 +127,6 @@ const perks = [
     body: "Bowling lanes are part of the takeover. Strikes between commits, frame counters by the pizza.",
   },
   {
-    tag: "Hackathon HQ",
-    title: "Arcade games",
-    body: "Fifteen dollars in arcade credits per builder. Skee-ball-driven development, officially endorsed.",
-  },
-  {
     tag: "All day",
     title: "Amazing food",
     body: "Real meals all day — lunch at HQ, dinner at a waterfront restaurant. No pizza fatigue.",

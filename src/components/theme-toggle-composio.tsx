@@ -3,20 +3,21 @@
 import { useEffect, useState } from "react";
 
 export function ThemeToggleComposio() {
-  // Composio is the default — `bs-theme-default` is the opt-out flag.
+  // Composio is the default — `bs-theme-nebius` is the opt-out flag
+  // (renders the legacy Nebius lime/navy theme).
   const [composio, setComposio] = useState(true);
 
   useEffect(() => {
-    setComposio(localStorage.getItem("bs-theme-default") !== "1");
+    setComposio(localStorage.getItem("bs-theme-nebius") !== "1");
   }, []);
 
   function flip(useComposio: boolean) {
     if (useComposio) {
-      localStorage.removeItem("bs-theme-default");
+      localStorage.removeItem("bs-theme-nebius");
       document.documentElement.setAttribute("data-theme", "composio");
       document.documentElement.classList.add("dark");
     } else {
-      localStorage.setItem("bs-theme-default", "1");
+      localStorage.setItem("bs-theme-nebius", "1");
       document.documentElement.removeAttribute("data-theme");
     }
     setComposio(useComposio);
@@ -34,7 +35,7 @@ export function ThemeToggleComposio() {
             : "hover:underline"
         }
       >
-        default
+        nebius
       </button>
       <span aria-hidden> · </span>
       <button
