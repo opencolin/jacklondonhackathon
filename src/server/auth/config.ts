@@ -5,14 +5,19 @@ import Google from "next-auth/providers/google";
 import LinkedIn from "next-auth/providers/linkedin";
 import Resend from "next-auth/providers/resend";
 import { DrizzleAdapter } from "@auth/drizzle-adapter";
+import { eq } from "drizzle-orm";
 import { db } from "@/server/db";
 import {
   users,
   accounts,
   sessions,
   verificationTokens,
+  events,
+  eventRegistrations,
 } from "@/server/db/schema";
 import { env } from "@/server/env";
+
+const CODE_CRUISE_SLUG = "code-cruise";
 
 const providers: NextAuthConfig["providers"] = [];
 
@@ -77,6 +82,32 @@ export const authConfig = {
         session.user.isAdmin = (user as { isAdmin?: boolean }).isAdmin ?? false;
       }
       return session;
+    },
+  },
+  events: {
+    async signIn({ user }) {
+      if (!user?.id) return;
+      try {
+        const [event] = await db
+          .select({ id: events.id })
+          .from(events)
+          .where(eq(events.slug, CODE_CRUISE_SLUG))
+          .limit(1);
+        if (!event) return;
+        await db
+          .insert(eventRegistrations)
+          .values({
+            eventId: event.id,
+            userId: user.id,
+            status: "rsvp",
+            source: "builder",
+          })
+          .onConflictDoNothing({
+            target: [eventRegistrations.eventId, eventRegistrations.userId],
+          });
+      } catch (error) {
+        console.error("[auth] auto-RSVP to CodeCruise failed", error);
+      }
     },
   },
 } satisfies NextAuthConfig;
