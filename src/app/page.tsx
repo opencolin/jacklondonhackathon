@@ -125,8 +125,8 @@ const venues = [
     href: "https://farmhousethai.com/oakland",
     cta: "farmhousethai.com/oakland",
     image:
-      "https://pluto-images.ordersave.com/pluto-images/funnel/images/b52a838e-9cd9-4b0c-8f62-cc6886721d00?w=1600&fit=cover",
-    imageAlt: "Farmhouse Kitchen Thai feast laid out on banana leaves",
+      "https://pluto-images.ordersave.com/pluto-images/funnel/images/66324b38-8c2f-4ece-9cc3-c0a0ed4688b9?w=1600&fit=cover",
+    imageAlt: "Farmhouse Kitchen Thai feast — best Thai food in town",
   },
 ] as const;
 
