@@ -244,10 +244,19 @@ export default function HackJackLondonSquarePage() {
       <TopNav />
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden border-b border-ink-200 bg-white">
-          <div className="absolute inset-0 grid-bg opacity-60" aria-hidden />
-          <div className="absolute -right-24 -top-24 h-[460px] w-[460px] rounded-full bg-lime/40 blur-3xl" aria-hidden />
-          <div className="absolute -left-24 bottom-0 h-[320px] w-[320px] rounded-full bg-navy-700/10 blur-3xl" aria-hidden />
+        <section className="relative overflow-hidden border-b border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900">
+          <img
+            src="/boat/bow-sunset-bridge.jpg"
+            alt=""
+            aria-hidden
+            className="absolute inset-0 h-full w-full object-cover opacity-40 dark:opacity-30"
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/30 dark:from-ink-900 dark:via-ink-900/85 dark:to-ink-900/30"
+            aria-hidden
+          />
+          <div className="absolute -right-24 -top-24 h-[460px] w-[460px] rounded-full bg-lime/40 blur-3xl dark:bg-lime/20" aria-hidden />
+          <div className="absolute -left-24 bottom-0 h-[320px] w-[320px] rounded-full bg-navy-700/10 blur-3xl dark:bg-lime/10" aria-hidden />
           <div className="container-page relative pt-20 pb-24 sm:pt-28 sm:pb-28 lg:pt-36">
             <div className="flex flex-wrap items-center gap-2">
               <span className="pill-lime">
@@ -257,9 +266,9 @@ export default function HackJackLondonSquarePage() {
               <span className="pill-outline">Boat day May 30</span>
             </div>
             <RotatingHeroTitle className="mt-6" />
-            <p className="mt-7 max-w-2xl text-xl text-ink-600">
+            <p className="mt-7 max-w-2xl text-xl text-ink-600 dark:text-ink-300">
               Three weeks of building. Best of the best win a day on the yacht — 1:1s with angels,
-              VCs, and sponsors, sunset cruise, and the winner jumps into the ocean!
+              VCs, and sponsors, sunset cruise, and the winner takes home $10k.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link href="/builders/login" className="btn-lime px-6 py-3.5 text-sm">
@@ -280,8 +289,8 @@ export default function HackJackLondonSquarePage() {
                 ["Finalists", "30 max"],
               ].map(([label, value]) => (
                 <div key={label}>
-                  <dt className="text-xs font-semibold uppercase tracking-widest text-ink-500">{label}</dt>
-                  <dd className="mt-2 text-2xl font-bold text-navy-700">{value}</dd>
+                  <dt className="text-xs font-semibold uppercase tracking-widest text-ink-500 dark:text-ink-400">{label}</dt>
+                  <dd className="mt-2 text-2xl font-bold text-navy-700 dark:text-lime">{value}</dd>
                 </div>
               ))}
             </dl>
@@ -298,10 +307,10 @@ export default function HackJackLondonSquarePage() {
           <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {timeline.map((s) => (
               <li key={s.num} className="card flex h-full flex-col">
-                <span className="font-mono text-xs font-semibold text-navy-700">{s.num}</span>
+                <span className="font-mono text-xs font-semibold text-navy-700 dark:text-lime">{s.num}</span>
                 <span className="pill-lime mt-3 self-start">{s.date}</span>
-                <h3 className="h-display mt-3 text-xl font-bold text-ink-900">{s.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-700">{s.body}</p>
+                <h3 className="h-display mt-3 text-xl font-bold text-ink-900 dark:text-ink-50">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-700 dark:text-ink-200">{s.body}</p>
               </li>
             ))}
           </ol>
@@ -317,15 +326,15 @@ export default function HackJackLondonSquarePage() {
           <div className="grid gap-6 md:grid-cols-3">
             {officeHourRoles.map((p) => (
               <div key={p.who} className="card">
-                <h3 className="text-lg font-semibold text-ink-900">{p.who}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-700">{p.body}</p>
+                <h3 className="text-lg font-semibold text-ink-900 dark:text-ink-50">{p.who}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-700 dark:text-ink-200">{p.body}</p>
               </div>
             ))}
           </div>
-          <div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-card border border-ink-200 bg-white px-6 py-5">
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-card border border-ink-200 bg-white dark:border-ink-700 dark:bg-ink-900 px-6 py-5">
             <div>
-              <p className="text-xs font-semibold uppercase tracking-widest text-ink-500">Schedule</p>
-              <p className="mt-1 text-base font-medium text-ink-900">
+              <p className="text-xs font-semibold uppercase tracking-widest text-ink-500 dark:text-ink-400">Schedule</p>
+              <p className="mt-1 text-base font-medium text-ink-900 dark:text-ink-50">
                 Daily through May 30 — online plus in person across SF and Oakland.
               </p>
             </div>
@@ -342,7 +351,7 @@ export default function HackJackLondonSquarePage() {
             title="Meet the Dragon Lady."
             body="80 feet of motor yacht docked at the Jack London Square marina. Five staterooms, six heads, hot tub on the top deck, and a main salon big enough to host the cruise crowd. Built 1979 in Long Beach. Chartered through Jerry's Faeries."
           />
-          <div className="overflow-hidden rounded-card border border-ink-200 bg-white">
+          <div className="overflow-hidden rounded-card border border-ink-200 bg-white dark:border-ink-700 dark:bg-ink-900">
             {/* Hero photo */}
             <img
               src="/boat/bow-sunset-bridge.jpg"
@@ -384,18 +393,18 @@ export default function HackJackLondonSquarePage() {
                 caption: "Marina sunset, demo time",
               },
             ].map((p) => (
-              <figure key={p.src} className="overflow-hidden rounded-card border border-ink-200 bg-white">
+              <figure key={p.src} className="overflow-hidden rounded-card border border-ink-200 bg-white dark:border-ink-700 dark:bg-ink-900">
                 <img
                   src={p.src}
                   alt={p.alt}
                   className="aspect-[4/3] w-full object-cover"
                   loading="lazy"
                 />
-                <figcaption className="px-4 py-3 text-xs text-ink-600">{p.caption}</figcaption>
+                <figcaption className="px-4 py-3 text-xs text-ink-600 dark:text-ink-300">{p.caption}</figcaption>
               </figure>
             ))}
           </div>
-          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-card border border-ink-200 bg-white px-6 py-5">
+          <div className="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-card border border-ink-200 bg-white dark:border-ink-700 dark:bg-ink-900 px-6 py-5">
             <dl className="flex flex-wrap gap-x-8 gap-y-3 text-sm">
               {[
                 ["80 ft", "Length"],
@@ -404,8 +413,8 @@ export default function HackJackLondonSquarePage() {
                 ["1979", "Built · Long Beach"],
               ].map(([value, label]) => (
                 <div key={label} className="flex items-baseline gap-2">
-                  <dt className="font-bold text-navy-700">{value}</dt>
-                  <dd className="text-ink-500">{label}</dd>
+                  <dt className="font-bold text-navy-700 dark:text-lime">{value}</dt>
+                  <dd className="text-ink-500 dark:text-ink-400">{label}</dd>
                 </div>
               ))}
             </dl>
@@ -443,8 +452,8 @@ export default function HackJackLondonSquarePage() {
                     {s.name}
                   </span>
                 </div>
-                <p className="text-xs font-semibold uppercase tracking-widest text-ink-500">{s.role}</p>
-                <p className="mt-3 text-sm leading-relaxed text-ink-700">{s.blurb}</p>
+                <p className="text-xs font-semibold uppercase tracking-widest text-ink-500 dark:text-ink-400">{s.role}</p>
+                <p className="mt-3 text-sm leading-relaxed text-ink-700 dark:text-ink-200">{s.blurb}</p>
                 <div className="mt-auto flex flex-wrap gap-2 pt-6">
                   <Link href={s.site} className="btn-outline text-xs" target="_blank" rel="noreferrer">
                     Website ↗
@@ -468,9 +477,9 @@ export default function HackJackLondonSquarePage() {
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {judges.map((j) => (
               <div key={j.who} className="card flex h-full flex-col">
-                <h3 className="h-display text-xl font-bold text-ink-900">{j.who}</h3>
-                <p className="mt-2 text-xs font-semibold uppercase tracking-widest text-ink-500">{j.when}</p>
-                <p className="mt-3 text-sm leading-relaxed text-ink-700">{j.body}</p>
+                <h3 className="h-display text-xl font-bold text-ink-900 dark:text-ink-50">{j.who}</h3>
+                <p className="mt-2 text-xs font-semibold uppercase tracking-widest text-ink-500 dark:text-ink-400">{j.when}</p>
+                <p className="mt-3 text-sm leading-relaxed text-ink-700 dark:text-ink-200">{j.body}</p>
               </div>
             ))}
           </div>
@@ -483,17 +492,17 @@ export default function HackJackLondonSquarePage() {
             title="One ride across the bay. One sunset. Demos at dinner."
             body="The boat day is for the top 30 builders. Bay crossing, all-day 1:1 conversations and pitch refinement at Plank, final presentations late afternoon, sunset cruise, dinner at Farmhouse, the winner walks the plank, after-party on the docked yacht. Times are firm — the boat doesn't wait."
           />
-          <ol className="overflow-hidden rounded-card border border-ink-200 bg-white">
+          <ol className="overflow-hidden rounded-card border border-ink-200 bg-white dark:border-ink-700 dark:bg-ink-900">
             {schedule.map((row, i) => (
               <li
                 key={`${row.time}-${row.title}`}
                 className={`grid grid-cols-1 gap-1 px-6 py-5 sm:grid-cols-[180px_1fr_240px] sm:items-center sm:gap-6 ${
-                  i !== schedule.length - 1 ? "border-b border-ink-200" : ""
+                  i !== schedule.length - 1 ? "border-b border-ink-200 dark:border-ink-700" : ""
                 }`}
               >
-                <span className="font-mono text-sm font-semibold text-navy-700">{row.time}</span>
-                <span className="text-base font-medium text-ink-900">{row.title}</span>
-                <span className="text-sm text-ink-500 sm:text-right">{row.where}</span>
+                <span className="font-mono text-sm font-semibold text-navy-700 dark:text-lime">{row.time}</span>
+                <span className="text-base font-medium text-ink-900 dark:text-ink-50">{row.title}</span>
+                <span className="text-sm text-ink-500 dark:text-ink-400 sm:text-right">{row.where}</span>
               </li>
             ))}
           </ol>
@@ -517,11 +526,11 @@ export default function HackJackLondonSquarePage() {
                 />
                 <div className="flex flex-1 flex-col p-6">
                   <div className="flex items-start justify-between gap-3">
-                    <h3 className="h-display text-2xl font-bold text-ink-900">{v.name}</h3>
+                    <h3 className="h-display text-2xl font-bold text-ink-900 dark:text-ink-50">{v.name}</h3>
                     <span className="pill-ink whitespace-nowrap">{v.role.split("·")[0].trim()}</span>
                   </div>
-                  <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-ink-500">{v.role}</p>
-                  <p className="mt-3 text-sm leading-relaxed text-ink-700">{v.blurb}</p>
+                  <p className="mt-1 text-xs font-semibold uppercase tracking-widest text-ink-500 dark:text-ink-400">{v.role}</p>
+                  <p className="mt-3 text-sm leading-relaxed text-ink-700 dark:text-ink-200">{v.blurb}</p>
                   <div className="mt-auto flex flex-wrap gap-2 pt-6">
                     <Link href={v.href} className="btn-outline text-xs" target="_blank" rel="noreferrer">
                       {v.cta} ↗
@@ -554,16 +563,16 @@ export default function HackJackLondonSquarePage() {
             {perks.map((p) => (
               <div key={p.title} className="card flex flex-col">
                 <span className="pill-lime self-start">{p.tag}</span>
-                <h3 className="h-display mt-4 text-2xl font-bold text-ink-900">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-700">{p.body}</p>
+                <h3 className="h-display mt-4 text-2xl font-bold text-ink-900 dark:text-ink-50">{p.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-700 dark:text-ink-200">{p.body}</p>
               </div>
             ))}
           </div>
-          <div className="mt-8 rounded-card border border-ink-200 bg-white p-6">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-ink-500">And the sponsor stack</p>
+          <div className="mt-8 rounded-card border border-ink-200 bg-white dark:border-ink-700 dark:bg-ink-900 p-6">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-ink-500 dark:text-ink-400">And the sponsor stack</p>
             <ul className="grid gap-3 sm:grid-cols-3">
               {sdkPerks.map((line) => (
-                <li key={line} className="flex items-start gap-3 text-sm text-ink-800">
+                <li key={line} className="flex items-start gap-3 text-sm text-ink-800 dark:text-ink-100">
                   <span className="mt-0.5 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-lime text-navy-700">
                     <svg viewBox="0 0 20 20" fill="none" className="h-3 w-3">
                       <path d="M4 10l4 4 8-8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -582,8 +591,8 @@ export default function HackJackLondonSquarePage() {
           <div className="grid gap-4 md:grid-cols-2">
             {faqs.map((f) => (
               <div key={f.q} className="card">
-                <h3 className="text-base font-semibold text-ink-900">{f.q}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-700">{f.a}</p>
+                <h3 className="text-base font-semibold text-ink-900 dark:text-ink-50">{f.q}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-700 dark:text-ink-200">{f.a}</p>
               </div>
             ))}
           </div>

@@ -12,7 +12,11 @@ export function Section({
   id?: string;
 }) {
   const bgClass =
-    bg === "tint" ? "bg-ink-50" : bg === "navy" ? "bg-navy-700 text-white" : "bg-white";
+    bg === "tint"
+      ? "bg-ink-50 dark:bg-ink-800"
+      : bg === "navy"
+      ? "bg-navy-700 text-white"
+      : "bg-white dark:bg-ink-900";
   return (
     <section id={id} className={cn("section", bgClass, className)}>
       <div className="container-page">{children}</div>
@@ -36,14 +40,30 @@ export function SectionHeader({
   return (
     <div className={cn("mb-12 max-w-3xl", align === "center" ? "mx-auto text-center" : "")}>
       {eyebrow ? (
-        <p className={cn("mb-3 text-xs font-semibold uppercase tracking-[0.18em]", invert ? "text-lime" : "text-ink-500")}>
+        <p
+          className={cn(
+            "mb-3 text-xs font-semibold uppercase tracking-[0.18em]",
+            invert ? "text-lime" : "text-ink-500 dark:text-ink-400",
+          )}
+        >
           {eyebrow}
         </p>
       ) : null}
-      <h2 className={cn("h-display text-3xl font-bold leading-[1.1] tracking-tight md:text-5xl", invert ? "text-white" : "text-ink-900")}>
+      <h2
+        className={cn(
+          "h-display text-3xl font-bold leading-[1.1] tracking-tight md:text-5xl",
+          invert ? "text-white" : "text-ink-900 dark:text-ink-50",
+        )}
+      >
         {title}
       </h2>
-      {body ? <p className={cn("mt-5 text-lg", invert ? "text-ink-100" : "text-ink-600")}>{body}</p> : null}
+      {body ? (
+        <p
+          className={cn("mt-5 text-lg", invert ? "text-ink-100" : "text-ink-600 dark:text-ink-300")}
+        >
+          {body}
+        </p>
+      ) : null}
     </div>
   );
 }

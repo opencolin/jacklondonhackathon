@@ -15,7 +15,7 @@ export function NebiusLogo({ subtitle = "Builders", href = "/" }: { subtitle?: s
         />
       </svg>
       {subtitle ? (
-        <span className="text-sm font-semibold tracking-tight text-navy-700">{subtitle}</span>
+        <span className="text-sm font-semibold tracking-tight text-navy-700 dark:text-ink-50">{subtitle}</span>
       ) : null}
     </Link>
   );
