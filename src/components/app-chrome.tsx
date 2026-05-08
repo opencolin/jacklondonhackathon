@@ -7,7 +7,7 @@ import { SignOutButton } from "./sign-out-button";
 export function AppHeader({ links }: { links: { label: string; href: string }[] }) {
   return (
     <header className="sticky top-0 z-40 border-b border-ink-200 bg-white/85 backdrop-blur dark:border-ink-800 dark:bg-ink-900/85">
-      <div className="container-page flex h-24 items-center justify-between">
+      <div className="mx-auto flex h-24 w-full max-w-page items-center justify-between pl-2 pr-6 sm:pr-8 lg:pr-12">
         <div className="flex items-center gap-8">
           <ClawCruiseLogo />
           <nav className="hidden gap-1 md:flex">
