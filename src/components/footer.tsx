@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ClawCruiseLogo } from "./claw-cruise-logo";
+import { BuilderShipLogo } from "./buildership-logo";
 
 const cols = [
   {
@@ -55,7 +55,7 @@ export function Footer() {
       <div className="container-page py-16">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-6">
           <div className="col-span-2 space-y-4">
-            <ClawCruiseLogo />
+            <BuilderShipLogo />
             <p className="max-w-xs text-sm text-ink-600 dark:text-ink-300">
               The operating layer for OpenClaw developer events. Built on Nebius.
             </p>

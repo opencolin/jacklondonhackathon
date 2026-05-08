@@ -106,7 +106,7 @@ export const authConfig = {
             target: [eventRegistrations.eventId, eventRegistrations.userId],
           });
       } catch (error) {
-        console.error("[auth] auto-RSVP to CodeCruise failed", error);
+        console.error("[auth] auto-RSVP to BuilderShip failed", error);
       }
     },
   },

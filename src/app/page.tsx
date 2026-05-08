@@ -6,9 +6,9 @@ import { Section, SectionHeader } from "@/components/section";
 import { RotatingHeroTitle } from "@/components/rotating-hero-title";
 
 export const metadata: Metadata = {
-  title: "CodeCruise — Three-week hackathon, finals on the bay",
+  title: "BuilderShip — Three-week hackathon, finals on the bay",
   description:
-    "CodeCruise: a three-week remote hackathon with daily office hours. Submit by May 28. Top 30 builders earn a boat day on the Dragon Lady, May 30 — bay crossing, all-day 1:1 pitches at Plank, final presentations, sunset cruise, dinner at Farmhouse, the winner takes home $10k in credits and a DGX Spark, after-party on the yacht. Sponsored by Nebius, Composio, Tavily, OpenClaw, and CopilotKit.",
+    "BuilderShip: a three-week remote hackathon with daily office hours. Submit by May 28. Top 30 builders earn a boat day on the Dragon Lady, May 30 — bay crossing, all-day 1:1 pitches at Plank, final presentations, sunset cruise, dinner at Farmhouse, the winner takes home $10k in credits and a DGX Spark, after-party on the yacht. Sponsored by Nebius, Composio, Tavily, OpenClaw, CopilotKit, and Contree.",
 };
 
 const timeline = [

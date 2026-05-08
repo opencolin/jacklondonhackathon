@@ -5,7 +5,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-// Event timezone. CodeCruise + every office-hours session run on Pacific
+// Event timezone. BuilderShip + every office-hours session run on Pacific
 // time, so we pin formatters here. Server-rendered output ignores Vercel's
 // UTC default; client output ignores the user's local TZ. Both render Pacific.
 const EVENT_TZ = "America/Los_Angeles";

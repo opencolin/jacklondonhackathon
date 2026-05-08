@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 
-const SHARE_TITLE = "CodeCruise — Three-week hackathon, finals on the bay";
+const SHARE_TITLE = "BuilderShip — Three-week hackathon, finals on the bay";
 const SHARE_TEXT =
   "Three-week remote hackathon with daily office hours. Top 30 builders win a boat day on the Dragon Lady, May 30. Winner takes home $10k in credits and a DGX Spark.";
 

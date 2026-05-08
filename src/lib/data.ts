@@ -400,7 +400,7 @@ export const pendingInvitations = [
   {
     id: "inv_1",
     teamName: "Token Brigade",
-    eventName: "CodeCruise",
+    eventName: "BuilderShip",
     leaderName: "Marcus Yang",
   },
 ];

@@ -23,7 +23,7 @@ export function Hero() {
           Builders ship. Sponsors see real integration telemetry. Workshops on tap. Powered by Token Factory and Contree.
         </p>
         <div className="mt-10 flex flex-wrap items-center gap-3">
-          <Link href="/builders/login" className="btn-lime px-6 py-3.5 text-sm">Start building →</Link>
+          <Link href="/builders/login" className="btn-lime px-6 py-3.5 text-sm">Ship it →</Link>
           <Link href="/companies/login" className="btn-outline px-6 py-3.5 text-sm">Host an event</Link>
           <Link href="/workshops/running-openclaw-on-nebius" className="btn-ghost text-sm">Watch the OpenClaw on Nebius workshop →</Link>
         </div>

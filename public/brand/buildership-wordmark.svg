@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" width="720" height="220" role="img" aria-label="BuilderShip">
+  <defs>
+    <linearGradient id="builderGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3271DC"/>
+      <stop offset="55%" stop-color="#1B4BB1"/>
+      <stop offset="100%" stop-color="#11357E"/>
+    </linearGradient>
+    <linearGradient id="shipGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#6FDBF6"/>
+      <stop offset="55%" stop-color="#23B7E2"/>
+      <stop offset="100%" stop-color="#1485AE"/>
+    </linearGradient>
+    <filter id="dropShadow" x="-8%" y="-8%" width="116%" height="140%">
+      <feDropShadow dx="0" dy="6" stdDeviation="6" flood-color="#0a0f1c" flood-opacity="0.35"/>
+    </filter>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Lobster&amp;display=swap');
+    </style>
+  </defs>
+
+  <g filter="url(#dropShadow)">
+    <text x="360" y="150" text-anchor="middle"
+      font-family="'Lobster', 'Pacifico', 'Brush Script MT', cursive"
+      font-size="150"
+      font-weight="400"
+      stroke="#ffffff"
+      stroke-width="14"
+      stroke-linejoin="round"
+      stroke-miterlimit="2"
+      paint-order="stroke">
+      <tspan fill="url(#builderGrad)">Builder</tspan><tspan fill="url(#shipGrad)">Ship</tspan>
+    </text>
+  </g>
+</svg>

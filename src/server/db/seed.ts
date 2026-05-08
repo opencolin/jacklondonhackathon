@@ -54,12 +54,12 @@ async function main() {
       ])
       .returning();
 
-  console.log("Seeding CodeCruise event…");
+  console.log("Seeding BuilderShip event…");
   const [codeCruise] = await db
     .insert(events)
     .values({
-      slug: "code-cruise",
-      title: "CodeCruise",
+      slug: "buildership",
+      title: "BuilderShip",
       description:
         "Three-week remote hackathon culminating in a finals day on the Dragon Lady, May 30. Top 30 builders earn the boat day. Winner takes home $10k in credits and a DGX Spark.",
       format: "HACKATHON",

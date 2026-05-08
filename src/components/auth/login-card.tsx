@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ClawCruiseLogo } from "@/components/claw-cruise-logo";
+import { BuilderShipLogo } from "@/components/buildership-logo";
 import {
   MagicLinkForm,
   ProviderButton,
@@ -21,7 +21,7 @@ export function LoginCard({
       <div className="container-page flex min-h-screen items-center justify-center py-16">
         <div className="w-full max-w-md">
           <div className="mb-8 flex flex-col items-center gap-4">
-            <ClawCruiseLogo />
+            <BuilderShipLogo />
             <span className="pill-lime">{flavor === "builder" ? "Builder access" : "Sponsor access"}</span>
           </div>
           <div className="card p-8">
