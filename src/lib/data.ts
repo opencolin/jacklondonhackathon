@@ -236,7 +236,7 @@ export const events: Event[] = [
     id: "evt_aws",
     slug: "ai-demo-night-aws-builder-loft",
     title: "AI Demo Night at AWS Builder Loft",
-    format: "DEMO_NIGHT",
+    format: "MEETUP",
     state: "COMPLETED",
     startDateTime: "2026-04-02T18:00:00-07:00",
     city: "SF",

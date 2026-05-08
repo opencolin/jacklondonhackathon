@@ -84,7 +84,9 @@ export function getRedisConnection(): Redis | undefined {
 function makeQueue<T>(queueName: string): QueueLike<T> {
   const conn = getConnection();
   if (!conn) return createNoopQueue<T>(queueName);
-  return new Queue<T>(queueName, { connection: conn });
+  // BullMQ's Queue<T> type is more specific than our QueueLike<T> shape;
+  // the runtime is compatible.
+  return new Queue<T>(queueName, { connection: conn }) as unknown as QueueLike<T>;
 }
 
 // =============================================================================

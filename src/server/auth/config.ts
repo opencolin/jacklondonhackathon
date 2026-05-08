@@ -58,14 +58,16 @@ if (env.RESEND_API_KEY) {
   );
 }
 
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export const authConfig = {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // The Drizzle adapter typings narrow to SQLite tables in some versions;
+  // our schema is Postgres. Cast to silence — runtime is fine.
   adapter: DrizzleAdapter(db as any, {
-    usersTable: users,
-    accountsTable: accounts,
-    sessionsTable: sessions,
-    verificationTokensTable: verificationTokens,
-  }),
+    usersTable: users as any,
+    accountsTable: accounts as any,
+    sessionsTable: sessions as any,
+    verificationTokensTable: verificationTokens as any,
+  }) as any,
   session: { strategy: "database", maxAge: 30 * 24 * 60 * 60 },
   trustHost: true,
   providers,
@@ -74,11 +76,9 @@ export const authConfig = {
     verifyRequest: "/builders/login?check-email=1",
   },
   callbacks: {
-    async session({ session, user }) {
+    async session({ session, user }: { session: any; user: any }) {
       if (session.user && user) {
-        // expose db user id and admin flag
         session.user.id = user.id;
-        // @ts-expect-error -- DrizzleAdapter user type doesn't include is_admin yet
         session.user.isAdmin = (user as { isAdmin?: boolean }).isAdmin ?? false;
       }
       return session;

@@ -181,11 +181,8 @@ async function judgeOneDimension(
   const seed = deterministicSeed(submissionId, rubric.key);
 
   const callOnce = (): Promise<NebiusJudgeResult> =>
-    (nebiusJudge as (args: NebiusJudgeArgs) => Promise<NebiusJudgeResult>)({
-      prompt: rubric.prompt,
-      evidence,
+    nebiusJudge(`${rubric.prompt}\n\n--- EVIDENCE ---\n${evidence}`, {
       seed,
-      rubricKey: rubric.key,
     });
 
   let lastErr: unknown;
@@ -334,9 +331,16 @@ export async function scoreSubmission(
   // 2. Snapshot the repo (Token Factory / GitHub calls happen OUTSIDE the tx).
   let snapshot: RepoSnapshot;
   try {
-    snapshot = (await (
-      snapshotRepo as (args: { owner: string; repo: string }) => Promise<RepoSnapshot>
-    )(parsedRepo)) as RepoSnapshot;
+    const raw = await snapshotRepo(parsedRepo);
+    snapshot = {
+      defaultBranchSha: raw.sha,
+      readme: raw.readme,
+      topCommitMessages: raw.recentCommits
+        .slice(0, 3)
+        .map((c) => c.message),
+      integrationCounts: raw.integrationGreps as unknown as Record<string, number>,
+      raw,
+    };
   } catch (err) {
     const reason = err instanceof Error ? err.message : "github snapshot failed";
     await markFailed(db, submissionId, `GitHub snapshot failed: ${reason}`);
