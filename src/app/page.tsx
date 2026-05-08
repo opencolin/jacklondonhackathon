@@ -267,8 +267,8 @@ export default function HackJackLondonSquarePage() {
             </div>
             <RotatingHeroTitle className="mt-6" />
             <p className="mt-7 max-w-2xl text-xl text-ink-600 dark:text-ink-300">
-              Three weeks of building. Best of the best win a day on the yacht — 1:1s with angels,
-              VCs, and sponsors, sunset cruise, and the winner takes home $10k in credits and a DGX Spark.
+              Best of the best win a day on the yacht — 1:1s with angels, VCs, and sponsors, sunset
+              cruise, and the winner takes home $10k in credits and a DGX Spark.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link href="/builders/login" className="btn-lime px-6 py-3.5 text-sm">
