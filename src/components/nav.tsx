@@ -15,7 +15,7 @@ export function TopNav() {
     <header className="sticky top-0 z-40 border-b border-ink-200 bg-white/85 backdrop-blur dark:border-ink-800 dark:bg-ink-900/85">
       <div className="container-page flex h-16 items-center justify-between">
         <div className="flex items-center gap-8">
-          <NebiusLogo />
+          <NebiusLogo subtitle="" />
           <nav className="hidden gap-1 md:flex">
             {links.map((l) => (
               <Link
