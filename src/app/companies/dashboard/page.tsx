@@ -36,7 +36,7 @@ export default async function CompanyDashboard() {
 
   return (
     <>
-      <AppHeader subtitle="Builders for Business" links={companyNav} />
+      <AppHeader links={companyNav} />
       <main className="bg-ink-50">
         <section className="border-b border-ink-200 bg-white">
           <div className="container-page py-10">
