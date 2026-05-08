@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CodeCruiseLogo } from "@/components/code-cruise-logo";
+import { ClawCruiseLogo } from "@/components/claw-cruise-logo";
 
 export function LoginCard({
   flavor,
@@ -17,7 +17,7 @@ export function LoginCard({
       <div className="container-page flex min-h-screen items-center justify-center py-16">
         <div className="w-full max-w-md">
           <div className="mb-8 flex flex-col items-center gap-4">
-            <CodeCruiseLogo />
+            <ClawCruiseLogo />
             <span className="pill-lime">{flavor === "builder" ? "Builder access" : "Sponsor access"}</span>
           </div>
           <div className="card p-8">

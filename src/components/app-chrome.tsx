@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { CodeCruiseLogo } from "./code-cruise-logo";
+import { ClawCruiseLogo } from "./claw-cruise-logo";
 import { ThemeToggle } from "./theme-toggle";
 import { ShareButton } from "./share-button";
 import { SignOutButton } from "./sign-out-button";
@@ -9,7 +9,7 @@ export function AppHeader({ links }: { links: { label: string; href: string }[] 
     <header className="sticky top-0 z-40 border-b border-ink-200 bg-white/85 backdrop-blur dark:border-ink-800 dark:bg-ink-900/85">
       <div className="container-page flex h-16 items-center justify-between">
         <div className="flex items-center gap-8">
-          <CodeCruiseLogo />
+          <ClawCruiseLogo />
           <nav className="hidden gap-1 md:flex">
             {links.map((l) => (
               <Link
