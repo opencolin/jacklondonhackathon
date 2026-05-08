@@ -65,19 +65,28 @@ export default function DocPage({ params }: { params: { slug: string[] } }) {
   return (
     <>
       <TopNav />
-      <main className="bg-white">
+      <main className="bg-white dark:bg-ink-900">
         <div className="container-page grid gap-10 py-10 lg:grid-cols-[260px_1fr]">
           <aside className="hidden lg:block">
             <nav className="sticky top-24 space-y-6 text-sm">
               {docSections.map((s) => (
                 <div key={s.title}>
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-ink-500">{s.title}</p>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-ink-500 dark:text-ink-400">{s.title}</p>
                   <ul className="space-y-1">
                     {s.pages.map((p) => {
                       const active = p.slug === slugStr;
                       return (
                         <li key={p.slug}>
-                          <Link href={`/docs/${p.slug}`} className={`block rounded px-2 py-1 ${active ? "bg-navy-700 text-white" : "text-ink-700 hover:bg-ink-100"}`}>{p.title}</Link>
+                          <Link
+                            href={`/docs/${p.slug}`}
+                            className={`block rounded px-2 py-1 ${
+                              active
+                                ? "bg-navy-700 text-white dark:bg-lime dark:text-navy-700"
+                                : "text-ink-700 hover:bg-ink-100 dark:text-ink-200 dark:hover:bg-ink-800 dark:hover:text-ink-50"
+                            }`}
+                          >
+                            {p.title}
+                          </Link>
                         </li>
                       );
                     })}
@@ -86,10 +95,10 @@ export default function DocPage({ params }: { params: { slug: string[] } }) {
               ))}
             </nav>
           </aside>
-          <article className="prose prose-slate max-w-none">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-500">{content.eyebrow}</p>
-            <h1 className="h-display text-4xl font-bold tracking-tight">{content.title}</h1>
-            <div className="mt-6 space-y-4 text-ink-800 [&_pre]:mt-4 [&_pre]:rounded-card [&_pre]:bg-navy-700 [&_pre]:p-5 [&_pre]:text-sm [&_pre]:text-ink-100 [&_code]:font-mono [&_ol]:ml-5 [&_ol]:list-decimal [&_ol]:space-y-2 [&_ul]:ml-5 [&_ul]:list-disc [&_ul]:space-y-2 [&_a]:font-medium [&_a]:text-navy-700 [&_a:hover]:underline">
+          <article className="prose prose-slate max-w-none dark:prose-invert">
+            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">{content.eyebrow}</p>
+            <h1 className="h-display text-4xl font-bold tracking-tight text-ink-900 dark:text-ink-50">{content.title}</h1>
+            <div className="mt-6 space-y-4 text-ink-800 dark:text-ink-100 [&_strong]:text-ink-900 dark:[&_strong]:text-ink-50 [&_pre]:mt-4 [&_pre]:rounded-card [&_pre]:bg-navy-700 [&_pre]:p-5 [&_pre]:text-sm [&_pre]:text-ink-100 dark:[&_pre]:bg-ink-800 [&_code]:font-mono [&_ol]:ml-5 [&_ol]:list-decimal [&_ol]:space-y-2 [&_ul]:ml-5 [&_ul]:list-disc [&_ul]:space-y-2 [&_a]:font-medium [&_a]:text-navy-700 dark:[&_a]:text-lime [&_a:hover]:underline">
               {content.body}
             </div>
           </article>
