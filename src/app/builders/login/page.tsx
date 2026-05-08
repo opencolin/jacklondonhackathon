@@ -4,8 +4,8 @@ export default function BuilderLogin() {
   return (
     <LoginCard
       flavor="builder"
-      title="Sign in to Nebius Builders"
-      subtitle="Find an event, form a team, ship an OpenClaw agent."
+      title="Sign in to CodeCruise"
+      subtitle="Submit your project, RSVP for office hours, ship something the judges remember."
       redirect="/builders/dashboard"
     />
   );

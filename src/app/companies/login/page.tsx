@@ -4,8 +4,8 @@ export default function CompanyLogin() {
   return (
     <LoginCard
       flavor="company"
-      title="Sign in to Nebius Builders for business"
-      subtitle="Run events, sponsor builders, see real integration telemetry."
+      title="Sign in to CodeCruise for sponsors"
+      subtitle="Send judges, schedule office hours, see who's building on your stack."
       redirect="/companies/dashboard"
     />
   );
