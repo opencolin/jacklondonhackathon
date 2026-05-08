@@ -32,7 +32,7 @@ export function SectionHeader({
   invert = false,
 }: {
   eyebrow?: string;
-  title: string;
+  title: React.ReactNode;
   body?: string;
   align?: "left" | "center";
   invert?: boolean;

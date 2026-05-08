@@ -301,7 +301,7 @@ export default function HackJackLondonSquarePage() {
         <Section id="how-it-works" bg="tint">
           <SectionHeader
             eyebrow="How it works"
-            title="Three weeks. Thirty builders. One day on the bay."
+            title={<>Three weeks. Thirty builders.<br />One day on the bay.</>}
             body="The hackathon is mostly remote. The boat day is the celebration — and the finals."
           />
           <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
