@@ -18,7 +18,7 @@ export default function EventsIndex() {
       <SiteHeader />
       <main>
         <section className="border-b border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900">
-          <div className="container-page py-16">
+          <div className="container-page pt-16 pb-10">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">Events</p>
             <h1 className="h-display text-4xl font-bold tracking-tight text-ink-900 md:text-5xl dark:text-ink-50">Find an event. Show up. Ship.</h1>
             <p className="mt-4 max-w-2xl text-lg text-ink-600 dark:text-ink-300">Every event below has a Contree workspace ready, Token Factory keys loaded, and a base station for live demos.</p>
@@ -38,9 +38,9 @@ export default function EventsIndex() {
           </section>
         ) : null}
 
-        <section className="section bg-white dark:bg-ink-900">
+        <section className="bg-white pb-20 pt-10 dark:bg-ink-900 sm:pb-24 lg:pb-28">
           <div className="container-page">
-            <h2 className="mb-8 h-display text-3xl font-bold text-ink-900 dark:text-ink-50">Upcoming</h2>
+            <h2 className="mb-8 h-display text-3xl font-bold text-ink-900 dark:text-ink-50">Upcoming events</h2>
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">{upcoming.map((e) => <EventCard key={e.id} event={e} />)}</div>
           </div>
         </section>
