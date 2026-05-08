@@ -3,7 +3,7 @@ import { ClawCruiseLogo } from "./claw-cruise-logo";
 import { ThemeToggle } from "./theme-toggle";
 
 const links = [
-  { href: "/#how-it-works", label: "How it works" },
+  { href: "/#how-it-works", label: "Schedule" },
   { href: "/events", label: "Events" },
   { href: "/#faq", label: "FAQ" },
   { href: "/workshops", label: "Workshops" },

@@ -301,7 +301,7 @@ export default function HackJackLondonSquarePage() {
                 Start building →
               </Link>
               <Link href="#how-it-works" className="btn-outline px-6 py-3.5 text-sm">
-                How it works
+                Schedule
               </Link>
               <Link href="#sponsors" className="btn-ghost text-sm">
                 Sponsors & stack →
@@ -323,10 +323,10 @@ export default function HackJackLondonSquarePage() {
           </div>
         </section>
 
-        {/* How it works */}
+        {/* Schedule */}
         <Section id="how-it-works" bg="tint">
           <SectionHeader
-            eyebrow="How it works"
+            eyebrow="Schedule"
             title={<>Three weeks. Thirty builders.<br />One day on the bay.</>}
             body="The hackathon is mostly remote. The boat day is the celebration — and the finals."
           />
