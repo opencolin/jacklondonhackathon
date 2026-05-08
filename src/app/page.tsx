@@ -459,7 +459,7 @@ export default function HackJackLondonSquarePage() {
         <Section id="sponsors" bg="tint">
           <SectionHeader
             eyebrow="Sponsors & organizers"
-            title="One cloud. Four SDKs. Build something real."
+            title="Build something real."
             body="Each sponsor is an organizer — their teams are on the boat, in the room at Plank, and judging at the end. Bring an idea, leave with credits and a working agent."
           />
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
