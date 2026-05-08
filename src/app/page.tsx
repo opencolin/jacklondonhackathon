@@ -47,7 +47,7 @@ const judges = [
   {
     who: "Sponsor teams",
     when: "Office hours, then on the boat",
-    body: "Nebius, Composio, Tavily, OpenClaw, and CopilotKit engineers have been at office hours all month — by May 30 they know your codebase. They stress-test the integration and weigh in on the score.",
+    body: "Nebius, Composio, Tavily, OpenClaw, CopilotKit, and Contree engineers have been at office hours all month — by May 30 they know your codebase. They stress-test the integration and weigh in on the score.",
   },
   {
     who: "Angel investors",
@@ -121,6 +121,15 @@ const sponsors = [
     site: "https://www.copilotkit.ai",
     docs: "https://docs.copilotkit.ai",
     accent: "navy",
+  },
+  {
+    name: "Contree",
+    role: "Sandboxed cloud workspaces",
+    blurb:
+      "Code-server in your browser with Token Factory keys preloaded, Git-like branching across sandboxes, and one-command deploy to Nebius Serverless. Spin up a fresh workspace per idea — never pollute your laptop.",
+    site: "https://contree.dev",
+    docs: "https://docs.contree.dev",
+    accent: "lime",
   },
 ] as const;
 
