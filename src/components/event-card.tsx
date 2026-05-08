@@ -4,11 +4,9 @@ import { formatDate, formatTime } from "@/lib/utils";
 
 const formatLabel: Record<Event["format"], string> = {
   HACKATHON: "Hackathon",
-  HACK_DAY: "Hack day",
-  HACK_NIGHT: "Hack night",
   MEETUP: "Meetup",
   MINI_CONFERENCE: "Mini conference",
-  DEMO_NIGHT: "Demo night",
+  OFFICE_HOURS: "Office hours",
 };
 
 function StatePill({ state, startDateTime }: { state: Event["state"]; startDateTime: string }) {

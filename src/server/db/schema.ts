@@ -27,10 +27,8 @@ export const userStatusEnum = pgEnum("user_status", ["active", "disabled", "ghos
 
 export const eventFormatEnum = pgEnum("event_format", [
   "HACKATHON",
-  "HACK_DAY",
   "MEETUP",
   "MINI_CONFERENCE",
-  "DEMO_NIGHT",
   "OFFICE_HOURS",
 ]);
 

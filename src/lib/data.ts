@@ -3,10 +3,8 @@
 
 export type EventFormat =
   | "HACKATHON"
-  | "HACK_DAY"
   | "MEETUP"
   | "MINI_CONFERENCE"
-  | "DEMO_NIGHT"
   | "OFFICE_HOURS";
 
 export type EventState = "LIVE" | "UPCOMING" | "COMPLETED";

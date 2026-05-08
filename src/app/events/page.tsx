@@ -11,10 +11,8 @@ const formats = [
   "All",
   "Office hours",
   "Hackathon",
-  "Hack day",
   "Meetup",
   "Mini conference",
-  "Demo night",
 ] as const;
 
 function items<T>(result: { items: T[] } | T[]): T[] {
