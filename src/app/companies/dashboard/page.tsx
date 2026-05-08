@@ -14,7 +14,7 @@ export default function CompanyDashboard() {
   const ourEvents = events.slice(0, 4);
   return (
     <>
-      <AppHeader subtitle="Builders for Business" links={companyNav} />
+      <AppHeader links={companyNav} />
       <main className="bg-ink-50">
         <section className="border-b border-ink-200 bg-white">
           <div className="container-page py-10">

@@ -32,7 +32,7 @@ function StatePill({ state, startDateTime }: { state: Event["state"]; startDateT
 
 export function EventCard({ event, href }: { event: Event; href?: string }) {
   return (
-    <Link href={href ?? `/events/${event.slug}`} className="group flex h-full flex-col overflow-hidden rounded-card border border-ink-200 bg-white transition-all hover:border-ink-300 hover:shadow-soft">
+    <Link href={href ?? `/events/${event.slug}`} className="group flex h-full flex-col overflow-hidden rounded-card border border-ink-200 bg-white transition-all hover:border-ink-300 hover:shadow-soft dark:border-ink-700 dark:bg-ink-900 dark:hover:border-ink-600">
       <div className={`relative h-36 bg-gradient-to-br ${event.cover}`}>
         <div className="absolute left-4 top-4 flex gap-2">
           <StatePill state={event.state} startDateTime={event.startDateTime} />
@@ -42,15 +42,15 @@ export function EventCard({ event, href }: { event: Event; href?: string }) {
         </div>
       </div>
       <div className="flex flex-1 flex-col p-5">
-        <p className="mb-1.5 text-xs font-medium uppercase tracking-wider text-ink-500">
+        <p className="mb-1.5 text-xs font-medium uppercase tracking-wider text-ink-500 dark:text-ink-400">
           {formatLabel[event.format]} · {formatDate(event.startDateTime)} · {formatTime(event.startDateTime)}
         </p>
-        <h3 className="mb-2 text-base font-semibold leading-snug text-ink-900 group-hover:text-navy-700">{event.title}</h3>
-        <p className="mb-4 line-clamp-2 text-sm text-ink-600">{event.description}</p>
-        <div className="mt-auto flex items-center justify-between text-xs text-ink-500">
+        <h3 className="mb-2 text-base font-semibold leading-snug text-ink-900 dark:text-ink-50 group-hover:text-navy-700">{event.title}</h3>
+        <p className="mb-4 line-clamp-2 text-sm text-ink-600 dark:text-ink-300">{event.description}</p>
+        <div className="mt-auto flex items-center justify-between text-xs text-ink-500 dark:text-ink-400">
           <span className="truncate pr-4">{event.isOnline ? "Online" : event.venue.split(",")[0]}</span>
           {event.prizePool ? <span className="pill-lime">{event.prizePool}</span> : (
-            <span className="text-ink-400">{event.registered}/{event.capacity}</span>
+            <span className="text-ink-400 dark:text-ink-500">{event.registered}/{event.capacity}</span>
           )}
         </div>
       </div>

@@ -5,7 +5,7 @@ import { formatDate } from "@/lib/utils";
 
 const builderNav = [
   { label: "Console", href: "/builders/dashboard" },
-  { label: "Events", href: "/events" },
+  { label: "Office hours", href: "/#office-hours" },
   { label: "Teams", href: "/builders/teams" },
   { label: "Workshops", href: "/workshops" },
   { label: "Profile", href: "/builders/dashboard/profile" },
@@ -15,12 +15,12 @@ export default function TeamsPage() {
   return (
     <>
       <AppHeader links={builderNav} />
-      <main className="bg-ink-50">
-        <section className="border-b border-ink-200 bg-white">
+      <main className="bg-ink-50 dark:bg-ink-800">
+        <section className="border-b border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900">
           <div className="container-page py-10">
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500">Teams</p>
-            <h1 className="h-display mt-1 text-3xl font-bold tracking-tight">Build with the right people.</h1>
-            <p className="mt-2 max-w-2xl text-ink-600">Form one team per event you build at. Invite teammates by email or Discord handle. The team's project page auto-creates when you save your first draft.</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">Teams</p>
+            <h1 className="h-display mt-1 text-3xl font-bold tracking-tight text-ink-900 dark:text-ink-50">Build with the right people.</h1>
+            <p className="mt-2 max-w-2xl text-ink-600 dark:text-ink-300">Form one team per event you build at. Invite teammates by email or Discord handle. The team's project page auto-creates when you save your first draft.</p>
           </div>
         </section>
 
@@ -29,18 +29,18 @@ export default function TeamsPage() {
 
             <div>
               <div className="mb-4 flex items-end justify-between">
-                <h2 className="text-xl font-bold tracking-tight">Teams you lead</h2>
+                <h2 className="text-xl font-bold tracking-tight text-ink-900 dark:text-ink-50">Teams you lead</h2>
                 <button className="btn-lime">+ New team</button>
               </div>
               {teamsAsLeader.length === 0 ? (
-                <div className="card text-sm text-ink-500">No teams yet. Pick an event and start one.</div>
+                <div className="card text-sm text-ink-500 dark:text-ink-400">No teams yet. Pick an event and start one.</div>
               ) : (
                 <div className="grid gap-4">
                   {teamsAsLeader.map((t) => (
                     <div key={t.id} className="card">
                       <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
                         <div>
-                          <p className="text-xs uppercase tracking-widest text-ink-500">{t.event.title} · {formatDate(t.event.startDateTime)}</p>
+                          <p className="text-xs uppercase tracking-widest text-ink-500 dark:text-ink-400">{t.event.title} · {formatDate(t.event.startDateTime)}</p>
                           <h3 className="mt-1 text-lg font-semibold">{t.name}</h3>
                           <ul className="mt-3 flex flex-wrap gap-2">
                             {t.members.map((m) => (
@@ -56,9 +56,9 @@ export default function TeamsPage() {
                           <Link href="/builders/dashboard/events/evt_clawcamp/builder" className="btn-navy text-xs">Open team →</Link>
                         </div>
                       </div>
-                      <div className="mt-4 flex items-center justify-between rounded-lg border border-ink-200 bg-ink-50 p-3 text-sm">
+                      <div className="mt-4 flex items-center justify-between rounded-lg border border-ink-200 bg-ink-50 p-3 text-sm dark:border-ink-700 dark:bg-ink-800">
                         <span><span className="font-medium">{t.project.name}</span> · status: {t.project.status.toLowerCase()} · video: {t.project.hasVideo ? "ready" : "not yet recorded"}</span>
-                        <Link href="/builders/dashboard/events/evt_clawcamp/builder#project" className="text-xs font-medium text-navy-700 hover:underline">Edit project →</Link>
+                        <Link href="/builders/dashboard/events/evt_clawcamp/builder#project" className="text-xs font-medium text-navy-700 hover:underline dark:text-lime">Edit project →</Link>
                       </div>
                     </div>
                   ))}
@@ -69,7 +69,7 @@ export default function TeamsPage() {
             <div>
               <h2 className="mb-4 text-xl font-bold tracking-tight">Teams you're on</h2>
               {teamsAsMember.length === 0 ? (
-                <div className="card text-sm text-ink-500">You're not on any other teams. Accept an invite below to join one.</div>
+                <div className="card text-sm text-ink-500 dark:text-ink-400">You're not on any other teams. Accept an invite below to join one.</div>
               ) : null}
             </div>
 
@@ -80,7 +80,7 @@ export default function TeamsPage() {
                   <div key={i.id} className="card flex items-center justify-between">
                     <div>
                       <p className="font-semibold">{i.teamName}</p>
-                      <p className="text-sm text-ink-500">{i.eventName} · invited by {i.leaderName}</p>
+                      <p className="text-sm text-ink-500 dark:text-ink-400">{i.eventName} · invited by {i.leaderName}</p>
                     </div>
                     <div className="flex gap-2">
                       <button className="btn-ghost text-xs">Decline</button>

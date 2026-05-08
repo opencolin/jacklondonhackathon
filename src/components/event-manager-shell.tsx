@@ -26,7 +26,7 @@ export function EventManagerShell({ eventSlug, active, children }: { eventSlug: 
   ];
   return (
     <>
-      <AppHeader subtitle="Builders for Business" links={companyNav} />
+      <AppHeader links={companyNav} />
       <div className="border-b border-ink-200 bg-white">
         <div className="container-page py-6">
           <Link href="/companies/dashboard" className="text-sm text-ink-500 hover:text-ink-700">← All events</Link>

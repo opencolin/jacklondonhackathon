@@ -6,7 +6,7 @@ import { formatDate, formatTime } from "@/lib/utils";
 
 const builderNav = [
   { label: "Console", href: "/builders/dashboard" },
-  { label: "Events", href: "/events" },
+  { label: "Office hours", href: "/#office-hours" },
   { label: "Teams", href: "/builders/teams" },
   { label: "Workshops", href: "/workshops" },
   { label: "Profile", href: "/builders/dashboard/profile" },
@@ -25,7 +25,7 @@ export default function BuilderEventHub({ params }: { params: { id: string } }) 
   return (
     <>
       <AppHeader links={builderNav} />
-      <main className="bg-ink-50">
+      <main className="bg-ink-50 dark:bg-ink-800">
         <section className={`relative overflow-hidden border-b border-ink-200 bg-gradient-to-br ${event.cover}`}>
           <div className="container-page py-10 text-navy-700">
             <Link href="/builders/dashboard" className="text-sm hover:underline">← Console</Link>
