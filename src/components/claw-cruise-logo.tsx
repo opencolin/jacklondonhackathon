@@ -8,6 +8,8 @@ const LOGOS = [
   { src: "/brand/agenthack-red.png", alt: "AgentHack" },
   { src: "/brand/clawcruise-blue.png", alt: "ClawCruise" },
   { src: "/brand/agenthack-blue.png", alt: "AgentHack" },
+  { src: "/brand/foundership.png", alt: "FounderShip" },
+  { src: "/brand/buildship.png", alt: "BuildShip" },
 ] as const;
 
 const INTERVAL_MS = 5000;
@@ -36,7 +38,7 @@ export function ClawCruiseLogo({
       className="inline-flex items-center gap-3"
       aria-label={`${logo.alt} ${subtitle}`.trim()}
     >
-      <span className="relative inline-block h-9 w-[140px]">
+      <span className="relative inline-block h-[72px] w-[280px]">
         {LOGOS.map((l, i) => (
           // eslint-disable-next-line @next/next/no-img-element
           <img
