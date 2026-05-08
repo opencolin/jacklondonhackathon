@@ -10,11 +10,11 @@ import {
 import {
   events,
   eventRegistrations,
-  eventSponsors,
-  sponsors,
   venues,
   auditLog,
 } from "@/server/db/schema";
+import { toLegacyEvent } from "@/server/lib/event-mapper";
+import type { Event as LegacyEvent } from "@/lib/data";
 
 const eventStateValues = [
   "draft",
@@ -45,8 +45,9 @@ export const eventsRouter = router({
       const where = conditions.length ? and(...conditions) : undefined;
 
       const rows = await ctx.db
-        .select()
+        .select({ event: events, venue: venues })
         .from(events)
+        .leftJoin(venues, eq(events.venueId, venues.id))
         .where(where)
         .orderBy(asc(events.startsAt), asc(events.id))
         .limit(input.limit + 1);
@@ -54,102 +55,67 @@ export const eventsRouter = router({
       let nextCursor: string | undefined = undefined;
       if (rows.length > input.limit) {
         const nextItem = rows.pop();
-        nextCursor = nextItem?.id;
+        nextCursor = nextItem?.event.id;
       }
 
-      return { items: rows, nextCursor };
+      const items: LegacyEvent[] = rows.map((r) => toLegacyEvent(r.event, r.venue));
+      return { items, nextCursor };
     }),
 
   bySlug: publicProcedure
     .input(z.object({ slug: z.string() }))
-    .query(async ({ ctx, input }) => {
-      const eventRow = await ctx.db
-        .select()
+    .query(async ({ ctx, input }): Promise<LegacyEvent> => {
+      const rows = await ctx.db
+        .select({ event: events, venue: venues })
         .from(events)
+        .leftJoin(venues, eq(events.venueId, venues.id))
         .where(eq(events.slug, input.slug))
         .limit(1);
-      const event = eventRow[0];
-      if (!event) {
+      const row = rows[0];
+      if (!row) {
         throw new TRPCError({ code: "NOT_FOUND", message: "Event not found" });
       }
-
-      const venue = event.venueId
-        ? (
-            await ctx.db
-              .select()
-              .from(venues)
-              .where(eq(venues.id, event.venueId))
-              .limit(1)
-          )[0] ?? null
-        : null;
-
-      const sponsorRows = await ctx.db
-        .select({
-          sponsor: sponsors,
-          role: eventSponsors.role,
-        })
-        .from(eventSponsors)
-        .innerJoin(sponsors, eq(sponsors.id, eventSponsors.sponsorId))
-        .where(eq(eventSponsors.eventId, event.id));
 
       const registeredCountRow = await ctx.db
         .select({ count: sql<number>`count(*)::int` })
         .from(eventRegistrations)
         .where(
           and(
-            eq(eventRegistrations.eventId, event.id),
+            eq(eventRegistrations.eventId, row.event.id),
             eq(eventRegistrations.status, "rsvp"),
           ),
         );
-      const registeredCount = registeredCountRow[0]?.count ?? 0;
+      const registeredCount = registeredCountRow[0]?.count;
 
-      return { event, venue, sponsors: sponsorRows, registeredCount };
+      return toLegacyEvent(row.event, row.venue, registeredCount);
     }),
 
   byId: publicProcedure
     .input(z.object({ id: z.string().uuid() }))
-    .query(async ({ ctx, input }) => {
-      const eventRow = await ctx.db
-        .select()
+    .query(async ({ ctx, input }): Promise<LegacyEvent> => {
+      const rows = await ctx.db
+        .select({ event: events, venue: venues })
         .from(events)
+        .leftJoin(venues, eq(events.venueId, venues.id))
         .where(eq(events.id, input.id))
         .limit(1);
-      const event = eventRow[0];
-      if (!event) {
+      const row = rows[0];
+      if (!row) {
         throw new TRPCError({ code: "NOT_FOUND", message: "Event not found" });
       }
-
-      const venue = event.venueId
-        ? (
-            await ctx.db
-              .select()
-              .from(venues)
-              .where(eq(venues.id, event.venueId))
-              .limit(1)
-          )[0] ?? null
-        : null;
-
-      const sponsorRows = await ctx.db
-        .select({
-          sponsor: sponsors,
-          role: eventSponsors.role,
-        })
-        .from(eventSponsors)
-        .innerJoin(sponsors, eq(sponsors.id, eventSponsors.sponsorId))
-        .where(eq(eventSponsors.eventId, event.id));
 
       const registeredCountRow = await ctx.db
         .select({ count: sql<number>`count(*)::int` })
         .from(eventRegistrations)
         .where(
           and(
-            eq(eventRegistrations.eventId, event.id),
+            eq(eventRegistrations.eventId, row.event.id),
             eq(eventRegistrations.status, "rsvp"),
           ),
         );
-      const registeredCount = registeredCountRow[0]?.count ?? 0;
+      const registeredCount = registeredCountRow[0]?.count;
 
-      return { event, venue, sponsors: sponsorRows, registeredCount };
+      return toLegacyEvent(row.event, row.venue, registeredCount);
     }),
 
   register: protectedProcedure

@@ -249,6 +249,7 @@ export const events = pgTable(
     registered: integer("registered").notNull().default(0),
     coverGradient: text("cover_gradient"),
     prizeSummary: text("prize_summary"),
+    rsvpUrl: text("rsvp_url"),
     partnersJson: jsonb("partners_json").$type<string[]>().notNull().default(sql`'[]'::jsonb`),
     parentEventId: uuid("parent_event_id"),
     rrule: text("rrule"),
