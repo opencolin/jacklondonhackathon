@@ -249,10 +249,10 @@ export default function HackJackLondonSquarePage() {
             src="/boat/bow-sunset-bridge.jpg"
             alt=""
             aria-hidden
-            className="absolute inset-0 h-full w-full object-cover opacity-40 dark:opacity-30"
+            className="absolute inset-0 h-full w-full object-cover opacity-90 dark:opacity-80"
           />
           <div
-            className="absolute inset-0 bg-gradient-to-r from-white via-white/85 to-white/30 dark:from-ink-900 dark:via-ink-900/85 dark:to-ink-900/30"
+            className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/55 to-white/0 dark:from-ink-900/95 dark:via-ink-900/55 dark:to-ink-900/0"
             aria-hidden
           />
           <div className="absolute -right-24 -top-24 h-[460px] w-[460px] rounded-full bg-lime/40 blur-3xl dark:bg-lime/20" aria-hidden />
