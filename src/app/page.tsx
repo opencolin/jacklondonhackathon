@@ -166,9 +166,8 @@ const venues = [
       "Award-winning Thai restaurant in Jack London Square. Where we sit down after the sunset cruise for a real dinner and project presentations on the screens — chef-driven food, family-style tables, room for fifty.",
     href: "https://farmhousethai.com/oakland",
     cta: "farmhousethai.com/oakland",
-    image:
-      "https://pluto-images.ordersave.com/pluto-images/funnel/images/66324b38-8c2f-4ece-9cc3-c0a0ed4688b9?w=1600&fit=cover",
-    imageAlt: "Farmhouse Kitchen Thai feast — best Thai food in town",
+    image: "/venues/farmhouse/hero.jpg",
+    imageAlt: "Farmhouse Kitchen Thai feast on banana leaves — lobster, fried chicken, blue rice",
   },
 ] as const;
 
