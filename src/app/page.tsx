@@ -6,9 +6,9 @@ import { Section, SectionHeader } from "@/components/section";
 import { RotatingHeroTitle } from "@/components/rotating-hero-title";
 
 export const metadata: Metadata = {
-  title: "Hack Jack London Square — Nebius Builders Boat Hackathon",
+  title: "CodeCruise — Three-week hackathon, finals on the bay",
   description:
-    "Three-week remote hackathon with daily office hours. Submit by May 28. Top 30 builders earn a boat day on the Dragon Lady, May 30 — bay crossing, all-day 1:1 pitches at Plank, final presentations, sunset cruise, dinner at Farmhouse, the winner walks the plank, after-party on the yacht. Sponsored by Nebius, Composio, and Tavily.",
+    "CodeCruise: a three-week remote hackathon with daily office hours. Submit by May 28. Top 30 builders earn a boat day on the Dragon Lady, May 30 — bay crossing, all-day 1:1 pitches at Plank, final presentations, sunset cruise, dinner at Farmhouse, the winner takes home $10k, after-party on the yacht. Sponsored by Nebius, Composio, and Tavily.",
 };
 
 const timeline = [
@@ -218,7 +218,7 @@ const faqs = [
   },
   {
     q: "What happens on May 30?",
-    a: "Finals day in Jack London Square — and there's no five-minute stage pitch. You spend the whole day in 1:1 conversations: angels and VCs over breakfast at Plank, sponsor judges over lunch and bowling, more 1:1s through the afternoon. Final presentations at Plank in the late afternoon. Sunset cruise, dinner at Farmhouse, winners announced. The winner walks the plank into the bay. After-party back on the docked yacht.",
+    a: "Finals day in Jack London Square — and there's no five-minute stage pitch. You spend the whole day in 1:1 conversations: angels and VCs over breakfast at Plank, sponsor judges over lunch and bowling, more 1:1s through the afternoon. Final presentations before the sunset cruise. Dinner at Farmhouse, winners announced, the winner takes home $10k. After-party back on the docked yacht.",
   },
   {
     q: "What does \"walking the plank\" mean?",
@@ -301,7 +301,7 @@ export default function HackJackLondonSquarePage() {
         <Section id="how-it-works" bg="tint">
           <SectionHeader
             eyebrow="How it works"
-            title="Three weeks. One submission. Thirty builders. One day on the bay."
+            title="Three weeks. Thirty builders. One day on the bay."
             body="The hackathon is mostly remote. The boat day is the celebration — and the finals."
           />
           <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -472,7 +472,7 @@ export default function HackJackLondonSquarePage() {
           <SectionHeader
             eyebrow="Who's scoring you"
             title="No five-minute stage pitch. 1:1 conversations all day."
-            body="The score on May 30 is a blend. AI judges read your code over the three weeks. Sponsor teams, angels, and VCs do 1:1s with every builder all day at Plank — your pitch sharpens with each conversation. Final presentations at Plank in the late afternoon. Everyone's vote counts."
+            body="The score on May 30 is a blend. AI judges read your code over the three weeks. Sponsor teams, angels, and VCs do 1:1s with every builder all day at Plank — your pitch sharpens with each conversation. Final presentations before the sunset cruise. Everyone's vote counts."
           />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
             {judges.map((j) => (
@@ -490,7 +490,7 @@ export default function HackJackLondonSquarePage() {
           <SectionHeader
             eyebrow="Finals day · May 30"
             title="One ride across the bay. One sunset. Demos at dinner."
-            body="The boat day is for the top 30 builders. Bay crossing, all-day 1:1 conversations and pitch refinement at Plank, final presentations late afternoon, sunset cruise, dinner at Farmhouse, the winner walks the plank, after-party on the docked yacht. Times are firm — the boat doesn't wait."
+            body="The boat day is for the top 30 builders. Bay crossing, all-day 1:1 conversations and pitch refinement at Plank, final presentations before the sunset cruise, dinner at Farmhouse where winners are announced, after-party on the docked yacht. Times are firm — the boat doesn't wait."
           />
           <ol className="overflow-hidden rounded-card border border-ink-200 bg-white dark:border-ink-700 dark:bg-ink-900">
             {schedule.map((row, i) => (

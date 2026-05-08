@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { NebiusLogo } from "./nebius-logo";
+import { CodeCruiseLogo } from "./code-cruise-logo";
 import { ThemeToggle } from "./theme-toggle";
 
 const links = [
@@ -15,7 +15,7 @@ export function TopNav() {
     <header className="sticky top-0 z-40 border-b border-transparent bg-white/30 backdrop-blur-md dark:bg-ink-900/30">
       <div className="container-page flex h-16 items-center justify-between">
         <div className="flex items-center gap-8">
-          <NebiusLogo subtitle="" />
+          <CodeCruiseLogo />
           <nav className="hidden gap-1 md:flex">
             {links.map((l) => (
               <Link
