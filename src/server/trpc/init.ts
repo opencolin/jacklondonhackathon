@@ -2,7 +2,7 @@ import "server-only";
 import { initTRPC, TRPCError } from "@trpc/server";
 import superjson from "superjson";
 import { ZodError } from "zod";
-import { auth } from "@/server/auth";
+import { safeAuth } from "@/server/lib/safe-auth";
 import { db } from "@/server/db";
 import { users, judges, sponsorAdmins } from "@/server/db/schema";
 import { eq } from "drizzle-orm";
@@ -12,31 +12,38 @@ export type ContextOptions = {
 };
 
 export async function createContext({ headers }: ContextOptions) {
-  const session = await auth();
+  const session = await safeAuth();
   let dbUser: typeof users.$inferSelect | null = null;
   let judgeKinds: ("ai" | "sponsor" | "angel" | "vc")[] = [];
   let sponsorIds: string[] = [];
 
   if (session?.user?.id) {
-    const userRow = await db
-      .select()
-      .from(users)
-      .where(eq(users.id, session.user.id))
-      .limit(1);
-    dbUser = userRow[0] ?? null;
+    try {
+      const userRow = await db
+        .select()
+        .from(users)
+        .where(eq(users.id, session.user.id))
+        .limit(1);
+      dbUser = userRow[0] ?? null;
 
-    if (dbUser) {
-      const judgeRows = await db
-        .select({ kind: judges.kind })
-        .from(judges)
-        .where(eq(judges.userId, dbUser.id));
-      judgeKinds = judgeRows.map((r) => r.kind);
+      if (dbUser) {
+        const judgeRows = await db
+          .select({ kind: judges.kind })
+          .from(judges)
+          .where(eq(judges.userId, dbUser.id));
+        judgeKinds = judgeRows.map((r) => r.kind);
 
-      const sponsorRows = await db
-        .select({ sponsorId: sponsorAdmins.sponsorId })
-        .from(sponsorAdmins)
-        .where(eq(sponsorAdmins.userId, dbUser.id));
-      sponsorIds = sponsorRows.map((r) => r.sponsorId);
+        const sponsorRows = await db
+          .select({ sponsorId: sponsorAdmins.sponsorId })
+          .from(sponsorAdmins)
+          .where(eq(sponsorAdmins.userId, dbUser.id));
+        sponsorIds = sponsorRows.map((r) => r.sponsorId);
+      }
+    } catch (err) {
+      console.warn(
+        "[trpc] context DB load failed, continuing as logged-out:",
+        (err as Error)?.message,
+      );
     }
   }
 

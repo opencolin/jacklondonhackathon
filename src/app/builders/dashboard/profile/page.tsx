@@ -1,7 +1,7 @@
 import { AppHeader } from "@/components/app-chrome";
 import Link from "next/link";
 import { redirect } from "next/navigation";
-import { auth } from "@/server/auth";
+import { safeAuth } from "@/server/lib/safe-auth";
 import { db } from "@/server/db";
 import { users } from "@/server/db/schema";
 import { eq } from "drizzle-orm";
@@ -18,7 +18,7 @@ const builderNav = [
 ];
 
 export default async function ProfilePage() {
-  const session = await auth();
+  const session = await safeAuth();
   if (!session?.user) redirect("/builders/login");
 
   // Fetch the full user record for fields the session doesn't carry (phone, github_url, etc).

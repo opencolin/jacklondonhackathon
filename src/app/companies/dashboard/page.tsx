@@ -3,7 +3,7 @@ import { redirect } from "next/navigation";
 import { AppHeader } from "@/components/app-chrome";
 import type { Event } from "@/lib/data";
 import { formatDate } from "@/lib/utils";
-import { auth } from "@/server/auth";
+import { safeAuth } from "@/server/lib/safe-auth";
 import { api } from "@/lib/trpc/server";
 
 export const dynamic = "force-dynamic";
@@ -21,7 +21,7 @@ function items<T>(result: { items: T[] } | T[]): T[] {
 }
 
 export default async function CompanyDashboard() {
-  const session = await auth();
+  const session = await safeAuth();
   if (!session?.user) redirect("/companies/login");
 
   const trpc = await api();

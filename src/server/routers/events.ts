@@ -14,6 +14,12 @@ import {
   auditLog,
 } from "@/server/db/schema";
 import { toLegacyEvent } from "@/server/lib/event-mapper";
+import {
+  isDbPlaceholder,
+  mockEventBySlug,
+  mockEventById,
+  mockEventsByState,
+} from "@/server/lib/events-fallback";
 import type { Event as LegacyEvent } from "@/lib/data";
 
 const eventStateValues = [
@@ -36,86 +42,120 @@ export const eventsRouter = router({
       }),
     )
     .query(async ({ ctx, input }) => {
-      const conditions = [];
-      if (input.state) conditions.push(eq(events.state, input.state));
-      if (input.parentEventId)
-        conditions.push(eq(events.parentEventId, input.parentEventId));
-      if (input.cursor) conditions.push(gt(events.id, input.cursor));
-
-      const where = conditions.length ? and(...conditions) : undefined;
-
-      const rows = await ctx.db
-        .select({ event: events, venue: venues })
-        .from(events)
-        .leftJoin(venues, eq(events.venueId, venues.id))
-        .where(where)
-        .orderBy(asc(events.startsAt), asc(events.id))
-        .limit(input.limit + 1);
-
-      let nextCursor: string | undefined = undefined;
-      if (rows.length > input.limit) {
-        const nextItem = rows.pop();
-        nextCursor = nextItem?.event.id;
+      if (isDbPlaceholder()) {
+        return { items: mockEventsByState(input.state).slice(0, input.limit), nextCursor: undefined };
       }
+      try {
+        const conditions = [];
+        if (input.state) conditions.push(eq(events.state, input.state));
+        if (input.parentEventId)
+          conditions.push(eq(events.parentEventId, input.parentEventId));
+        if (input.cursor) conditions.push(gt(events.id, input.cursor));
 
-      const items: LegacyEvent[] = rows.map((r) => toLegacyEvent(r.event, r.venue));
-      return { items, nextCursor };
+        const where = conditions.length ? and(...conditions) : undefined;
+
+        const rows = await ctx.db
+          .select({ event: events, venue: venues })
+          .from(events)
+          .leftJoin(venues, eq(events.venueId, venues.id))
+          .where(where)
+          .orderBy(asc(events.startsAt), asc(events.id))
+          .limit(input.limit + 1);
+
+        let nextCursor: string | undefined = undefined;
+        if (rows.length > input.limit) {
+          const nextItem = rows.pop();
+          nextCursor = nextItem?.event.id;
+        }
+
+        const items: LegacyEvent[] = rows.map((r) => toLegacyEvent(r.event, r.venue));
+        return { items, nextCursor };
+      } catch (err) {
+        console.warn("[events.list] DB unavailable, using mock:", (err as Error)?.message);
+        return { items: mockEventsByState(input.state).slice(0, input.limit), nextCursor: undefined };
+      }
     }),
 
   bySlug: publicProcedure
     .input(z.object({ slug: z.string() }))
     .query(async ({ ctx, input }): Promise<LegacyEvent> => {
-      const rows = await ctx.db
-        .select({ event: events, venue: venues })
-        .from(events)
-        .leftJoin(venues, eq(events.venueId, venues.id))
-        .where(eq(events.slug, input.slug))
-        .limit(1);
-      const row = rows[0];
-      if (!row) {
-        throw new TRPCError({ code: "NOT_FOUND", message: "Event not found" });
+      if (isDbPlaceholder()) {
+        const fallback = mockEventBySlug(input.slug);
+        if (!fallback) throw new TRPCError({ code: "NOT_FOUND", message: "Event not found" });
+        return fallback;
       }
+      try {
+        const rows = await ctx.db
+          .select({ event: events, venue: venues })
+          .from(events)
+          .leftJoin(venues, eq(events.venueId, venues.id))
+          .where(eq(events.slug, input.slug))
+          .limit(1);
+        const row = rows[0];
+        if (!row) {
+          throw new TRPCError({ code: "NOT_FOUND", message: "Event not found" });
+        }
 
-      const registeredCountRow = await ctx.db
-        .select({ count: sql<number>`count(*)::int` })
-        .from(eventRegistrations)
-        .where(
-          and(
-            eq(eventRegistrations.eventId, row.event.id),
-            eq(eventRegistrations.status, "rsvp"),
-          ),
-        );
-      const registeredCount = registeredCountRow[0]?.count;
+        const registeredCountRow = await ctx.db
+          .select({ count: sql<number>`count(*)::int` })
+          .from(eventRegistrations)
+          .where(
+            and(
+              eq(eventRegistrations.eventId, row.event.id),
+              eq(eventRegistrations.status, "rsvp"),
+            ),
+          );
+        const registeredCount = registeredCountRow[0]?.count;
 
-      return toLegacyEvent(row.event, row.venue, registeredCount);
+        return toLegacyEvent(row.event, row.venue, registeredCount);
+      } catch (err) {
+        if (err instanceof TRPCError) throw err;
+        console.warn("[events.bySlug] DB unavailable, using mock:", (err as Error)?.message);
+        const fallback = mockEventBySlug(input.slug);
+        if (!fallback) throw new TRPCError({ code: "NOT_FOUND", message: "Event not found" });
+        return fallback;
+      }
     }),
 
   byId: publicProcedure
-    .input(z.object({ id: z.string().uuid() }))
+    .input(z.object({ id: z.string() }))
     .query(async ({ ctx, input }): Promise<LegacyEvent> => {
-      const rows = await ctx.db
-        .select({ event: events, venue: venues })
-        .from(events)
-        .leftJoin(venues, eq(events.venueId, venues.id))
-        .where(eq(events.id, input.id))
-        .limit(1);
-      const row = rows[0];
-      if (!row) {
-        throw new TRPCError({ code: "NOT_FOUND", message: "Event not found" });
+      if (isDbPlaceholder()) {
+        const fallback = mockEventById(input.id);
+        if (!fallback) throw new TRPCError({ code: "NOT_FOUND", message: "Event not found" });
+        return fallback;
       }
+      try {
+        const rows = await ctx.db
+          .select({ event: events, venue: venues })
+          .from(events)
+          .leftJoin(venues, eq(events.venueId, venues.id))
+          .where(eq(events.id, input.id))
+          .limit(1);
+        const row = rows[0];
+        if (!row) {
+          throw new TRPCError({ code: "NOT_FOUND", message: "Event not found" });
+        }
 
-      const registeredCountRow = await ctx.db
-        .select({ count: sql<number>`count(*)::int` })
-        .from(eventRegistrations)
-        .where(
-          and(
-            eq(eventRegistrations.eventId, row.event.id),
-            eq(eventRegistrations.status, "rsvp"),
-          ),
-        );
-      const registeredCount = registeredCountRow[0]?.count;
+        const registeredCountRow = await ctx.db
+          .select({ count: sql<number>`count(*)::int` })
+          .from(eventRegistrations)
+          .where(
+            and(
+              eq(eventRegistrations.eventId, row.event.id),
+              eq(eventRegistrations.status, "rsvp"),
+            ),
+          );
+        const registeredCount = registeredCountRow[0]?.count;
 
-      return toLegacyEvent(row.event, row.venue, registeredCount);
+        return toLegacyEvent(row.event, row.venue, registeredCount);
+      } catch (err) {
+        if (err instanceof TRPCError) throw err;
+        console.warn("[events.byId] DB unavailable, using mock:", (err as Error)?.message);
+        const fallback = mockEventById(input.id);
+        if (!fallback) throw new TRPCError({ code: "NOT_FOUND", message: "Event not found" });
+        return fallback;
+      }
     }),
 
   register: protectedProcedure

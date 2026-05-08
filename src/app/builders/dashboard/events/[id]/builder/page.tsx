@@ -3,7 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import { AppHeader } from "@/components/app-chrome";
 import { eventBlasts, eventPrizes } from "@/lib/data";
 import { formatDate, formatTime } from "@/lib/utils";
-import { auth } from "@/server/auth";
+import { safeAuth } from "@/server/lib/safe-auth";
 import { api } from "@/lib/trpc/server";
 
 export const dynamic = "force-dynamic";
@@ -20,7 +20,7 @@ const builderNav = [
 const tabs = ["Overview", "Team", "Project", "IDE", "Feedback", "Volunteer"] as const;
 
 export default async function BuilderEventHub({ params }: { params: { id: string } }) {
-  const session = await auth();
+  const session = await safeAuth();
   if (!session?.user) redirect("/builders/login");
 
   const trpc = await api();

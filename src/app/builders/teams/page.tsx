@@ -4,7 +4,7 @@ import { AppHeader } from "@/components/app-chrome";
 import { MarkLoggedIn } from "@/components/mark-logged-in";
 import { teamsAsLeader, teamsAsMember, pendingInvitations } from "@/lib/data";
 import { formatDate } from "@/lib/utils";
-import { auth } from "@/server/auth";
+import { safeAuth } from "@/server/lib/safe-auth";
 
 export const dynamic = "force-dynamic";
 
@@ -18,7 +18,7 @@ const builderNav = [
 ];
 
 export default async function TeamsPage() {
-  const session = await auth();
+  const session = await safeAuth();
   if (!session?.user) redirect("/builders/login");
 
   return (

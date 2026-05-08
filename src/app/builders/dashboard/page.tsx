@@ -5,7 +5,7 @@ import { EventCard } from "@/components/event-card";
 import { WorkshopCard } from "@/components/workshop-card";
 import { workshops, liveStats } from "@/lib/data";
 import type { Event } from "@/lib/data";
-import { auth } from "@/server/auth";
+import { safeAuth } from "@/server/lib/safe-auth";
 import { api } from "@/lib/trpc/server";
 
 export const dynamic = "force-dynamic";
@@ -24,7 +24,7 @@ function items<T>(result: { items: T[] } | T[]): T[] {
 }
 
 export default async function BuilderDashboard() {
-  const session = await auth();
+  const session = await safeAuth();
   if (!session?.user) redirect("/builders/login");
 
   const trpc = await api();
