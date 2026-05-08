@@ -54,7 +54,7 @@ export default async function EventsIndex() {
         <section className="border-b border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900">
           <div className="container-page pt-16 pb-10">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">Schedule</p>
-            <h1 className="h-display text-4xl font-bold tracking-tight text-ink-900 md:text-5xl dark:text-ink-50">Every session, in order.</h1>
+            <h1 className="h-display text-4xl font-bold tracking-tight text-ink-900 md:text-5xl dark:text-ink-50">Three weeks. Thirty builders.<br />One day on the bay.</h1>
             <p className="mt-4 max-w-2xl text-lg text-ink-600 dark:text-ink-300">Office hours, ClawCamp, and the May 30 boat day — RSVP via Luma where it's linked, or just show up.</p>
             <EventFilters cities={cities} formats={formats} />
           </div>
