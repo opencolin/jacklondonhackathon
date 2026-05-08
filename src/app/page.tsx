@@ -264,10 +264,10 @@ export default function HackJackLondonSquarePage() {
               .
             </h1>
             <p className="mt-7 max-w-2xl text-xl text-ink-600">
-              Three weeks of building with daily office hours. Submit your project by May 28. The top
-              30 builders earn a day on the Dragon Lady, May 30 — 1:1 conversations with angels, VCs,
-              and sponsors all day at Plank, final presentations late afternoon, sunset cruise, dinner
-              at Farmhouse, and the winner walks the plank into the bay.
+              Three weeks of building with daily office hours. Submit your project by May 28. Only the
+              top 30 — best of the best — earn a day on the Dragon Lady, May 30. 1:1 conversations
+              with angels, VCs, and sponsors all day at Plank, final presentations late afternoon,
+              sunset cruise, dinner at Farmhouse, and the winner walks the plank into the bay.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link href="/builders/login" className="btn-lime px-6 py-3.5 text-sm">
@@ -556,7 +556,7 @@ export default function HackJackLondonSquarePage() {
           <SectionHeader
             eyebrow="Finalist perks"
             title="Make finals, win the boat day."
-            body="Top 30 builders earn the trip. Six experience perks on the house — plus the sponsor stack, which every builder gets from day one. Win the whole thing and you walk the plank."
+            body="Only the top 30 — best of the best — earn the trip. Six experience perks on the house, plus the sponsor stack (that one's available to every builder from day one). Win the whole thing and you walk the plank."
           />
           <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {perks.map((p) => (
@@ -603,12 +603,12 @@ export default function HackJackLondonSquarePage() {
             <div>
               <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-lime">Start building</p>
               <h2 className="h-display text-3xl font-bold leading-[1.1] tracking-tight text-white md:text-5xl">
-                Three weeks. Thirty builders. One walk off the plank.
+                Three weeks. Thirty finalists. One walk off the plank.
               </h2>
               <p className="mt-5 max-w-xl text-lg text-ink-100">
                 Submissions close <strong className="font-semibold text-white">May 28</strong>.
-                Finalists announced <strong className="font-semibold text-white">May 29</strong>. Boat
-                leaves South Beach at 9 AM <strong className="font-semibold text-white">May 30</strong>.
+                Best of the best announced <strong className="font-semibold text-white">May 29</strong>.
+                Boat leaves South Beach at 9 AM <strong className="font-semibold text-white">May 30</strong>.
                 Build starts whenever you do.
               </p>
             </div>
