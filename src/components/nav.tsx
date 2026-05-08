@@ -13,7 +13,7 @@ const links = [
 export function TopNav() {
   return (
     <header className="sticky top-0 z-40 border-b border-transparent bg-white/30 backdrop-blur-md dark:bg-ink-900/30">
-      <div className="container-page flex h-24 items-center justify-between">
+      <div className="container-page flex h-[72px] items-center justify-between">
         <div className="flex items-center gap-8">
           <ClawCruiseLogo />
           <nav className="hidden gap-1 md:flex">
