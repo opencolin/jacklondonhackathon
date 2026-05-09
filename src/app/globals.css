@@ -85,10 +85,6 @@
   .live-dot {
     @apply inline-block h-2 w-2 rounded-full bg-emerald-500;
   }
-  /* BuilderShip wordmark variants — Composio default; Nebius shows when no data-theme is set */
-  .bs-logo-nebius { display: none; }
-  html:not([data-theme]) .bs-logo-composio { display: none; }
-  html:not([data-theme]) .bs-logo-nebius { display: block; }
   .grid-bg {
     background-image:
       linear-gradient(to right, rgba(5,43,66,0.06) 1px, transparent 1px),
