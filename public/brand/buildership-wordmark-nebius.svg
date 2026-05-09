@@ -18,7 +18,12 @@
   <text x="360" y="150" text-anchor="middle"
     font-family="'Lobster', 'Pacifico', 'Brush Script MT', cursive"
     font-size="150"
-    font-weight="400">
+    font-weight="400"
+    stroke="#ffffff"
+    stroke-width="6"
+    stroke-linejoin="round"
+    stroke-miterlimit="2"
+    paint-order="stroke">
     <tspan fill="url(#builderGradNebius)">Builder</tspan><tspan fill="url(#shipGradNebius)">Ship</tspan>
   </text>
 </svg>

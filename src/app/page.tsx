@@ -232,7 +232,7 @@ export default function HackJackLondonSquarePage() {
               <span className="pill-outline">Submit by May 28</span>
               <span className="pill-outline">Boat day May 30</span>
             </div>
-            <RotatingHeroTitle className="mt-6" />
+            <RotatingHeroTitle className="mt-12" />
             <p className="mt-7 max-w-2xl text-xl text-ink-600 dark:text-ink-300">
               Best builders of the bay. 30 of you on the boat — building, bowling, beer, beluga caviar, sunset cruise.
               Compete for $10k and a DGX Spark.
