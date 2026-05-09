@@ -3,20 +3,10 @@ import { SiteHeader } from "@/components/site-header";
 import { Footer } from "@/components/footer";
 import { Section, SectionHeader } from "@/components/section";
 import { EventList } from "@/components/event-list";
-import { EventFilters } from "@/components/event-filters";
 import { api } from "@/lib/trpc/server";
 import type { Event } from "@/lib/data";
 
 export const dynamic = "force-dynamic";
-
-const cities = ["All", "SF", "NYC", "LA", "London", "Berlin", "Remote"] as const;
-const formats = [
-  "All",
-  "Office hours",
-  "Hackathon",
-  "Meetup",
-  "Mini conference",
-] as const;
 
 const timeline = [
   {
@@ -96,13 +86,6 @@ export default async function EventsIndex() {
             ))}
           </ol>
         </Section>
-
-        <section className="border-y border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900">
-          <div className="container-page pt-12 pb-10">
-            <p className="mt-2 max-w-2xl text-base text-ink-600 dark:text-ink-300">Office hours, ClawCamp, and the May 30 boat day — RSVP via Luma where it's linked, or just show up.</p>
-            <EventFilters cities={cities} formats={formats} />
-          </div>
-        </section>
 
         {live.length ? (
           <section className="section bg-ink-50 dark:bg-ink-800">
