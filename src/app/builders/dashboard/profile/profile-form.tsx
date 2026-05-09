@@ -1,7 +1,6 @@
 "use client";
 
-import { useActionState } from "react";
-import { useFormStatus } from "react-dom";
+import { useFormState, useFormStatus } from "react-dom";
 import { saveProfile, type ProfileSaveState } from "./actions";
 
 const initialState: ProfileSaveState = { status: "idle" };
@@ -21,7 +20,7 @@ export function ProfileForm({
     twitterUrl: string;
   };
 }) {
-  const [state, formAction] = useActionState(saveProfile, initialState);
+  const [state, formAction] = useFormState(saveProfile, initialState);
   const fieldErrors = state.status === "error" ? state.fieldErrors ?? {} : {};
 
   return (
