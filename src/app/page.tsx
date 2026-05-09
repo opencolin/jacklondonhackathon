@@ -173,7 +173,7 @@ const schedule = [
 const faqs = [
   {
     q: "How do I apply?",
-    a: "Post something you've built — agent, demo, repo, video, weird side project — publicly on X, LinkedIn, or wherever you live. Tag @openclaw and the sponsor stack so we see it. We're picking the best builders of the bay, and the post is the whole signal: no essay, no resume. Drop the link in our Discord too if you want a deeper read.",
+    a: "Post something you've built — agent, demo, repo, video, weird side project — publicly on X, LinkedIn, or wherever you live. Tag @ship_builders @nebiusai @composio @tavilyai @openclaw so we see it. We're picking the best builders of the bay, and the post is the whole signal: no essay, no resume. Drop the link in our Discord too if you want a deeper read.",
   },
   {
     q: "What's the format?",
@@ -292,12 +292,12 @@ export default function HackJackLondonSquarePage() {
                 <p className="text-xs font-semibold uppercase tracking-widest text-navy-700 dark:text-lime">How to apply</p>
                 <ol className="mt-3 grid gap-3 text-sm leading-relaxed text-ink-700 dark:text-ink-200">
                   <li><span className="font-mono font-semibold text-navy-700 dark:text-lime">01.</span> Post something you built — an agent, demo, repo, video, anything. Public post on X, LinkedIn, or wherever you live.</li>
-                  <li><span className="font-mono font-semibold text-navy-700 dark:text-lime">02.</span> Tag <span className="font-semibold">@openclaw</span> and the sponsor stack so we see it. That's the whole signal.</li>
+                  <li><span className="font-mono font-semibold text-navy-700 dark:text-lime">02.</span> Tag <span className="font-semibold">@ship_builders @nebiusai @composio @tavilyai @openclaw</span> so we see it. That's the whole signal.</li>
                   <li><span className="font-mono font-semibold text-navy-700 dark:text-lime">03.</span> If you want a deeper read, drop the link in our Discord too.</li>
                 </ol>
               </div>
               <div className="flex flex-wrap gap-2 pt-1">
-                <Link href="https://x.com/intent/tweet?text=Show%20us%20your%20claws%20%40openclaw" className="btn-lime text-sm" target="_blank" rel="noreferrer">
+                <Link href="https://x.com/intent/tweet?text=Show%20us%20your%20claws%20%40ship_builders%20%40nebiusai%20%40composio%20%40tavilyai%20%40openclaw" className="btn-lime text-sm" target="_blank" rel="noreferrer">
                   Post on X →
                 </Link>
                 <Link href="https://www.linkedin.com/" className="btn-outline text-sm" target="_blank" rel="noreferrer">
@@ -590,7 +590,7 @@ export default function HackJackLondonSquarePage() {
                 Three weeks. Thirty finalists. One walk off the plank.
               </h2>
               <p className="mt-5 max-w-xl text-lg text-ink-100">
-                Post something you built, tag <strong className="font-semibold text-white">@openclaw</strong> and the sponsors,
+                Post something you built, tag <strong className="font-semibold text-white">@ship_builders @nebiusai @composio @tavilyai @openclaw</strong>,
                 and we'll see it. Submissions close <strong className="font-semibold text-white">May 28</strong>.
                 Finalists announced <strong className="font-semibold text-white">May 29</strong>.
                 Boat leaves South Beach at 9 AM <strong className="font-semibold text-white">May 30</strong>.
