@@ -89,6 +89,24 @@ export const partners: { name: string; tag?: string }[] = [
 
 export const events: Event[] = [
   {
+    id: "evt_buildership",
+    slug: "buildership",
+    title: "BuilderShip",
+    format: "HACKATHON",
+    state: "LIVE",
+    startDateTime: "2026-05-08T00:00:00-07:00",
+    endDateTime: "2026-05-30T23:59:00-07:00",
+    city: "SF",
+    venue: "Remote · finals on the bay, May 30",
+    isOnline: false,
+    cover: "from-accent-sky via-accent-blue to-navy-700",
+    description:
+      "Three-week remote AI hackathon hosted by Composio and Nebius. Submit by May 28. Top 30 builders earn a boat day on the bay, May 30. Compete for $10k and a DGX Spark.",
+    capacity: 30,
+    registered: 0,
+    partners: ["Composio", "Nebius", "Tavily", "OpenClaw"],
+  },
+  {
     id: "evt_oh_mon",
     slug: "office-hours-monday-zoom",
     title: "Office Hours · Monday Zoom",
@@ -384,7 +402,7 @@ export const teamsAsLeader = [
   {
     id: "team_muglife",
     name: "Muglife",
-    event: events.find((e) => e.id === "evt_clawcamp_humantech")!,
+    event: events.find((e) => e.id === "evt_buildership")!,
     invitations: [{ email: "alex@example.com", status: "PENDING" as const }],
     members: [
       { name: "Colin Lowenberg", role: "Lead" },

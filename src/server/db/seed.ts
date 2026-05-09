@@ -6,9 +6,21 @@ import {
   eventSponsors,
   officeHoursSessions,
 } from "./schema";
-import { sql } from "drizzle-orm";
+import { eq, sql } from "drizzle-orm";
 
 async function main() {
+  // Idempotency guard — skip the whole seed if the BuilderShip event row
+  // already exists. Lets us run db:seed on every Vercel build safely.
+  const existing = await db
+    .select()
+    .from(events)
+    .where(eq(events.slug, "buildership"))
+    .limit(1);
+  if (existing.length > 0) {
+    console.log("Seed: BuilderShip event already exists, skipping.");
+    return;
+  }
+
   console.log("Seeding sponsors…");
   const [nebius, composio, tavily] = await db
     .insert(sponsors)
