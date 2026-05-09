@@ -213,13 +213,13 @@ export default function HackJackLondonSquarePage() {
         {/* Hero */}
         <section className="relative -mt-16 overflow-hidden border-b border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900 md:-mt-[72px]">
           <img
-            src="/boat/bow-sunset-bridge.jpg"
+            src="/hero/lobster-yacht-bridge.png"
             alt=""
             aria-hidden
             className="absolute inset-0 h-full w-full object-cover opacity-90 dark:opacity-80"
           />
           <div
-            className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/55 to-white/0 dark:from-ink-900/95 dark:via-ink-900/55 dark:to-ink-900/0"
+            className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/60 to-white/10 dark:from-black/85 dark:via-black/55 dark:to-black/10"
             aria-hidden
           />
           <div className="absolute -right-24 -top-24 h-[460px] w-[460px] rounded-full bg-lime/40 blur-3xl dark:bg-lime/20" aria-hidden />
