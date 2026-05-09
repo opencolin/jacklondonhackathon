@@ -37,7 +37,7 @@ export function RotatingHeroTitle({ className }: { className?: string }) {
   return (
     <h1
       className={cn(
-        "h-display max-w-4xl text-5xl font-bold leading-[1.05] tracking-tight text-ink-900 sm:text-6xl lg:text-7xl dark:text-ink-50",
+        "h-display max-w-4xl min-h-[2lh] text-5xl font-bold leading-[1.05] tracking-tight text-ink-900 sm:text-6xl lg:text-7xl dark:text-ink-50",
         className,
       )}
     >
