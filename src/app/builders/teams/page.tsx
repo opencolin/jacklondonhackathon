@@ -62,13 +62,13 @@ export default async function TeamsPage() {
                           </ul>
                         </div>
                         <div className="flex flex-shrink-0 gap-2">
-                          <button className="btn-outline text-xs">Invite</button>
-                          <Link href="/builders/dashboard/events/evt_clawcamp/builder" className="btn-navy text-xs">Open team →</Link>
+                          <button type="button" className="btn-outline text-xs" disabled title="Invitations land in M2">Invite (soon)</button>
+                          <Link href={`/builders/dashboard/events/${t.event.id}/builder`} className="btn-navy text-xs">Open team →</Link>
                         </div>
                       </div>
                       <div className="mt-4 flex items-center justify-between rounded-lg border border-ink-200 bg-ink-50 p-3 text-sm dark:border-ink-700 dark:bg-ink-800">
                         <span><span className="font-medium">{t.project.name}</span> · status: {t.project.status.toLowerCase()} · video: {t.project.hasVideo ? "ready" : "not yet recorded"}</span>
-                        <Link href="/builders/dashboard/events/evt_clawcamp/builder#project" className="text-xs font-medium text-navy-700 hover:underline dark:text-lime">Edit project →</Link>
+                        <Link href={`/builders/dashboard/events/${t.event.id}/builder#project`} className="text-xs font-medium text-navy-700 hover:underline dark:text-lime">Edit project →</Link>
                       </div>
                     </div>
                   ))}

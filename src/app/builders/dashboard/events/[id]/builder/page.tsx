@@ -24,7 +24,15 @@ export default async function BuilderEventHub({ params }: { params: { id: string
   if (!session?.user) redirect("/builders/login");
 
   const trpc = await api();
-  const event = await trpc.events.byId({ id: params.id });
+  let event: Awaited<ReturnType<typeof trpc.events.byId>> | null = null;
+  try {
+    event = await trpc.events.byId({ id: params.id });
+  } catch {
+    // events.byId throws TRPCError NOT_FOUND when no event exists.
+    // Convert to a clean 404 so the route doesn't bubble up as a
+    // server-component render error.
+    return notFound();
+  }
   if (!event) return notFound();
 
   return (
