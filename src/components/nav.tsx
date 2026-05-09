@@ -30,7 +30,7 @@ export function TopNav() {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <Link href="/builders/login" className="btn-ghost hidden sm:inline-flex">Log in</Link>
-          <Link href="/#apply" className="btn-lime">Apply</Link>
+          <Link href="/#apply" className="btn-lime">Ship it</Link>
         </div>
       </div>
     </header>
