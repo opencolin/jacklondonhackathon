@@ -40,14 +40,14 @@ export default async function CompanyDashboard() {
   return (
     <>
       <AppHeader links={companyNav} />
-      <main className="bg-ink-50">
-        <section className="border-b border-ink-200 bg-white">
+      <main className="bg-ink-50 dark:bg-ink-800">
+        <section className="border-b border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900">
           <div className="container-page py-10">
             <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
               <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500">Company portal</p>
-                <h1 className="h-display mt-1 text-3xl font-bold tracking-tight">Nebius — host dashboard</h1>
-                <p className="mt-2 text-ink-600">Verified · Pro plan · Q3 2026 cycle</p>
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">Company portal</p>
+                <h1 className="h-display mt-1 text-3xl font-bold tracking-tight text-ink-900 dark:text-ink-50">Nebius — host dashboard</h1>
+                <p className="mt-2 text-ink-600 dark:text-ink-300">Verified · Pro plan · Q3 2026 cycle</p>
               </div>
               <div className="flex gap-2">
                 <Link href="/events/openmind-om1-build-night/manage" className="btn-navy">+ New event</Link>
@@ -108,7 +108,7 @@ export default async function CompanyDashboard() {
           </div>
         </section>
 
-        <section id="devrel" className="section bg-white">
+        <section id="devrel" className="section bg-white dark:bg-ink-900">
           <div className="container-page">
             <h2 className="h-display text-2xl font-bold">DevRel toolkit</h2>
             <p className="mt-2 max-w-2xl text-ink-600">Everything we surface so your DevRel team can act on what shipped at your event.</p>

@@ -30,7 +30,7 @@ export default async function BuilderEventHub({ params }: { params: { id: string
   return (
     <>
       <AppHeader links={builderNav} />
-      <main className="bg-ink-50">
+      <main className="bg-ink-50 dark:bg-ink-800">
         <section className={`relative overflow-hidden border-b border-ink-200 bg-gradient-to-br ${event.cover}`}>
           <div className="container-page py-10 text-navy-700">
             <Link href="/builders/dashboard" className="text-sm hover:underline">← Console</Link>
@@ -109,7 +109,7 @@ export default async function BuilderEventHub({ params }: { params: { id: string
           </div>
         </section>
 
-        <section id="project" className="section bg-white">
+        <section id="project" className="section bg-white dark:bg-ink-900">
           <div className="container-page">
             <h2 className="h-display text-2xl font-bold">Project submission</h2>
             <p className="mt-2 max-w-2xl text-ink-600">Fill once, edit until the deadline. The video step records inside the browser and uploads to the platform automatically.</p>
