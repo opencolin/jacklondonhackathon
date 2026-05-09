@@ -88,16 +88,18 @@ function ComposioLockup({
         x="220"
         y="170"
         textAnchor="start"
-        fontFamily="'Bungee', system-ui, sans-serif"
+        fontFamily="'Cinzel', 'Trajan Pro', 'Times New Roman', serif"
         fontSize="108"
+        fontWeight="700"
+        letterSpacing="2"
         stroke="rgba(255,255,255,0.18)"
         strokeWidth="3"
         strokeLinejoin="round"
         strokeMiterlimit="2"
         paintOrder="stroke"
       >
-        <tspan fill="url(#cBuilder)">Builder</tspan>
-        <tspan fill="url(#cShip)">Ship</tspan>
+        <tspan fill="url(#cBuilder)">BUILDER</tspan>
+        <tspan fill="url(#cShip)">SHIP</tspan>
       </text>
     </svg>
   );
@@ -150,14 +152,16 @@ function NebiusLockup({
         x="220"
         y="170"
         textAnchor="start"
-        fontFamily="'Bungee', system-ui, sans-serif"
+        fontFamily="'Cinzel', 'Trajan Pro', 'Times New Roman', serif"
         fontSize="108"
+        fontWeight="700"
+        letterSpacing="2"
         strokeLinejoin="round"
         strokeMiterlimit="2"
         paintOrder="stroke"
       >
-        <tspan fill="url(#nBuilder)" stroke="#E0FF4F" strokeWidth="5">Builder</tspan>
-        <tspan fill="url(#nShip)" stroke="#052B42" strokeWidth="5">Ship</tspan>
+        <tspan fill="url(#nBuilder)" stroke="#E0FF4F" strokeWidth="5">BUILDER</tspan>
+        <tspan fill="url(#nShip)" stroke="#052B42" strokeWidth="5">SHIP</tspan>
       </text>
     </svg>
   );

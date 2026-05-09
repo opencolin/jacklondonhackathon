@@ -15,7 +15,7 @@
       <stop offset="100%" stop-color="#052B42"/>
     </linearGradient>
     <style type="text/css">
-      @import url('https://fonts.googleapis.com/css2?family=Bungee&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&amp;display=swap');
     </style>
   </defs>
 
@@ -31,8 +31,8 @@
 
   <!-- Wordmark — per-tspan strokes so Builder pops on dark and Ship pops on light -->
   <text x="220" y="170" text-anchor="start"
-    font-family="'Bungee', system-ui, sans-serif" font-size="108"
+    font-family="'Cinzel', 'Trajan Pro', 'Times New Roman', serif" font-size="108" font-weight="700" letter-spacing="2"
     stroke-linejoin="round" stroke-miterlimit="2" paint-order="stroke">
-    <tspan fill="url(#nBuilder)" stroke="#E0FF4F" stroke-width="5">Builder</tspan><tspan fill="url(#nShip)" stroke="#052B42" stroke-width="5">Ship</tspan>
+    <tspan fill="url(#nBuilder)" stroke="#E0FF4F" stroke-width="5">BUILDER</tspan><tspan fill="url(#nShip)" stroke="#052B42" stroke-width="5">SHIP</tspan>
   </text>
 </svg>
