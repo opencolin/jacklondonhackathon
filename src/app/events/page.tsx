@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { SiteHeader } from "@/components/site-header";
 import { Footer } from "@/components/footer";
+import { Section, SectionHeader } from "@/components/section";
 import { EventList } from "@/components/event-list";
 import { EventFilters } from "@/components/event-filters";
 import { api } from "@/lib/trpc/server";
@@ -15,6 +16,33 @@ const formats = [
   "Hackathon",
   "Meetup",
   "Mini conference",
+] as const;
+
+const timeline = [
+  {
+    num: "01",
+    date: "Now → May 28",
+    title: "Build remotely",
+    body: "Three weeks to ship. Daily office hours online and in person. Sponsor credits and APIs available from day one.",
+  },
+  {
+    num: "02",
+    date: "Anytime → May 28",
+    title: "Submit on GitHub",
+    body: "Push your repo. AI judges review every submission. Want a deeper read? Schedule a live demo with human judges any time before the 28th.",
+  },
+  {
+    num: "03",
+    date: "May 29",
+    title: "Finalists announced",
+    body: "Top 30 builders named the night before. Twenty-four hours to polish your pitch and pack a jacket for the bay.",
+  },
+  {
+    num: "04",
+    date: "May 30",
+    title: "Boat day",
+    body: "Bay crossing, polish on the waterfront, an open kayak race on the Oakland waterfront, sunset cruise, dinner at a Jack London Square restaurant, demos, judging, after-party on the yacht.",
+  },
 ] as const;
 
 const finalsDaySchedule = [
@@ -51,11 +79,27 @@ export default async function EventsIndex() {
     <>
       <SiteHeader />
       <main>
-        <section className="border-b border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900">
-          <div className="container-page pt-16 pb-10">
-            <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">Schedule</p>
-            <h1 className="h-display text-4xl font-bold tracking-tight text-ink-900 md:text-5xl dark:text-ink-50">Three weeks. Thirty builders.<br />One day on the bay.</h1>
-            <p className="mt-4 max-w-2xl text-lg text-ink-600 dark:text-ink-300">Office hours, ClawCamp, and the May 30 boat day — RSVP via Luma where it's linked, or just show up.</p>
+        <Section bg="tint">
+          <SectionHeader
+            eyebrow="Schedule"
+            title={<>Three weeks. Thirty builders.<br />One day on the bay.</>}
+            body="The hackathon is mostly remote. The boat day is the celebration — and the finals."
+          />
+          <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            {timeline.map((s) => (
+              <li key={s.num} className="card flex h-full flex-col">
+                <span className="font-mono text-xs font-semibold text-navy-700 dark:text-lime">{s.num}</span>
+                <span className="pill-lime mt-3 self-start">{s.date}</span>
+                <h3 className="h-display mt-3 text-xl font-bold text-ink-900 dark:text-ink-50">{s.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-700 dark:text-ink-200">{s.body}</p>
+              </li>
+            ))}
+          </ol>
+        </Section>
+
+        <section className="border-y border-ink-200 bg-white dark:border-ink-800 dark:bg-ink-900">
+          <div className="container-page pt-12 pb-10">
+            <p className="mt-2 max-w-2xl text-base text-ink-600 dark:text-ink-300">Office hours, ClawCamp, and the May 30 boat day — RSVP via Luma where it's linked, or just show up.</p>
             <EventFilters cities={cities} formats={formats} />
           </div>
         </section>
