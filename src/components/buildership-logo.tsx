@@ -152,9 +152,12 @@ function NebiusLockup({
         textAnchor="start"
         fontFamily="'Bungee', system-ui, sans-serif"
         fontSize="108"
+        strokeLinejoin="round"
+        strokeMiterlimit="2"
+        paintOrder="stroke"
       >
-        <tspan fill="url(#nBuilder)">Builder</tspan>
-        <tspan fill="url(#nShip)">Ship</tspan>
+        <tspan fill="url(#nBuilder)" stroke="#E0FF4F" strokeWidth="5">Builder</tspan>
+        <tspan fill="url(#nShip)" stroke="#052B42" strokeWidth="5">Ship</tspan>
       </text>
     </svg>
   );

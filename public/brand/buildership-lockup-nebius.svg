@@ -29,9 +29,10 @@
     <path d="M 12 86 Q 27 82, 41 86 T 66 86 T 86 86" fill="none" stroke="#E0FF4F" stroke-width="2.5" stroke-linecap="round"/>
   </g>
 
-  <!-- Wordmark — no stroke; dark navy + lime read cleanly on Nebius's light surfaces -->
+  <!-- Wordmark — per-tspan strokes so Builder pops on dark and Ship pops on light -->
   <text x="220" y="170" text-anchor="start"
-    font-family="'Bungee', system-ui, sans-serif" font-size="108">
-    <tspan fill="url(#nBuilder)">Builder</tspan><tspan fill="url(#nShip)">Ship</tspan>
+    font-family="'Bungee', system-ui, sans-serif" font-size="108"
+    stroke-linejoin="round" stroke-miterlimit="2" paint-order="stroke">
+    <tspan fill="url(#nBuilder)" stroke="#E0FF4F" stroke-width="5">Builder</tspan><tspan fill="url(#nShip)" stroke="#052B42" stroke-width="5">Ship</tspan>
   </text>
 </svg>
