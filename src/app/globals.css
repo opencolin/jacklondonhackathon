@@ -264,4 +264,30 @@
     background: #0089FF;
     color: #FFFFFF;
   }
+
+  /* Lime accents → Composio blues
+     Override the lime palette site-wide when Composio theme is active.
+     Backgrounds: action blue #0089FF. Text: sky blue #51A2FF (lighter for readability). */
+  html[data-theme="composio"] .text-lime,
+  html[data-theme="composio"] .dark\:text-lime,
+  html[data-theme="composio"] .hover\:text-lime:hover,
+  html[data-theme="composio"] .dark\:hover\:text-lime:hover {
+    color: #51A2FF !important;
+  }
+  html[data-theme="composio"] .bg-lime,
+  html[data-theme="composio"] .dark\:bg-lime,
+  html[data-theme="composio"] .hover\:bg-lime:hover {
+    background-color: #0089FF !important;
+    color: #FFFFFF !important;
+  }
+  html[data-theme="composio"] .bg-lime\/80 { background-color: rgba(0, 137, 255, 0.80) !important; }
+  html[data-theme="composio"] .bg-lime\/40 { background-color: rgba(0, 137, 255, 0.40) !important; }
+  html[data-theme="composio"] .bg-lime\/20 { background-color: rgba(0, 137, 255, 0.20) !important; }
+  html[data-theme="composio"] .bg-lime\/10 { background-color: rgba(0, 137, 255, 0.10) !important; }
+  html[data-theme="composio"] .border-lime,
+  html[data-theme="composio"] .dark\:border-lime,
+  html[data-theme="composio"] .hover\:border-lime:hover,
+  html[data-theme="composio"] .dark\:hover\:border-lime:hover {
+    border-color: #0089FF !important;
+  }
 }
