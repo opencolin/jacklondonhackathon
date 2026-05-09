@@ -226,11 +226,11 @@ export default function HackJackLondonSquarePage() {
           <div className="absolute -left-24 bottom-0 h-[320px] w-[320px] rounded-full bg-navy-700/10 blur-3xl dark:bg-lime/10" aria-hidden />
           <div className="container-page relative pt-20 pb-24 sm:pt-28 sm:pb-28 lg:pt-36">
             <div className="flex flex-wrap items-center gap-2">
-              <span className="pill-lime">
-                <span className="live-dot" /> Office hours running
-              </span>
+              <span className="pill-outline">Office hours M–F</span>
               <span className="pill-outline">Submit by May 28</span>
-              <span className="pill-outline">Boat day May 30</span>
+              <span className="pill-lime">
+                <span className="live-dot" /> Boat day May 30
+              </span>
             </div>
             <RotatingHeroTitle className="mt-20" />
             <p className="mt-7 max-w-2xl text-xl text-ink-600 dark:text-ink-300">
