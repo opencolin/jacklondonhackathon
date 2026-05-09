@@ -1,4 +1,5 @@
-import { db } from "./index";
+import { drizzle } from "drizzle-orm/postgres-js";
+import postgres from "postgres";
 import {
   sponsors,
   venues,
@@ -9,6 +10,18 @@ import {
 import { eq, sql } from "drizzle-orm";
 
 async function main() {
+  const url =
+    process.env.DATABASE_URL_DIRECT ??
+    process.env.DATABASE_URL_UNPOOLED ??
+    process.env.DATABASE_URL;
+  if (!url) throw new Error("DATABASE_URL required");
+  const sqlClient = postgres(url, {
+    max: 1,
+    connect_timeout: 60,
+    prepare: false,
+  });
+  const db = drizzle(sqlClient);
+
   // Idempotency guard — skip the whole seed if the BuilderShip event row
   // already exists. Lets us run db:seed on every Vercel build safely.
   const existing = await db
@@ -145,6 +158,7 @@ async function main() {
 
   await db.execute(sql`select 1`);
   console.log("Seed complete.");
+  await sqlClient.end();
 }
 
 main()
