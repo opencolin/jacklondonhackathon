@@ -211,8 +211,8 @@
     transform: translateY(-1px);
   }
   html[data-theme="composio"] .pill-lime {
-    border-color: #5BD17A;
-    color: #5BD17A;
+    border-color: #0089FF;
+    color: #51A2FF;
   }
 
   /* Inputs */
