@@ -16,7 +16,7 @@
       <stop offset="100%" stop-color="#0089FF"/>
     </linearGradient>
     <style type="text/css">
-      @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;900&amp;display=swap');
+      @import url('https://fonts.googleapis.com/css2?family=Trade+Winds&amp;display=swap');
     </style>
   </defs>
 
@@ -32,8 +32,8 @@
 
   <!-- Wordmark — thin stroke for edge contrast on dark Composio bg -->
   <text x="220" y="170" text-anchor="start"
-    font-family="'Cinzel', 'Trajan Pro', 'Times New Roman', serif" font-size="108" font-weight="700" letter-spacing="2"
+    font-family="'Trade Winds', 'Pacifico', 'Brush Script MT', cursive" font-size="108" font-weight="400"
     stroke="rgba(255,255,255,0.18)" stroke-width="3" stroke-linejoin="round" stroke-miterlimit="2" paint-order="stroke">
-    <tspan fill="url(#cBuilder)">BUILDER</tspan><tspan fill="url(#cShip)">SHIP</tspan>
+    <tspan fill="url(#cBuilder)">Builder</tspan><tspan fill="url(#cShip)">Ship</tspan>
   </text>
 </svg>

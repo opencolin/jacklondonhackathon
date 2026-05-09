@@ -88,18 +88,17 @@ function ComposioLockup({
         x="220"
         y="170"
         textAnchor="start"
-        fontFamily="'Cinzel', 'Trajan Pro', 'Times New Roman', serif"
+        fontFamily="'Trade Winds', 'Pacifico', 'Brush Script MT', cursive"
         fontSize="108"
-        fontWeight="700"
-        letterSpacing="2"
+        fontWeight="400"
         stroke="rgba(255,255,255,0.18)"
         strokeWidth="3"
         strokeLinejoin="round"
         strokeMiterlimit="2"
         paintOrder="stroke"
       >
-        <tspan fill="url(#cBuilder)">BUILDER</tspan>
-        <tspan fill="url(#cShip)">SHIP</tspan>
+        <tspan fill="url(#cBuilder)">Builder</tspan>
+        <tspan fill="url(#cShip)">Ship</tspan>
       </text>
     </svg>
   );
@@ -152,16 +151,15 @@ function NebiusLockup({
         x="220"
         y="170"
         textAnchor="start"
-        fontFamily="'Cinzel', 'Trajan Pro', 'Times New Roman', serif"
+        fontFamily="'Trade Winds', 'Pacifico', 'Brush Script MT', cursive"
         fontSize="108"
-        fontWeight="700"
-        letterSpacing="2"
+        fontWeight="400"
         strokeLinejoin="round"
         strokeMiterlimit="2"
         paintOrder="stroke"
       >
-        <tspan fill="url(#nBuilder)" stroke="#E0FF4F" strokeWidth="5">BUILDER</tspan>
-        <tspan fill="url(#nShip)" stroke="#052B42" strokeWidth="5">SHIP</tspan>
+        <tspan fill="url(#nBuilder)" stroke="#E0FF4F" strokeWidth="5">Builder</tspan>
+        <tspan fill="url(#nShip)" stroke="#052B42" strokeWidth="5">Ship</tspan>
       </text>
     </svg>
   );
