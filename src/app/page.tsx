@@ -279,39 +279,6 @@ export default function HackJackLondonSquarePage() {
           </div>
         </section>
 
-        {/* Perks */}
-        <Section>
-          <SectionHeader
-            eyebrow="Finalist perks"
-            title="Make finals, win the boat day."
-            body="Only the top 30 — best of the best — earn the trip. Six experience perks on the house, plus the sponsor stack (that one's available to every builder from day one). Win the whole thing and you walk the plank."
-          />
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-            {perks.map((p) => (
-              <div key={p.title} className="card flex flex-col">
-                <span className="pill-lime self-start">{p.tag}</span>
-                <h3 className="h-display mt-4 text-2xl font-bold text-ink-900 dark:text-ink-50">{p.title}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-ink-700 dark:text-ink-200">{p.body}</p>
-              </div>
-            ))}
-          </div>
-          <div className="mt-8 rounded-card border border-ink-200 bg-white dark:border-ink-700 dark:bg-ink-900 p-6">
-            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-ink-500 dark:text-ink-400">And the sponsor stack</p>
-            <ul className="grid gap-3 sm:grid-cols-3">
-              {sdkPerks.map((line) => (
-                <li key={line} className="flex items-start gap-3 text-sm text-ink-800 dark:text-ink-100">
-                  <span className="mt-0.5 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-lime text-navy-700">
-                    <svg viewBox="0 0 20 20" fill="none" className="h-3 w-3">
-                      <path d="M4 10l4 4 8-8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </span>
-                  <span>{line}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </Section>
-
         {/* Apply */}
         <Section id="apply">
           <SectionHeader
@@ -374,6 +341,39 @@ export default function HackJackLondonSquarePage() {
               </li>
             ))}
           </ol>
+        </Section>
+
+        {/* Perks */}
+        <Section>
+          <SectionHeader
+            eyebrow="Finalist perks"
+            title="Make finals, win the boat day."
+            body="Only the top 30 — best of the best — earn the trip. Six experience perks on the house, plus the sponsor stack (that one's available to every builder from day one). Win the whole thing and you walk the plank."
+          />
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+            {perks.map((p) => (
+              <div key={p.title} className="card flex flex-col">
+                <span className="pill-lime self-start">{p.tag}</span>
+                <h3 className="h-display mt-4 text-2xl font-bold text-ink-900 dark:text-ink-50">{p.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-ink-700 dark:text-ink-200">{p.body}</p>
+              </div>
+            ))}
+          </div>
+          <div className="mt-8 rounded-card border border-ink-200 bg-white dark:border-ink-700 dark:bg-ink-900 p-6">
+            <p className="mb-4 text-xs font-semibold uppercase tracking-widest text-ink-500 dark:text-ink-400">And the sponsor stack</p>
+            <ul className="grid gap-3 sm:grid-cols-3">
+              {sdkPerks.map((line) => (
+                <li key={line} className="flex items-start gap-3 text-sm text-ink-800 dark:text-ink-100">
+                  <span className="mt-0.5 inline-flex h-5 w-5 flex-none items-center justify-center rounded-full bg-lime text-navy-700">
+                    <svg viewBox="0 0 20 20" fill="none" className="h-3 w-3">
+                      <path d="M4 10l4 4 8-8" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </span>
+                  <span>{line}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
         </Section>
 
         {/* Office hours */}
