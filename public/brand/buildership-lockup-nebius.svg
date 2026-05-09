@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 240" width="1240" height="240" role="img" aria-label="BuilderShip">
+  <defs>
+    <linearGradient id="nBuilder" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0E3F5C"/>
+      <stop offset="55%" stop-color="#073149"/>
+      <stop offset="100%" stop-color="#052B42"/>
+    </linearGradient>
+    <linearGradient id="nShip" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EFFF92"/>
+      <stop offset="55%" stop-color="#E0FF4F"/>
+      <stop offset="100%" stop-color="#D6F73A"/>
+    </linearGradient>
+    <linearGradient id="nBadge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#0E3F5C"/>
+      <stop offset="100%" stop-color="#052B42"/>
+    </linearGradient>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Bungee&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Mark: navy badge with lime sail -->
+  <g transform="translate(40, 50) scale(1.5625)">
+    <rect width="96" height="96" rx="19" fill="url(#nBadge)"/>
+    <line x1="48" y1="17" x2="48" y2="63" stroke="#E0FF4F" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 51 22 L 51 58 L 76 58 Z" fill="#E0FF4F"/>
+    <path d="M 45 30 L 45 58 L 27 58 Z" fill="#E0FF4F" opacity="0.92"/>
+    <path d="M 14 63 Q 19 80, 35 80 L 61 80 Q 77 80, 82 63 Z" fill="#E0FF4F"/>
+    <path d="M 12 86 Q 27 82, 41 86 T 66 86 T 86 86" fill="none" stroke="#E0FF4F" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Wordmark — no stroke; dark navy + lime read cleanly on Nebius's light surfaces -->
+  <text x="220" y="170" text-anchor="start"
+    font-family="'Bungee', system-ui, sans-serif" font-size="108">
+    <tspan fill="url(#nBuilder)">Builder</tspan><tspan fill="url(#nShip)">Ship</tspan>
+  </text>
+</svg>

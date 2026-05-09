@@ -85,6 +85,10 @@
   .live-dot {
     @apply inline-block h-2 w-2 rounded-full bg-emerald-500;
   }
+  /* BuilderShip lockup variants — Composio (default); Nebius shown when no data-theme is set */
+  .bs-lockup-nebius { display: none; }
+  html:not([data-theme]) .bs-lockup-composio { display: none; }
+  html:not([data-theme]) .bs-lockup-nebius { display: block; }
   .grid-bg {
     background-image:
       linear-gradient(to right, rgba(5,43,66,0.06) 1px, transparent 1px),

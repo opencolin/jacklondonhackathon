@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 240" width="1240" height="240" role="img" aria-label="BuilderShip">
+  <defs>
+    <linearGradient id="cBuilder" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#51A2FF"/>
+      <stop offset="55%" stop-color="#0089FF"/>
+      <stop offset="100%" stop-color="#0007CD"/>
+    </linearGradient>
+    <linearGradient id="cShip" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7FE9FF"/>
+      <stop offset="55%" stop-color="#51A2FF"/>
+      <stop offset="100%" stop-color="#0089FF"/>
+    </linearGradient>
+    <linearGradient id="cBadge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#7FE9FF"/>
+      <stop offset="55%" stop-color="#51A2FF"/>
+      <stop offset="100%" stop-color="#0089FF"/>
+    </linearGradient>
+    <style type="text/css">
+      @import url('https://fonts.googleapis.com/css2?family=Bungee&amp;display=swap');
+    </style>
+  </defs>
+
+  <!-- Mark: Ship icon scaled to 150x150 (1.5625 of 96) -->
+  <g transform="translate(40, 50) scale(1.5625)">
+    <rect width="96" height="96" rx="19" fill="url(#cBadge)" stroke="rgba(255,255,255,0.20)" stroke-width="2" stroke-linejoin="round"/>
+    <line x1="48" y1="17" x2="48" y2="63" stroke="#fff" stroke-width="3" stroke-linecap="round"/>
+    <path d="M 51 22 L 51 58 L 76 58 Z" fill="#fff"/>
+    <path d="M 45 30 L 45 58 L 27 58 Z" fill="#fff" opacity="0.92"/>
+    <path d="M 14 63 Q 19 80, 35 80 L 61 80 Q 77 80, 82 63 Z" fill="#fff"/>
+    <path d="M 12 86 Q 27 82, 41 86 T 66 86 T 86 86" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round"/>
+  </g>
+
+  <!-- Wordmark — thin stroke for edge contrast on dark Composio bg -->
+  <text x="220" y="170" text-anchor="start"
+    font-family="'Bungee', system-ui, sans-serif" font-size="108"
+    stroke="rgba(255,255,255,0.18)" stroke-width="3" stroke-linejoin="round" stroke-miterlimit="2" paint-order="stroke">
+    <tspan fill="url(#cBuilder)">Builder</tspan><tspan fill="url(#cShip)">Ship</tspan>
+  </text>
+</svg>
