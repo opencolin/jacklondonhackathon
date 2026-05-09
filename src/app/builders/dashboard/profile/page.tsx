@@ -5,6 +5,7 @@ import { safeAuth } from "@/server/lib/safe-auth";
 import { db } from "@/server/db";
 import { users } from "@/server/db/schema";
 import { eq } from "drizzle-orm";
+import { ProfileForm } from "./profile-form";
 
 export const dynamic = "force-dynamic";
 
@@ -63,44 +64,11 @@ export default async function ProfilePage() {
               <p className="mt-6 text-xs text-ink-500 dark:text-ink-400">Replace your avatar from your OAuth provider — we don't host upload.</p>
             </div>
 
-            <div className="card lg:col-span-2">
-              <h2 className="text-lg font-semibold text-ink-900 dark:text-ink-50">Identity</h2>
-              <p className="text-sm text-ink-500 dark:text-ink-400">Read-only fields are pulled from your OAuth provider.</p>
-              <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label className="label">Name</label>
-                  <p className="rounded-lg border border-ink-200 bg-ink-50 px-3.5 py-2.5 text-sm text-ink-700 dark:border-ink-700 dark:bg-ink-800 dark:text-ink-200">{name}</p>
-                </div>
-                <div>
-                  <label className="label">Email</label>
-                  <p className="rounded-lg border border-ink-200 bg-ink-50 px-3.5 py-2.5 text-sm text-ink-700 dark:border-ink-700 dark:bg-ink-800 dark:text-ink-200">{email}</p>
-                </div>
-                <div>
-                  <label className="label" htmlFor="phone">Phone</label>
-                  <input id="phone" className="input" placeholder="(optional)" defaultValue={phone} />
-                </div>
-                <div>
-                  <label className="label" htmlFor="github">GitHub</label>
-                  <input id="github" className="input" defaultValue={githubUrl} />
-                </div>
-                <div>
-                  <label className="label" htmlFor="linkedin">LinkedIn</label>
-                  <input id="linkedin" className="input" placeholder="https://linkedin.com/in/..." defaultValue={linkedinUrl} />
-                </div>
-                <div>
-                  <label className="label" htmlFor="discord">Discord handle</label>
-                  <input id="discord" className="input" placeholder="username" defaultValue={discordId} />
-                </div>
-                <div>
-                  <label className="label" htmlFor="twitter">X / Twitter</label>
-                  <input id="twitter" className="input" placeholder="@handle" defaultValue={twitterUrl} />
-                </div>
-              </div>
-              <div className="mt-6 flex justify-end gap-2">
-                <button className="btn-outline">Cancel</button>
-                <button className="btn-lime">Save changes</button>
-              </div>
-            </div>
+            <ProfileForm
+              name={name}
+              email={email}
+              initial={{ phone, githubUrl, linkedinUrl, discordId, twitterUrl }}
+            />
           </div>
         </section>
 
