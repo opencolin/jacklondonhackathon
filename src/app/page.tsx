@@ -293,7 +293,7 @@ export default function HackJackLondonSquarePage() {
                 <ol className="mt-3 grid gap-3 text-sm leading-relaxed text-ink-700 dark:text-ink-200">
                   <li><span className="font-mono font-semibold text-navy-700 dark:text-lime">01.</span> Post something you built — an agent, demo, repo, video, anything. Public post on X, LinkedIn, or wherever you live.</li>
                   <li><span className="font-mono font-semibold text-navy-700 dark:text-lime">02.</span> Tag <span className="font-semibold">@ship_builders @nebiusai @composio @tavilyai @openclaw</span> so we see it. That's the whole signal.</li>
-                  <li><span className="font-mono font-semibold text-navy-700 dark:text-lime">03.</span> If you want a deeper read, drop the link in our Discord too.</li>
+                  <li><span className="font-mono font-semibold text-navy-700 dark:text-lime">03.</span> Want a deeper read? Reply to our DM, or share a longer write-up wherever you post.</li>
                 </ol>
               </div>
               <div className="flex flex-wrap gap-2 pt-1">
@@ -303,9 +303,6 @@ export default function HackJackLondonSquarePage() {
                 <Link href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fship.builders" className="btn-outline text-sm" target="_blank" rel="noreferrer">
                   Post on LinkedIn →
                 </Link>
-                <span className="btn-ghost text-sm cursor-not-allowed opacity-60" title="Discord invite coming soon">
-                  Discord (soon)
-                </span>
               </div>
             </div>
             <div className="card bg-navy-700 text-white">

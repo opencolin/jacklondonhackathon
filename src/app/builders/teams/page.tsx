@@ -2,7 +2,7 @@ import Link from "next/link";
 import { redirect } from "next/navigation";
 import { AppHeader } from "@/components/app-chrome";
 import { MarkLoggedIn } from "@/components/mark-logged-in";
-import { teamsAsLeader, teamsAsMember, pendingInvitations } from "@/lib/data";
+import { teamsAsLeader } from "@/lib/data";
 import { formatDate } from "@/lib/utils";
 import { safeAuth } from "@/server/lib/safe-auth";
 
@@ -40,7 +40,6 @@ export default async function TeamsPage() {
             <div>
               <div className="mb-4 flex items-end justify-between">
                 <h2 className="text-xl font-bold tracking-tight text-ink-900 dark:text-ink-50">Teams you lead</h2>
-                <button type="button" className="btn-lime" disabled title="Team creation lands in M2">+ New team (soon)</button>
               </div>
               {teamsAsLeader.length === 0 ? (
                 <div className="card text-sm text-ink-500 dark:text-ink-400">No teams yet. Pick an event and start one.</div>
@@ -62,7 +61,6 @@ export default async function TeamsPage() {
                           </ul>
                         </div>
                         <div className="flex flex-shrink-0 gap-2">
-                          <button type="button" className="btn-outline text-xs" disabled title="Invitations land in M2">Invite (soon)</button>
                           <Link href={`/builders/dashboard/events/${t.event.id}/builder`} className="btn-navy text-xs">Open team →</Link>
                         </div>
                       </div>
@@ -76,38 +74,9 @@ export default async function TeamsPage() {
               )}
             </div>
 
-            <div>
-              <h2 className="mb-4 text-xl font-bold tracking-tight">Teams you're on</h2>
-              {teamsAsMember.length === 0 ? (
-                <div className="card text-sm text-ink-500 dark:text-ink-400">You're not on any other teams. Accept an invite below to join one.</div>
-              ) : null}
-            </div>
-
-            <div>
-              <h2 className="mb-4 text-xl font-bold tracking-tight">Pending invitations</h2>
-              <div className="grid gap-3">
-                {pendingInvitations.map((i) => (
-                  <div key={i.id} className="card flex items-center justify-between">
-                    <div>
-                      <p className="font-semibold">{i.teamName}</p>
-                      <p className="text-sm text-ink-500 dark:text-ink-400">{i.eventName} · invited by {i.leaderName}</p>
-                    </div>
-                    <div className="flex gap-2">
-                      <button type="button" className="btn-ghost text-xs" disabled title="Invitation flow coming in M2">Decline (soon)</button>
-                      <button type="button" className="btn-lime text-xs" disabled title="Invitation flow coming in M2">Accept (soon)</button>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-
             <div className="card bg-navy-700 text-white">
               <h3 className="text-lg font-semibold">Looking for teammates?</h3>
-              <p className="mt-2 text-sm text-ink-100">Drop into the OpenClaw Discord and post: name, skills, project idea, and what you're looking for. The Squad Leader for your city will route you.</p>
-              <div className="mt-4 flex gap-2">
-                <span className="btn-lime cursor-not-allowed opacity-60" title="Discord invite coming soon">Discord (soon)</span>
-                <Link className="btn-ghost text-white hover:bg-white/10" href="/docs/builders/create-a-team">Read the guide</Link>
-              </div>
+              <p className="mt-2 text-sm text-ink-100">Post what you're building and what you need on X — tag <span className="font-mono font-medium text-lime">@ship_builders @nebiusai @composio @tavilyai @openclaw</span>. Other builders find you there.</p>
             </div>
           </div>
         </section>

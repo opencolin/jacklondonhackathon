@@ -17,7 +17,7 @@ const builderNav = [
   { label: "Profile", href: "/builders/dashboard/profile" },
 ];
 
-const tabs = ["Overview", "Team", "Project", "IDE", "Feedback", "Volunteer"] as const;
+const tabs = ["Overview", "Project"] as const;
 
 export default async function BuilderEventHub({ params }: { params: { id: string } }) {
   const session = await safeAuth();
@@ -119,85 +119,32 @@ export default async function BuilderEventHub({ params }: { params: { id: string
 
         <section id="project" className="section bg-white dark:bg-ink-900">
           <div className="container-page">
-            <h2 className="h-display text-2xl font-bold">Project submission</h2>
-            <p className="mt-2 max-w-2xl text-ink-600">Fill once, edit until the deadline. The video step records inside the browser and uploads to the platform automatically.</p>
-            <form className="mt-8 grid gap-5 lg:grid-cols-2">
-              <div className="lg:col-span-2">
-                <label className="label" htmlFor="pname">Project name</label>
-                <input id="pname" className="input" defaultValue="Muglife" />
-              </div>
-              <div className="lg:col-span-2">
-                <label className="label" htmlFor="pdesc">Description</label>
-                <textarea id="pdesc" rows={4} className="input" defaultValue="A Nebius-powered coffee-shop concierge agent that books, reorders, and routes loyalty perks across chains." />
-                <p className="mt-1 text-xs text-ink-500">Clear descriptions make it much easier for organizers and judges to review your work.</p>
-              </div>
-              <div>
-                <label className="label" htmlFor="techs">Technologies</label>
-                <input id="techs" className="input" defaultValue="Token Factory, Contree, Tavily, Stripe" />
-              </div>
-              <div>
-                <label className="label" htmlFor="other">Other technologies</label>
-                <input id="other" className="input" placeholder="Anything we missed" />
-              </div>
-              <div>
-                <label className="label" htmlFor="github">GitHub repository URL</label>
-                <input id="github" className="input" placeholder="https://github.com/team/repo" />
-              </div>
-              <div>
-                <label className="label" htmlFor="members">Team members</label>
-                <input id="members" disabled className="input bg-ink-50" defaultValue="Colin Lowenberg, Priya Iyer" />
-              </div>
-              <div className="lg:col-span-2 flex items-start gap-3 rounded-lg border border-ink-200 bg-ink-50 p-4 text-sm">
-                <input type="checkbox" id="contact" defaultChecked className="mt-0.5 h-4 w-4 accent-navy-700" />
-                <label htmlFor="contact" className="text-ink-700">Allow partner companies to contact us beyond judging.</label>
-              </div>
-              <div className="lg:col-span-2 flex justify-between gap-2">
-                <button type="button" className="btn-outline" disabled title="Project save lands in M2">Save draft (soon)</button>
-                <button type="button" className="btn-lime" disabled title="Project save lands in M2">Save project (soon)</button>
-              </div>
-            </form>
-
-            <div className="mt-12 card">
-              <h3 className="text-lg font-semibold">Demo video</h3>
-              <p className="text-sm text-ink-500">Required for judging. Records in-browser using your screen, camera, and mic.</p>
-              <div className="mt-5 grid gap-4 md:grid-cols-3">
-                <div className="rounded-lg border border-dashed border-ink-200 bg-ink-50 p-5 text-center">
-                  <p className="text-sm font-medium">1. Pick a screen</p>
-                  <p className="mt-1 text-xs text-ink-500">Full screen recommended</p>
-                </div>
-                <div className="rounded-lg border border-dashed border-ink-200 bg-ink-50 p-5 text-center">
-                  <p className="text-sm font-medium">2. Camera + mic on</p>
-                  <p className="mt-1 text-xs text-ink-500">We need to see and hear you</p>
-                </div>
-                <div className="rounded-lg border border-dashed border-ink-200 bg-ink-50 p-5 text-center">
-                  <p className="text-sm font-medium">3. Hit record</p>
-                  <p className="mt-1 text-xs text-ink-500">90s minimum, 4 min max</p>
-                </div>
-              </div>
-              <button type="button" className="btn-navy mt-6" disabled title="In-browser recording lands in M2">Start recording (soon)</button>
-            </div>
-          </div>
-        </section>
-
-        <section id="feedback" className="section">
-          <div className="container-page">
-            <h2 className="h-display text-2xl font-bold">Feedback to partners</h2>
-            <p className="mt-2 max-w-2xl text-ink-600">Bonus: thoughtful feedback enters you in the raffle. AI-grading filters low-effort responses.</p>
-            <div className="mt-8 grid gap-4 md:grid-cols-2">
-              {event.partners.map((p: string) => (
-                <div key={p} className="card">
-                  <div className="flex items-center justify-between">
-                    <p className="font-semibold">{p}</p>
-                    <span className="pill-outline">not submitted</span>
-                  </div>
-                  <textarea rows={4} className="input mt-3" placeholder={`Tell ${p} what worked, what hurt, and what you'd want next quarter.`} />
-                  <div className="mt-3 flex justify-end gap-2">
-                    <button type="button" className="btn-outline text-xs" disabled title="Feedback submission lands in M2">Save draft (soon)</button>
-                    <button type="button" className="btn-lime text-xs" disabled title="Feedback submission lands in M2">Submit (soon)</button>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <h2 className="h-display text-2xl font-bold text-ink-900 dark:text-ink-50">How to submit your project</h2>
+            <p className="mt-2 max-w-2xl text-ink-600 dark:text-ink-300">
+              Until in-app submission opens, post your project publicly and tag the sponsors — that's the application.
+            </p>
+            <ol className="mt-8 grid gap-4 md:grid-cols-2">
+              <li className="card">
+                <p className="text-xs font-mono font-semibold text-navy-700 dark:text-lime">01</p>
+                <h3 className="mt-2 text-lg font-semibold text-ink-900 dark:text-ink-50">Push your repo to GitHub</h3>
+                <p className="mt-2 text-sm text-ink-600 dark:text-ink-300">Public preferred so AI judges can read it. Private is fine if you can grant access during finals.</p>
+              </li>
+              <li className="card">
+                <p className="text-xs font-mono font-semibold text-navy-700 dark:text-lime">02</p>
+                <h3 className="mt-2 text-lg font-semibold text-ink-900 dark:text-ink-50">Post a demo + repo link on X</h3>
+                <p className="mt-2 text-sm text-ink-600 dark:text-ink-300">90 seconds is plenty. Tag <span className="font-mono font-medium">@ship_builders @nebiusai @composio @tavilyai @openclaw</span>.</p>
+              </li>
+              <li className="card">
+                <p className="text-xs font-mono font-semibold text-navy-700 dark:text-lime">03</p>
+                <h3 className="mt-2 text-lg font-semibold text-ink-900 dark:text-ink-50">Want a live read?</h3>
+                <p className="mt-2 text-sm text-ink-600 dark:text-ink-300">Show up to office hours any weekday before May 28 and walk a sponsor engineer through it.</p>
+              </li>
+              <li className="card">
+                <p className="text-xs font-mono font-semibold text-navy-700 dark:text-lime">04</p>
+                <h3 className="mt-2 text-lg font-semibold text-ink-900 dark:text-ink-50">May 29</h3>
+                <p className="mt-2 text-sm text-ink-600 dark:text-ink-300">Top 30 finalists named the night of the 29th. If you're in, the boat leaves South Beach at 9 AM May 30.</p>
+              </li>
+            </ol>
           </div>
         </section>
       </main>
