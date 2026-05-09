@@ -17,7 +17,10 @@ const titles: Title[] = [
   { highlight: "Yachts", suffix: " & Bots" },
   { highlight: "AI", suffix: " on the Bay" },
   { prefix: "Hack on a ", highlight: "Yacht" },
-  { highlight: "Wave", suffix: " Makers" },
+  { prefix: "Real builders ", highlight: "ship" },
+  { prefix: "Just ", highlight: "ship", suffix: " it" },
+  { prefix: "Vibe ", highlight: "Voyage" },
+  { prefix: "Show us your ", highlight: "claws" },
 ];
 
 const INTERVAL_MS = 2000;

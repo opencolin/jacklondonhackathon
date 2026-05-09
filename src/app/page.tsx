@@ -254,7 +254,7 @@ export default function HackJackLondonSquarePage() {
             </div>
             <div className="mt-10 flex flex-wrap items-center gap-3">
               <Link href="#apply" className="btn-lime px-6 py-3.5 text-sm">
-                Show us your claws →
+                Ship it right now →
               </Link>
               <Link href="#how-it-works" className="btn-outline px-6 py-3.5 text-sm">
                 Schedule
@@ -598,7 +598,7 @@ export default function HackJackLondonSquarePage() {
             </div>
             <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
               <Link href="#apply" className="btn-lime px-6 py-3.5 text-sm">
-                Show us your claws →
+                Ship it right now →
               </Link>
               <Link
                 href="mailto:events@agenthack.ai"
