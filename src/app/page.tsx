@@ -300,12 +300,12 @@ export default function HackJackLondonSquarePage() {
                 <Link href="https://x.com/intent/tweet?text=Show%20us%20your%20claws%20%40ship_builders%20%40nebiusai%20%40composio%20%40tavilyai%20%40openclaw" className="btn-lime text-sm" target="_blank" rel="noreferrer">
                   Post on X →
                 </Link>
-                <Link href="https://www.linkedin.com/" className="btn-outline text-sm" target="_blank" rel="noreferrer">
+                <Link href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fship.builders" className="btn-outline text-sm" target="_blank" rel="noreferrer">
                   Post on LinkedIn →
                 </Link>
-                <Link href="#" className="btn-ghost text-sm">
-                  Drop in Discord →
-                </Link>
+                <span className="btn-ghost text-sm cursor-not-allowed opacity-60" title="Discord invite coming soon">
+                  Discord (soon)
+                </span>
               </div>
             </div>
             <div className="card bg-navy-700 text-white">

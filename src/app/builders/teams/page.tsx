@@ -40,7 +40,7 @@ export default async function TeamsPage() {
             <div>
               <div className="mb-4 flex items-end justify-between">
                 <h2 className="text-xl font-bold tracking-tight text-ink-900 dark:text-ink-50">Teams you lead</h2>
-                <button className="btn-lime">+ New team</button>
+                <button type="button" className="btn-lime" disabled title="Team creation lands in M2">+ New team (soon)</button>
               </div>
               {teamsAsLeader.length === 0 ? (
                 <div className="card text-sm text-ink-500 dark:text-ink-400">No teams yet. Pick an event and start one.</div>
@@ -93,8 +93,8 @@ export default async function TeamsPage() {
                       <p className="text-sm text-ink-500 dark:text-ink-400">{i.eventName} · invited by {i.leaderName}</p>
                     </div>
                     <div className="flex gap-2">
-                      <button className="btn-ghost text-xs">Decline</button>
-                      <button className="btn-lime text-xs">Accept</button>
+                      <button type="button" className="btn-ghost text-xs" disabled title="Invitation flow coming in M2">Decline (soon)</button>
+                      <button type="button" className="btn-lime text-xs" disabled title="Invitation flow coming in M2">Accept (soon)</button>
                     </div>
                   </div>
                 ))}
@@ -105,7 +105,7 @@ export default async function TeamsPage() {
               <h3 className="text-lg font-semibold">Looking for teammates?</h3>
               <p className="mt-2 text-sm text-ink-100">Drop into the OpenClaw Discord and post: name, skills, project idea, and what you're looking for. The Squad Leader for your city will route you.</p>
               <div className="mt-4 flex gap-2">
-                <a className="btn-lime" href="#">Join the Discord →</a>
+                <span className="btn-lime cursor-not-allowed opacity-60" title="Discord invite coming soon">Discord (soon)</span>
                 <Link className="btn-ghost text-white hover:bg-white/10" href="/docs/builders/create-a-team">Read the guide</Link>
               </div>
             </div>

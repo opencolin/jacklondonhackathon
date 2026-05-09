@@ -152,8 +152,8 @@ export default async function BuilderEventHub({ params }: { params: { id: string
                 <label htmlFor="contact" className="text-ink-700">Allow partner companies to contact us beyond judging.</label>
               </div>
               <div className="lg:col-span-2 flex justify-between gap-2">
-                <button type="button" className="btn-outline">Save draft</button>
-                <button type="button" className="btn-lime">Save project</button>
+                <button type="button" className="btn-outline" disabled title="Project save lands in M2">Save draft (soon)</button>
+                <button type="button" className="btn-lime" disabled title="Project save lands in M2">Save project (soon)</button>
               </div>
             </form>
 
@@ -174,7 +174,7 @@ export default async function BuilderEventHub({ params }: { params: { id: string
                   <p className="mt-1 text-xs text-ink-500">90s minimum, 4 min max</p>
                 </div>
               </div>
-              <button className="btn-navy mt-6">Start recording</button>
+              <button type="button" className="btn-navy mt-6" disabled title="In-browser recording lands in M2">Start recording (soon)</button>
             </div>
           </div>
         </section>
@@ -192,8 +192,8 @@ export default async function BuilderEventHub({ params }: { params: { id: string
                   </div>
                   <textarea rows={4} className="input mt-3" placeholder={`Tell ${p} what worked, what hurt, and what you'd want next quarter.`} />
                   <div className="mt-3 flex justify-end gap-2">
-                    <button className="btn-outline text-xs">Save draft</button>
-                    <button className="btn-lime text-xs">Submit</button>
+                    <button type="button" className="btn-outline text-xs" disabled title="Feedback submission lands in M2">Save draft (soon)</button>
+                    <button type="button" className="btn-lime text-xs" disabled title="Feedback submission lands in M2">Submit (soon)</button>
                   </div>
                 </div>
               ))}
