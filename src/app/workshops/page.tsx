@@ -4,7 +4,7 @@ import { Footer } from "@/components/footer";
 import { WorkshopCard } from "@/components/workshop-card";
 import { workshops } from "@/lib/data";
 
-const tags = ["All", "openclaw", "nebius", "token-factory", "tutorial"];
+const tags = ["All", "nebius", "token-factory", "composio", "tavily", "openclaw", "tutorial"];
 
 export default function WorkshopsIndex({
   searchParams,
