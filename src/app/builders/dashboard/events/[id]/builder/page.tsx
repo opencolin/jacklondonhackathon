@@ -40,7 +40,7 @@ export default async function BuilderEventHub({ params }: { params: { id: string
       <AppHeader links={builderNav} />
       <main className="bg-ink-50 dark:bg-ink-800">
         <section className={`relative overflow-hidden border-b border-ink-200 bg-gradient-to-br ${event.cover}`}>
-          <div className="container-page py-10 text-navy-700">
+          <div className="container-page py-10 text-white drop-shadow-sm">
             <Link href="/builders/dashboard" className="text-sm hover:underline">← Console</Link>
             <div className="mt-3 flex flex-wrap items-center gap-2">
               {event.state === "LIVE" ? <span className="pill-navy"><span className="live-dot mr-1" /> Live now</span> : <span className="pill bg-white/90 text-navy-700">{event.state.toLowerCase()}</span>}
