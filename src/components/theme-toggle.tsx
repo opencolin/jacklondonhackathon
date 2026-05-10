@@ -60,7 +60,7 @@ export function ThemeToggle() {
       onClick={cycle}
       title={`Theme: ${label} (click to cycle)`}
       aria-label={`Theme: ${label}. Click to cycle between system, light, and dark.`}
-      className="inline-flex h-9 w-9 items-center justify-center rounded-pill border border-ink-200 bg-white text-ink-700 transition-colors hover:border-ink-300 hover:text-ink-900 dark:border-ink-700 dark:bg-ink-900 dark:text-ink-200 dark:hover:border-ink-600 dark:hover:text-ink-50"
+      className="bs-theme-toggle inline-flex h-9 w-9 items-center justify-center rounded-pill border border-ink-200 bg-white text-ink-700 transition-colors hover:border-ink-300 hover:text-ink-900 dark:border-ink-700 dark:bg-ink-900 dark:text-ink-200 dark:hover:border-ink-600 dark:hover:text-ink-50"
     >
       {!mounted ? (
         <SystemIcon />
