@@ -118,7 +118,7 @@ export const users = pgTable(
     id: uuid("id").primaryKey().defaultRandom(),
     email: citext("email").notNull(),
     name: text("name"),
-    imageUrl: text("image_url"),
+    image: text("image_url"),
     githubUrl: text("github_url"),
     githubLogin: text("github_login"),
     linkedinUrl: text("linkedin_url"),

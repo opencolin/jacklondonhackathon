@@ -56,13 +56,11 @@ function items<T>(result: { items: T[] } | T[]): T[] {
 
 export default async function EventsIndex() {
   const trpc = await api();
-  const [liveRes, upcomingRes, pastRes] = await Promise.all([
+  const [liveRes, pastRes] = await Promise.all([
     trpc.events.list({ state: "live", limit: 50 }),
-    trpc.events.list({ state: "published", limit: 50 }),
     trpc.events.list({ state: "completed", limit: 50 }),
   ]);
   const live = items<Event>(liveRes);
-  const upcoming = items<Event>(upcomingRes);
   const past = items<Event>(pastRes);
 
   return (
@@ -91,20 +89,13 @@ export default async function EventsIndex() {
           <section className="section bg-ink-50 dark:bg-ink-800">
             <div className="container-page">
               <div className="mb-8 flex items-end justify-between">
-                <h2 className="h-display text-3xl font-bold text-ink-900 dark:text-ink-50">Live now</h2>
+                <h2 className="h-display text-3xl font-bold text-ink-900 dark:text-ink-50">Upcoming sessions</h2>
                 <span className="pill-lime"><span className="live-dot" /> {live.length} live</span>
               </div>
               <EventList events={live} />
             </div>
           </section>
         ) : null}
-
-        <section className="bg-white pb-20 pt-10 dark:bg-ink-900 sm:pb-24 lg:pb-28">
-          <div className="container-page">
-            <h2 className="mb-8 h-display text-3xl font-bold text-ink-900 dark:text-ink-50">Upcoming sessions</h2>
-            <EventList events={upcoming} emptyLabel="No upcoming sessions." />
-          </div>
-        </section>
 
         <section className="border-t border-ink-200 bg-ink-50 pt-16 pb-20 dark:border-ink-800 dark:bg-ink-800 sm:pb-24 lg:pb-28">
           <div className="container-page">

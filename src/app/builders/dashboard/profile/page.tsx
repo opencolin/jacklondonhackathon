@@ -28,7 +28,13 @@ export default async function ProfilePage() {
 
   const name = session.user.name ?? user?.name ?? "Builder";
   const email = session.user.email ?? user?.email ?? "";
-  const image = session.user.image ?? user?.imageUrl ?? "";
+  const image = session.user.image ?? user?.image ?? "";
+  const initials = (name || email || "?")
+    .split(/[ @.]/)
+    .filter(Boolean)
+    .slice(0, 2)
+    .map((s) => s[0]?.toUpperCase())
+    .join("");
   const phone = user?.phone ?? "";
   const githubUrl = user?.githubUrl ?? "";
   const linkedinUrl = user?.linkedinUrl ?? "";
@@ -54,8 +60,14 @@ export default async function ProfilePage() {
           <div className="container-page grid gap-8 lg:grid-cols-3">
             <div className="card flex flex-col items-center text-center">
               <div className="relative mb-4 inline-flex">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={image} alt={name} className="h-32 w-32 rounded-full border-4 border-lime object-cover" />
+                {image ? (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={image} alt={name} className="h-32 w-32 rounded-full border-4 border-lime object-cover" />
+                ) : (
+                  <div className="flex h-32 w-32 items-center justify-center rounded-full border-4 border-lime bg-ink-100 text-3xl font-bold text-navy-700 dark:bg-ink-800 dark:text-lime">
+                    {initials}
+                  </div>
+                )}
                 <span className="absolute -bottom-1 right-0 inline-flex h-7 w-7 items-center justify-center rounded-full border-2 border-white bg-lime text-xs font-bold text-navy-700 dark:border-ink-900">N</span>
               </div>
               <p className="text-base font-semibold text-ink-900 dark:text-ink-50">{name}</p>

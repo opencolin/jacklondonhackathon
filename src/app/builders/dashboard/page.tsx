@@ -57,19 +57,6 @@ export default async function BuilderDashboard() {
                 <Link href="/builders/teams" className="btn-outline">Teams</Link>
               </div>
             </div>
-            <dl className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
-              {[
-                ["Total demos", "12"],
-                ["Projects shipped", "8"],
-                ["Workshop minutes", "184"],
-                ["Rank", "#312"],
-              ].map(([l, v]) => (
-                <div key={l} className="card">
-                  <dt className="text-xs font-semibold uppercase tracking-widest text-ink-500 dark:text-ink-400">{l}</dt>
-                  <dd className="mt-2 text-2xl font-bold text-navy-700 dark:text-lime">{v}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
         </section>
 
