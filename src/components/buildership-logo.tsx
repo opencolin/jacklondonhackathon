@@ -131,7 +131,7 @@ function ComposioLockup({
         </clipPath>
       </defs>
       <g transform="translate(40, 45) scale(1.5625)">
-        <YachtMark badgeFill="url(#cBadge)" detailColor="#fff" clipId="cMarkClip" />
+        <YachtMark badgeFill="url(#cBadge)" detailColor="#0a1929" clipId="cMarkClip" />
       </g>
       <text
         x="220"
