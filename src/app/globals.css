@@ -86,13 +86,13 @@
     @apply inline-block h-2 w-2 rounded-full bg-emerald-500;
   }
   /* BuilderShip lockup variants — Composio (default); Nebius shown when no data-theme is set */
-  .bs-lockup-nebius { display: none; }
-  html:not([data-theme]) .bs-lockup-composio { display: none; }
-  html:not([data-theme]) .bs-lockup-nebius { display: block; }
+  .bs-lockup-green { display: none; }
+  html:not([data-theme]) .bs-lockup-orange { display: none; }
+  html:not([data-theme]) .bs-lockup-green { display: block; }
 
   /* Composio theme is dark-only by brand. Hide the dark/light toggle so users
      don't accidentally toggle into a half-styled light mode. */
-  html[data-theme="composio"] .bs-theme-toggle { display: none !important; }
+  html[data-theme="orange"] .bs-theme-toggle { display: none !important; }
   .grid-bg {
     background-image:
       linear-gradient(to right, rgba(5,43,66,0.06) 1px, transparent 1px),
@@ -125,23 +125,23 @@
 }
 
 /* -------------------------------------------------------------------------
- * Composio theme override — opt-in via <html data-theme="composio">
+ * Composio theme override — opt-in via <html data-theme="orange">
  * Toggled by ?theme=composio URL param or the footer toggle.
  * Re-skins the existing primitive classes; no page-level edits required.
  * ------------------------------------------------------------------------- */
 @layer components {
-  html.dark[data-theme="composio"],
-  html.dark[data-theme="composio"] body {
+  html.dark[data-theme="orange"],
+  html.dark[data-theme="orange"] body {
     background: #000000;
     color: rgba(255, 255, 255, 0.80);
   }
 
   /* Buttons → square, mono, uppercase, white-on-black */
-  html.dark[data-theme="composio"] .btn,
-  html.dark[data-theme="composio"] .btn-lime,
-  html.dark[data-theme="composio"] .btn-navy,
-  html.dark[data-theme="composio"] .btn-outline,
-  html.dark[data-theme="composio"] .btn-ghost {
+  html.dark[data-theme="orange"] .btn,
+  html.dark[data-theme="orange"] .btn-lime,
+  html.dark[data-theme="orange"] .btn-navy,
+  html.dark[data-theme="orange"] .btn-outline,
+  html.dark[data-theme="orange"] .btn-ghost {
     border-radius: 0;
     font-family: "JetBrains Mono", ui-monospace, monospace;
     font-weight: 400;
@@ -149,51 +149,51 @@
     text-transform: uppercase;
     font-size: 14px;
   }
-  html.dark[data-theme="composio"] .btn-lime,
-  html.dark[data-theme="composio"] .btn-navy {
+  html.dark[data-theme="orange"] .btn-lime,
+  html.dark[data-theme="orange"] .btn-navy {
     background: #FFFFFF;
     color: #000000;
   }
-  html.dark[data-theme="composio"] .btn-lime:hover,
-  html.dark[data-theme="composio"] .btn-navy:hover {
+  html.dark[data-theme="orange"] .btn-lime:hover,
+  html.dark[data-theme="orange"] .btn-navy:hover {
     background: #DCDCDC;
     color: #000000;
   }
-  html.dark[data-theme="composio"] .btn-outline {
+  html.dark[data-theme="orange"] .btn-outline {
     background: transparent;
     color: #FFFFFF;
     border: 1px solid rgba(255, 255, 255, 0.24);
   }
-  html.dark[data-theme="composio"] .btn-outline:hover {
+  html.dark[data-theme="orange"] .btn-outline:hover {
     background: rgba(255, 255, 255, 0.04);
     border-color: rgba(255, 255, 255, 0.40);
   }
-  html.dark[data-theme="composio"] .btn-ghost {
+  html.dark[data-theme="orange"] .btn-ghost {
     background: transparent;
     color: #FFFFFF;
   }
-  html.dark[data-theme="composio"] .btn-ghost:hover {
+  html.dark[data-theme="orange"] .btn-ghost:hover {
     background: rgba(255, 255, 255, 0.04);
   }
 
   /* Cards → square, hairline border, no shadow */
-  html.dark[data-theme="composio"] .card {
+  html.dark[data-theme="orange"] .card {
     border-radius: 0;
     background: #0F0F0F;
     border: 1px solid rgba(255, 255, 255, 0.08);
     box-shadow: none;
     color: rgba(255, 255, 255, 0.80);
   }
-  html.dark[data-theme="composio"] .card:hover {
+  html.dark[data-theme="orange"] .card:hover {
     border-color: rgba(255, 255, 255, 0.16);
   }
 
   /* Pills → outlined eyebrow boxes with leading filled square */
-  html.dark[data-theme="composio"] .pill,
-  html.dark[data-theme="composio"] .pill-lime,
-  html.dark[data-theme="composio"] .pill-navy,
-  html.dark[data-theme="composio"] .pill-ink,
-  html.dark[data-theme="composio"] .pill-outline {
+  html.dark[data-theme="orange"] .pill,
+  html.dark[data-theme="orange"] .pill-lime,
+  html.dark[data-theme="orange"] .pill-navy,
+  html.dark[data-theme="orange"] .pill-ink,
+  html.dark[data-theme="orange"] .pill-outline {
     border-radius: 0;
     border: 1px solid rgba(255, 255, 255, 0.24);
     background: transparent;
@@ -204,39 +204,39 @@
     font-size: 12px;
     padding: 4px 8px;
   }
-  html.dark[data-theme="composio"] .pill::before,
-  html.dark[data-theme="composio"] .pill-outline::before,
-  html.dark[data-theme="composio"] .pill-lime::before,
-  html.dark[data-theme="composio"] .pill-navy::before,
-  html.dark[data-theme="composio"] .pill-ink::before {
+  html.dark[data-theme="orange"] .pill::before,
+  html.dark[data-theme="orange"] .pill-outline::before,
+  html.dark[data-theme="orange"] .pill-lime::before,
+  html.dark[data-theme="orange"] .pill-navy::before,
+  html.dark[data-theme="orange"] .pill-ink::before {
     content: "■";
     margin-right: 6px;
     font-size: 8px;
     display: inline-block;
     transform: translateY(-1px);
   }
-  html.dark[data-theme="composio"] .pill-lime {
+  html.dark[data-theme="orange"] .pill-lime {
     border-color: #FF6B35;
     color: #FFA37A;
   }
 
   /* Inputs */
-  html.dark[data-theme="composio"] .input {
+  html.dark[data-theme="orange"] .input {
     border-radius: 0;
     background: #0F0F0F;
     border: 1px solid rgba(255, 255, 255, 0.08);
     color: #FFFFFF;
   }
-  html.dark[data-theme="composio"] .input::placeholder {
+  html.dark[data-theme="orange"] .input::placeholder {
     color: rgba(255, 255, 255, 0.40);
   }
-  html.dark[data-theme="composio"] .input:focus {
+  html.dark[data-theme="orange"] .input:focus {
     border-color: #FF6B35;
     box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.20);
     outline: none;
   }
 
-  html.dark[data-theme="composio"] .kbd {
+  html.dark[data-theme="orange"] .kbd {
     border-radius: 0;
     background: #1E1E1E;
     border-color: rgba(255, 255, 255, 0.08);
@@ -244,28 +244,28 @@
   }
 
   /* Hide decorative blur orbs in the hero */
-  html.dark[data-theme="composio"] [class*="blur-3xl"][class*="rounded-full"] {
+  html.dark[data-theme="orange"] [class*="blur-3xl"][class*="rounded-full"] {
     display: none !important;
   }
 
   /* Status dot → Composio green */
-  html.dark[data-theme="composio"] .live-dot { background: #5BD17A; }
+  html.dark[data-theme="orange"] .live-dot { background: #5BD17A; }
 
   /* Hero h1 → tight 0.87 line-height, weight 400 (most distinctive Composio move) */
-  html.dark[data-theme="composio"] .h-display {
+  html.dark[data-theme="orange"] .h-display {
     line-height: 0.87;
     letter-spacing: normal;
     font-weight: 400;
   }
 
   /* Section padding bumped to ~120px for Composio's airy rhythm */
-  html.dark[data-theme="composio"] .section {
+  html.dark[data-theme="orange"] .section {
     padding-top: 120px;
     padding-bottom: 120px;
   }
 
   /* Selection color */
-  html.dark[data-theme="composio"] ::selection {
+  html.dark[data-theme="orange"] ::selection {
     background: #FF6B35;
     color: #FFFFFF;
   }
@@ -273,26 +273,26 @@
   /* Lime accents → Composio blues
      Override the lime palette site-wide when Composio theme is active.
      Backgrounds: action blue #FF6B35. Text: sky blue #FFA37A (lighter for readability). */
-  html.dark[data-theme="composio"] .text-lime,
-  html.dark[data-theme="composio"] .dark\:text-lime,
-  html.dark[data-theme="composio"] .hover\:text-lime:hover,
-  html.dark[data-theme="composio"] .dark\:hover\:text-lime:hover {
+  html.dark[data-theme="orange"] .text-lime,
+  html.dark[data-theme="orange"] .dark\:text-lime,
+  html.dark[data-theme="orange"] .hover\:text-lime:hover,
+  html.dark[data-theme="orange"] .dark\:hover\:text-lime:hover {
     color: #FFA37A !important;
   }
-  html.dark[data-theme="composio"] .bg-lime,
-  html.dark[data-theme="composio"] .dark\:bg-lime,
-  html.dark[data-theme="composio"] .hover\:bg-lime:hover {
+  html.dark[data-theme="orange"] .bg-lime,
+  html.dark[data-theme="orange"] .dark\:bg-lime,
+  html.dark[data-theme="orange"] .hover\:bg-lime:hover {
     background-color: #FF6B35 !important;
     color: #FFFFFF !important;
   }
-  html.dark[data-theme="composio"] .bg-lime\/80 { background-color: rgba(255, 107, 53, 0.80) !important; }
-  html.dark[data-theme="composio"] .bg-lime\/40 { background-color: rgba(255, 107, 53, 0.40) !important; }
-  html.dark[data-theme="composio"] .bg-lime\/20 { background-color: rgba(255, 107, 53, 0.20) !important; }
-  html.dark[data-theme="composio"] .bg-lime\/10 { background-color: rgba(255, 107, 53, 0.10) !important; }
-  html.dark[data-theme="composio"] .border-lime,
-  html.dark[data-theme="composio"] .dark\:border-lime,
-  html.dark[data-theme="composio"] .hover\:border-lime:hover,
-  html.dark[data-theme="composio"] .dark\:hover\:border-lime:hover {
+  html.dark[data-theme="orange"] .bg-lime\/80 { background-color: rgba(255, 107, 53, 0.80) !important; }
+  html.dark[data-theme="orange"] .bg-lime\/40 { background-color: rgba(255, 107, 53, 0.40) !important; }
+  html.dark[data-theme="orange"] .bg-lime\/20 { background-color: rgba(255, 107, 53, 0.20) !important; }
+  html.dark[data-theme="orange"] .bg-lime\/10 { background-color: rgba(255, 107, 53, 0.10) !important; }
+  html.dark[data-theme="orange"] .border-lime,
+  html.dark[data-theme="orange"] .dark\:border-lime,
+  html.dark[data-theme="orange"] .hover\:border-lime:hover,
+  html.dark[data-theme="orange"] .dark\:hover\:border-lime:hover {
     border-color: #FF6B35 !important;
   }
 }

@@ -17,9 +17,9 @@ export function BuilderShipLogo({
         className="relative inline-block h-10 md:h-14"
         style={{ aspectRatio: "1240 / 240" }}
       >
-        <ComposioLockup className="absolute inset-0 h-full w-full bs-lockup-composio" />
+        <ComposioLockup className="absolute inset-0 h-full w-full bs-lockup-orange" />
         <NebiusLockup
-          className="absolute inset-0 h-full w-full bs-lockup-nebius"
+          className="absolute inset-0 h-full w-full bs-lockup-green"
           aria-hidden
         />
       </span>

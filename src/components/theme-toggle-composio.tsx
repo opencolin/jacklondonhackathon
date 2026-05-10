@@ -3,24 +3,24 @@
 import { useEffect, useState } from "react";
 
 export function ThemeToggleComposio() {
-  // Composio is the default — `bs-theme-nebius` is the opt-out flag
-  // (renders the legacy Nebius lime/navy theme).
-  const [composio, setComposio] = useState(true);
+  // Orange is the default theme — `bs-theme-green` is the opt-out flag
+  // (renders the legacy green/lime/navy theme).
+  const [orange, setOrange] = useState(true);
 
   useEffect(() => {
-    setComposio(localStorage.getItem("bs-theme-nebius") !== "1");
+    setOrange(localStorage.getItem("bs-theme-green") !== "1");
   }, []);
 
-  function flip(useComposio: boolean) {
-    if (useComposio) {
-      localStorage.removeItem("bs-theme-nebius");
-      document.documentElement.setAttribute("data-theme", "composio");
+  function flip(useOrange: boolean) {
+    if (useOrange) {
+      localStorage.removeItem("bs-theme-green");
+      document.documentElement.setAttribute("data-theme", "orange");
       document.documentElement.classList.add("dark");
     } else {
-      localStorage.setItem("bs-theme-nebius", "1");
+      localStorage.setItem("bs-theme-green", "1");
       document.documentElement.removeAttribute("data-theme");
     }
-    setComposio(useComposio);
+    setOrange(useOrange);
   }
 
   return (
@@ -30,24 +30,24 @@ export function ThemeToggleComposio() {
         type="button"
         onClick={() => flip(false)}
         className={
-          !composio
+          !orange
             ? "font-medium text-ink-700 underline underline-offset-2 dark:text-ink-200"
             : "hover:underline"
         }
       >
-        nebius
+        green
       </button>
       <span aria-hidden> · </span>
       <button
         type="button"
         onClick={() => flip(true)}
         className={
-          composio
+          orange
             ? "font-medium text-ink-700 underline underline-offset-2 dark:text-ink-200"
             : "hover:underline"
         }
       >
-        composio
+        orange
       </button>
     </p>
   );
