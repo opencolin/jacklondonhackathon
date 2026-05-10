@@ -1,19 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1240 240" width="1240" height="240" role="img" aria-label="BuilderShip">
   <defs>
     <linearGradient id="cBuilder" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#51A2FF"/>
-      <stop offset="55%" stop-color="#0089FF"/>
-      <stop offset="100%" stop-color="#0007CD"/>
+      <stop offset="0%" stop-color="#FFA37A"/>
+      <stop offset="55%" stop-color="#FF6B35"/>
+      <stop offset="100%" stop-color="#C44A1A"/>
     </linearGradient>
     <linearGradient id="cShip" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#7FE9FF"/>
-      <stop offset="55%" stop-color="#51A2FF"/>
-      <stop offset="100%" stop-color="#0089FF"/>
+      <stop offset="0%" stop-color="#FFC4A3"/>
+      <stop offset="55%" stop-color="#FFA37A"/>
+      <stop offset="100%" stop-color="#FF6B35"/>
     </linearGradient>
     <linearGradient id="cBadge" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#7FE9FF"/>
-      <stop offset="55%" stop-color="#51A2FF"/>
-      <stop offset="100%" stop-color="#0089FF"/>
+      <stop offset="0%" stop-color="#FFC4A3"/>
+      <stop offset="55%" stop-color="#FFA37A"/>
+      <stop offset="100%" stop-color="#FF6B35"/>
     </linearGradient>
     <style type="text/css">
       @import url('https://fonts.googleapis.com/css2?family=Trade+Winds&amp;display=swap');

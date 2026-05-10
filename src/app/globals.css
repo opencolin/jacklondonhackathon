@@ -156,7 +156,8 @@
   }
   html.dark[data-theme="composio"] .btn-lime:hover,
   html.dark[data-theme="composio"] .btn-navy:hover {
-    background: #F6F6F6;
+    background: #DCDCDC;
+    color: #000000;
   }
   html.dark[data-theme="composio"] .btn-outline {
     background: transparent;
@@ -215,8 +216,8 @@
     transform: translateY(-1px);
   }
   html.dark[data-theme="composio"] .pill-lime {
-    border-color: #0089FF;
-    color: #51A2FF;
+    border-color: #FF6B35;
+    color: #FFA37A;
   }
 
   /* Inputs */
@@ -230,8 +231,8 @@
     color: rgba(255, 255, 255, 0.40);
   }
   html.dark[data-theme="composio"] .input:focus {
-    border-color: #0089FF;
-    box-shadow: 0 0 0 2px rgba(0, 137, 255, 0.20);
+    border-color: #FF6B35;
+    box-shadow: 0 0 0 2px rgba(255, 107, 53, 0.20);
     outline: none;
   }
 
@@ -265,33 +266,33 @@
 
   /* Selection color */
   html.dark[data-theme="composio"] ::selection {
-    background: #0089FF;
+    background: #FF6B35;
     color: #FFFFFF;
   }
 
   /* Lime accents → Composio blues
      Override the lime palette site-wide when Composio theme is active.
-     Backgrounds: action blue #0089FF. Text: sky blue #51A2FF (lighter for readability). */
+     Backgrounds: action blue #FF6B35. Text: sky blue #FFA37A (lighter for readability). */
   html.dark[data-theme="composio"] .text-lime,
   html.dark[data-theme="composio"] .dark\:text-lime,
   html.dark[data-theme="composio"] .hover\:text-lime:hover,
   html.dark[data-theme="composio"] .dark\:hover\:text-lime:hover {
-    color: #51A2FF !important;
+    color: #FFA37A !important;
   }
   html.dark[data-theme="composio"] .bg-lime,
   html.dark[data-theme="composio"] .dark\:bg-lime,
   html.dark[data-theme="composio"] .hover\:bg-lime:hover {
-    background-color: #0089FF !important;
+    background-color: #FF6B35 !important;
     color: #FFFFFF !important;
   }
-  html.dark[data-theme="composio"] .bg-lime\/80 { background-color: rgba(0, 137, 255, 0.80) !important; }
-  html.dark[data-theme="composio"] .bg-lime\/40 { background-color: rgba(0, 137, 255, 0.40) !important; }
-  html.dark[data-theme="composio"] .bg-lime\/20 { background-color: rgba(0, 137, 255, 0.20) !important; }
-  html.dark[data-theme="composio"] .bg-lime\/10 { background-color: rgba(0, 137, 255, 0.10) !important; }
+  html.dark[data-theme="composio"] .bg-lime\/80 { background-color: rgba(255, 107, 53, 0.80) !important; }
+  html.dark[data-theme="composio"] .bg-lime\/40 { background-color: rgba(255, 107, 53, 0.40) !important; }
+  html.dark[data-theme="composio"] .bg-lime\/20 { background-color: rgba(255, 107, 53, 0.20) !important; }
+  html.dark[data-theme="composio"] .bg-lime\/10 { background-color: rgba(255, 107, 53, 0.10) !important; }
   html.dark[data-theme="composio"] .border-lime,
   html.dark[data-theme="composio"] .dark\:border-lime,
   html.dark[data-theme="composio"] .hover\:border-lime:hover,
   html.dark[data-theme="composio"] .dark\:hover\:border-lime:hover {
-    border-color: #0089FF !important;
+    border-color: #FF6B35 !important;
   }
 }

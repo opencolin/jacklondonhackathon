@@ -47,19 +47,19 @@ function ComposioLockup({
     >
       <defs>
         <linearGradient id="cBuilder" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#51A2FF" />
-          <stop offset="55%" stopColor="#0089FF" />
-          <stop offset="100%" stopColor="#0007CD" />
+          <stop offset="0%" stopColor="#FFA37A" />
+          <stop offset="55%" stopColor="#FF6B35" />
+          <stop offset="100%" stopColor="#C44A1A" />
         </linearGradient>
         <linearGradient id="cShip" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#7FE9FF" />
-          <stop offset="55%" stopColor="#51A2FF" />
-          <stop offset="100%" stopColor="#0089FF" />
+          <stop offset="0%" stopColor="#FFC4A3" />
+          <stop offset="55%" stopColor="#FFA37A" />
+          <stop offset="100%" stopColor="#FF6B35" />
         </linearGradient>
         <linearGradient id="cBadge" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#7FE9FF" />
-          <stop offset="55%" stopColor="#51A2FF" />
-          <stop offset="100%" stopColor="#0089FF" />
+          <stop offset="0%" stopColor="#FFC4A3" />
+          <stop offset="55%" stopColor="#FFA37A" />
+          <stop offset="100%" stopColor="#FF6B35" />
         </linearGradient>
       </defs>
       <g transform="translate(40, 50) scale(1.5625)">
