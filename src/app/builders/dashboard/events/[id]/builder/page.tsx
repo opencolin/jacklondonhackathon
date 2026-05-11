@@ -1,10 +1,14 @@
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
+import { and, eq } from "drizzle-orm";
 import { AppHeader } from "@/components/app-chrome";
 import { eventBlasts, eventPrizes } from "@/lib/data";
 import { formatDate, formatTime } from "@/lib/utils";
 import { safeAuth } from "@/server/lib/safe-auth";
 import { api } from "@/lib/trpc/server";
+import { db } from "@/server/db";
+import { projects, teams } from "@/server/db/schema";
+import { ProjectForm } from "./project-form";
 
 export const dynamic = "force-dynamic";
 
@@ -34,6 +38,51 @@ export default async function BuilderEventHub({ params }: { params: { id: string
     return notFound();
   }
   if (!event) return notFound();
+
+  // Look up an existing project for this user + event so the form prefills.
+  let existingProject: {
+    name: string;
+    summary: string;
+    repoUrl: string;
+    demoUrl: string;
+    status: "draft" | "submitted";
+  } = { name: "", summary: "", repoUrl: "", demoUrl: "", status: "draft" };
+  try {
+    const [team] = await db
+      .select({ id: teams.id })
+      .from(teams)
+      .where(
+        and(eq(teams.eventId, event.id), eq(teams.leaderId, session.user.id)),
+      )
+      .limit(1);
+    if (team) {
+      const [project] = await db
+        .select({
+          name: projects.name,
+          summary: projects.summary,
+          repoUrl: projects.repoUrl,
+          demoUrl: projects.demoUrl,
+          status: projects.status,
+        })
+        .from(projects)
+        .where(
+          and(eq(projects.teamId, team.id), eq(projects.eventId, event.id)),
+        )
+        .limit(1);
+      if (project) {
+        existingProject = {
+          name: project.name ?? "",
+          summary: project.summary ?? "",
+          repoUrl: project.repoUrl ?? "",
+          demoUrl: project.demoUrl ?? "",
+          status: project.status === "submitted" ? "submitted" : "draft",
+        };
+      }
+    }
+  } catch (err) {
+    // Fall through with empty defaults. The form still works for save.
+    console.warn("[builder/page] project prefill failed", err);
+  }
 
   return (
     <>
@@ -118,33 +167,40 @@ export default async function BuilderEventHub({ params }: { params: { id: string
         </section>
 
         <section id="project" className="section bg-white dark:bg-ink-900">
-          <div className="container-page">
-            <h2 className="h-display text-2xl font-bold text-ink-900 dark:text-ink-50">How to submit your project</h2>
-            <p className="mt-2 max-w-2xl text-ink-600 dark:text-ink-300">
-              Until in-app submission opens, post your project publicly and tag the sponsors — that's the application.
-            </p>
-            <ol className="mt-8 grid gap-4 md:grid-cols-2">
-              <li className="card">
-                <p className="text-xs font-mono font-semibold text-navy-700 dark:text-lime">01</p>
-                <h3 className="mt-2 text-lg font-semibold text-ink-900 dark:text-ink-50">Push your repo to GitHub</h3>
-                <p className="mt-2 text-sm text-ink-600 dark:text-ink-300">Public preferred so AI judges can read it. Private is fine if you can grant access during finals.</p>
-              </li>
-              <li className="card">
-                <p className="text-xs font-mono font-semibold text-navy-700 dark:text-lime">02</p>
-                <h3 className="mt-2 text-lg font-semibold text-ink-900 dark:text-ink-50">Post a demo + repo link on X</h3>
-                <p className="mt-2 text-sm text-ink-600 dark:text-ink-300">90 seconds is plenty. Tag <span className="font-mono font-medium">@ship_builders @nebiusai @composio @tavilyai @openclaw</span>.</p>
-              </li>
-              <li className="card">
-                <p className="text-xs font-mono font-semibold text-navy-700 dark:text-lime">03</p>
-                <h3 className="mt-2 text-lg font-semibold text-ink-900 dark:text-ink-50">Want a live read?</h3>
-                <p className="mt-2 text-sm text-ink-600 dark:text-ink-300">Show up to office hours any weekday before May 28 and walk a sponsor engineer through it.</p>
-              </li>
-              <li className="card">
-                <p className="text-xs font-mono font-semibold text-navy-700 dark:text-lime">04</p>
-                <h3 className="mt-2 text-lg font-semibold text-ink-900 dark:text-ink-50">May 29</h3>
-                <p className="mt-2 text-sm text-ink-600 dark:text-ink-300">Top 30 finalists named the night of the 29th. If you're in, the boat leaves South Beach at 9 AM May 30.</p>
-              </li>
-            </ol>
+          <div className="container-page grid gap-8 lg:grid-cols-[1.4fr_1fr]">
+            <div>
+              <h2 className="h-display text-2xl font-bold text-ink-900 dark:text-ink-50">Project submission</h2>
+              <p className="mt-2 max-w-2xl text-ink-600 dark:text-ink-300">
+                Fill it once, edit it until <strong>May 28</strong>. Save a draft any time; flip to submitted when you're ready for judges.
+              </p>
+              {existingProject.status === "submitted" ? (
+                <span className="pill-lime mt-4 inline-flex"><span className="live-dot mr-1" /> Submitted · judges can see it</span>
+              ) : null}
+              <div className="card mt-6">
+                <ProjectForm eventId={event.id} initial={existingProject} />
+              </div>
+            </div>
+            <aside className="lg:pl-4">
+              <h3 className="text-sm font-mono font-semibold uppercase tracking-widest text-navy-700 dark:text-lime">Tips</h3>
+              <ul className="mt-4 grid gap-4 text-sm text-ink-700 dark:text-ink-200">
+                <li>
+                  <p className="font-semibold text-ink-900 dark:text-ink-50">Push your repo to GitHub</p>
+                  <p className="mt-1 text-ink-600 dark:text-ink-300">Public preferred so AI judges can read it. Private's fine if you can grant access during finals.</p>
+                </li>
+                <li>
+                  <p className="font-semibold text-ink-900 dark:text-ink-50">Post the demo on X too</p>
+                  <p className="mt-1 text-ink-600 dark:text-ink-300">90 seconds. Tag <span className="font-mono">@ship_builders @nebiusai @composio @tavilyai @openclaw</span>.</p>
+                </li>
+                <li>
+                  <p className="font-semibold text-ink-900 dark:text-ink-50">Walk through it at office hours</p>
+                  <p className="mt-1 text-ink-600 dark:text-ink-300">Drop in any weekday before May 28 to get a live read from a sponsor engineer.</p>
+                </li>
+                <li>
+                  <p className="font-semibold text-ink-900 dark:text-ink-50">Top 30 announced May 29</p>
+                  <p className="mt-1 text-ink-600 dark:text-ink-300">If you're in, the boat leaves South Beach at 9 AM May 30.</p>
+                </li>
+              </ul>
+            </aside>
           </div>
         </section>
       </main>
