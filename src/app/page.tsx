@@ -38,28 +38,59 @@ const timeline = [
   },
 ] as const;
 
-const judges = [
+const scoreSplit = [
   {
+    weight: "40%",
     who: "AI judges",
-    when: "Reading every submission, May 8 → May 28",
-    body: "Score every GitHub repo on usefulness, integration depth across the sponsor stack, and how working the working demo actually is.",
+    when: "Continuous, May 8 → 28",
+    body: "Read every GitHub repo. Score reproducibility, integration depth, and how working the working demo actually is.",
   },
   {
+    weight: "40%",
     who: "Sponsor teams",
-    when: "Office hours, then on the boat",
-    body: "Nebius, Composio, Tavily, and OpenClaw engineers have been at office hours all month — by May 30 they know your codebase. They stress-test the integration and weigh in on the score.",
+    when: "Office hours + boat day",
+    body: "Composio, Nebius, Tavily, and OpenClaw engineers stress-test the integration against their platform. They've been at office hours all month — by May 30 they know your codebase.",
   },
   {
-    who: "Angel investors",
-    when: "On the boat, May 30",
-    body: "Real checks, real conversations. 1:1 sessions with every builder all day — between bowling frames, in the lounge, on the patio. Their reaction lands in your final score.",
+    weight: "20%",
+    who: "Angels + VCs",
+    when: "1:1s on May 30",
+    body: "Bay Area investors do 1:1s with every builder all day at HQ — between bowling frames, on the patio. Their reaction lands in your final score, and the day doubles as a soft pitch tour.",
+  },
+];
+
+const rubric = [
+  {
+    axis: "Working demo",
+    weight: "0–10",
+    grader: "AI + Sponsors",
+    body: "Does it actually run end-to-end? Boot, login, the loop, output. Broken demos get 0; smooth flows get 10.",
   },
   {
-    who: "VCs",
-    when: "On the boat, May 30",
-    body: "Bay Area funds in the room. 1:1s rolling all day, plus you'll see them at the final presentations. The boat day doubles as a soft pitch tour — and their vote counts toward who wins.",
+    axis: "Integration depth",
+    weight: "0–10",
+    grader: "Sponsors",
+    body: "How deeply you use the sponsor stack — Composio tools, Tavily search, Nebius inference, OpenClaw runtime. One API call is 2; meaningful integration across services is 8+.",
   },
-] as const;
+  {
+    axis: "Usefulness",
+    weight: "0–10",
+    grader: "AI + Angels + VCs",
+    body: "Would a real person pay for this? Clear use case, sharp problem, plausible distribution. Toy demos cap around 5; product-shaped builds clear 8.",
+  },
+  {
+    axis: "Code quality",
+    weight: "0–5",
+    grader: "AI",
+    body: "Readable, structured, deployable. AI judges read every file. Bonus points for tests, clear README, sane error handling.",
+  },
+  {
+    axis: "Pitch + story",
+    weight: "0–5",
+    grader: "Angels + VCs",
+    body: "Boat day only. Can you explain what it does and why anyone should care in 90 seconds? Specificity beats slogans every time.",
+  },
+];
 
 const officeHourRoles = [
   {
@@ -181,7 +212,7 @@ const faqs = [
   },
   {
     q: "How does scoring work?",
-    a: "Two phases. AI judges read every GitHub submission during the three weeks and pick the top 30 builders. On May 30, your score is a blend: AI judges, sponsor teams, plus the angel investors and VCs in the room. Everyone you talk to that day is voting.",
+    a: "Two phases. AI judges read every GitHub submission during the three weeks and pick the top 30 builders. On May 30, your score is a blend: 40% AI judges, 40% sponsor teams, 20% the angel investors and VCs in the room. Every judge scores against the same five-axis rubric (working demo, integration depth, usefulness, code quality, pitch) — see the rubric section above. Everyone you talk to that day is voting.",
   },
   {
     q: "What happens on May 30?",
@@ -524,22 +555,68 @@ export default function HackJackLondonSquarePage() {
           </div>
         </Section>
 
-        {/* Who's in the room */}
+        {/* How judging works */}
         <Section id="judges">
           <SectionHeader
-            eyebrow="Who's scoring you"
-            title="Not just a 5-minute pitch. Demo and connect one-on-one with conversations all day."
-            body="The score on May 30 is a blend. AI judges read your code over the three weeks. Sponsor teams, angels, and VCs do 1:1s with every builder all day on the waterfront — your pitch sharpens with each conversation. Final presentations before the sunset cruise. Everyone's vote counts."
+            eyebrow="How judging works"
+            title="40% AI · 40% sponsors · 20% investors."
+            body="The score on May 30 is a blend. AI judges read every repo over the three weeks. Sponsor engineers and investors do 1:1s with every builder all day on the waterfront — your pitch sharpens with each conversation. Final presentations before the sunset cruise."
           />
-          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            {judges.map((j) => (
+          <div className="grid gap-4 md:grid-cols-3">
+            {scoreSplit.map((j) => (
               <div key={j.who} className="card flex h-full flex-col">
-                <h3 className="h-display text-xl font-bold text-ink-900 dark:text-ink-50">{j.who}</h3>
+                <p className="font-mono text-3xl font-semibold text-navy-700 dark:text-lime">{j.weight}</p>
+                <h3 className="h-display mt-2 text-xl font-bold text-ink-900 dark:text-ink-50">{j.who}</h3>
                 <p className="mt-2 text-xs font-semibold uppercase tracking-widest text-ink-500 dark:text-ink-400">{j.when}</p>
                 <p className="mt-3 text-sm leading-relaxed text-ink-700 dark:text-ink-200">{j.body}</p>
               </div>
             ))}
           </div>
+        </Section>
+
+        {/* The rubric */}
+        <Section id="rubric" bg="tint">
+          <SectionHeader
+            eyebrow="The rubric"
+            title="Five axes. No surprises."
+            body="Every judge — AI and human — scores against the same five-axis rubric (v1). The rubric is public so you can build to it."
+          />
+          <div className="overflow-hidden rounded-card border border-ink-200 bg-white dark:border-ink-700 dark:bg-ink-900">
+            <div className="grid grid-cols-12 border-b border-ink-200 px-6 py-3 text-xs font-semibold uppercase tracking-widest text-ink-500 dark:border-ink-700 dark:text-ink-400">
+              <div className="col-span-12 md:col-span-3">Axis</div>
+              <div className="hidden md:col-span-2 md:block">Weight</div>
+              <div className="hidden md:col-span-2 md:block">Graded by</div>
+              <div className="hidden md:col-span-5 md:block">What's a 10</div>
+            </div>
+            {rubric.map((r, i) => (
+              <div
+                key={r.axis}
+                className={`grid grid-cols-1 gap-2 px-6 py-5 text-sm md:grid-cols-12 md:items-start md:gap-4 ${
+                  i !== rubric.length - 1
+                    ? "border-b border-ink-200 dark:border-ink-700"
+                    : ""
+                }`}
+              >
+                <div className="md:col-span-3">
+                  <p className="font-semibold text-ink-900 dark:text-ink-50">{r.axis}</p>
+                </div>
+                <div className="md:col-span-2">
+                  <p className="font-mono text-xs uppercase tracking-widest text-ink-500 dark:text-ink-400 md:hidden">Weight</p>
+                  <p className="font-mono text-sm font-semibold text-navy-700 dark:text-lime">{r.weight}</p>
+                </div>
+                <div className="md:col-span-2">
+                  <p className="font-mono text-xs uppercase tracking-widest text-ink-500 dark:text-ink-400 md:hidden">Graded by</p>
+                  <p className="text-xs text-ink-700 dark:text-ink-200">{r.grader}</p>
+                </div>
+                <div className="md:col-span-5">
+                  <p className="text-ink-700 dark:text-ink-200">{r.body}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-6 text-xs text-ink-500 dark:text-ink-400">
+            Total: <span className="font-mono">40 points</span>. Composite score = (AI vote × 0.4) + (Sponsor vote × 0.4) + (Investor vote × 0.2). Public leaderboard goes live May 29 with the top 30.
+          </p>
         </Section>
 
         {/* Finals day schedule */}
