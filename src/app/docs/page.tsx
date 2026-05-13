@@ -31,6 +31,7 @@ const sponsorDocs: SponsorDoc[] = [
     links: [
       { label: "API reference", href: "https://docs.nebius.com/studio/inference/api-reference", external: true },
       { label: "Available models", href: "https://docs.nebius.com/studio/inference/models", external: true },
+      { label: "Get help on Discord", href: "https://discord.com/invite/zBzz6X4QW", external: true },
       { label: "Internal note: Token Factory", href: "/docs/openclaw/token-factory" },
     ],
   },
@@ -51,6 +52,7 @@ const sponsorDocs: SponsorDoc[] = [
       { label: "Compute quickstart", href: "https://docs.nebius.com/compute/quickstart", external: true },
       { label: "Serverless containers", href: "https://docs.nebius.com/serverless-containers", external: true },
       { label: "Object storage", href: "https://docs.nebius.com/storage/object-storage", external: true },
+      { label: "Get help on Discord", href: "https://discord.com/invite/zBzz6X4QW", external: true },
       { label: "Internal: deploy guide", href: "/docs/openclaw/nebius-cpu-serverless" },
     ],
   },
@@ -70,6 +72,7 @@ const sponsorDocs: SponsorDoc[] = [
     links: [
       { label: "Tool catalog", href: "https://app.composio.dev/apps", external: true },
       { label: "Triggers", href: "https://docs.composio.dev/patterns/triggers", external: true },
+      { label: "Get help on Discord", href: "https://discord.com/invite/cNruWaAhQk", external: true },
       { label: "GitHub", href: "https://github.com/ComposioHQ/composio", external: true },
     ],
   },

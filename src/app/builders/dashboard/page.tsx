@@ -178,20 +178,48 @@ export default async function BuilderDashboard() {
           </div>
         </section>
 
-        {/* Build help — office hours + workshops */}
+        {/* Build help — Discord, office hours, workshops */}
         <section className="section bg-white dark:bg-ink-900">
           <div className="container-page">
             <div className="mb-6 flex items-end justify-between">
               <div>
-                <h2 className="h-display text-2xl font-bold text-ink-900 dark:text-ink-50">Stuck? Watch a workshop.</h2>
+                <h2 className="h-display text-2xl font-bold text-ink-900 dark:text-ink-50">Stuck? Ask a sponsor.</h2>
                 <p className="mt-2 text-sm text-ink-600 dark:text-ink-300">
-                  Sponsor-led sessions on every SDK in the stack. Or drop into office hours weekdays at noon Pacific.
+                  Sponsor engineers live in Discord. Faster than office hours, fine for any-hour blockers.
                 </p>
               </div>
               <div className="flex gap-2">
                 <Link href="/events" className="btn-ghost text-sm">Office hours →</Link>
                 <Link href="/workshops" className="btn-ghost text-sm">All workshops →</Link>
               </div>
+            </div>
+            <div className="mb-10 grid gap-4 md:grid-cols-2">
+              <Link
+                href="https://discord.com/invite/zBzz6X4QW"
+                target="_blank"
+                rel="noreferrer"
+                className="card flex items-center justify-between gap-4 transition-colors hover:border-navy-700 dark:hover:border-lime"
+              >
+                <div>
+                  <p className="text-xs font-mono font-semibold uppercase tracking-widest text-navy-700 dark:text-lime">Nebius Discord</p>
+                  <p className="mt-1 text-base font-semibold text-ink-900 dark:text-ink-50">Token Factory + AI Cloud help</p>
+                  <p className="mt-1 text-sm text-ink-600 dark:text-ink-300">GPU instances, inference, Serverless deploy. Nebius DevRel reads channels live.</p>
+                </div>
+                <span className="font-mono text-sm text-navy-700 dark:text-lime">Join →</span>
+              </Link>
+              <Link
+                href="https://discord.com/invite/cNruWaAhQk"
+                target="_blank"
+                rel="noreferrer"
+                className="card flex items-center justify-between gap-4 transition-colors hover:border-navy-700 dark:hover:border-lime"
+              >
+                <div>
+                  <p className="text-xs font-mono font-semibold uppercase tracking-widest text-navy-700 dark:text-lime">Composio Discord</p>
+                  <p className="mt-1 text-base font-semibold text-ink-900 dark:text-ink-50">Tools, auth, integrations</p>
+                  <p className="mt-1 text-sm text-ink-600 dark:text-ink-300">Help with the 250+ tool catalog, auth flows, and tool schemas. Composio engineers active.</p>
+                </div>
+                <span className="font-mono text-sm text-navy-700 dark:text-lime">Join →</span>
+              </Link>
             </div>
             <div className="grid gap-6 md:grid-cols-3">
               {workshops.slice(0, 3).map((w) => <WorkshopCard key={w.slug} workshop={w} />)}

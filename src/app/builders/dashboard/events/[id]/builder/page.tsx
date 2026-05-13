@@ -184,6 +184,15 @@ export default async function BuilderEventHub({ params }: { params: { id: string
               <h3 className="text-sm font-mono font-semibold uppercase tracking-widest text-navy-700 dark:text-lime">Tips</h3>
               <ul className="mt-4 grid gap-4 text-sm text-ink-700 dark:text-ink-200">
                 <li>
+                  <p className="font-semibold text-ink-900 dark:text-ink-50">Stuck? Ask a sponsor on Discord</p>
+                  <p className="mt-1 text-ink-600 dark:text-ink-300">
+                    <Link href="https://discord.com/invite/zBzz6X4QW" target="_blank" rel="noreferrer" className="font-medium text-navy-700 hover:underline dark:text-lime">Nebius Discord ↗</Link>
+                    {" · "}
+                    <Link href="https://discord.com/invite/cNruWaAhQk" target="_blank" rel="noreferrer" className="font-medium text-navy-700 hover:underline dark:text-lime">Composio Discord ↗</Link>
+                    {" — sponsor engineers reply same-day."}
+                  </p>
+                </li>
+                <li>
                   <p className="font-semibold text-ink-900 dark:text-ink-50">Push your repo to GitHub</p>
                   <p className="mt-1 text-ink-600 dark:text-ink-300">Public preferred so AI judges can read it. Private's fine if you can grant access during finals.</p>
                 </li>
