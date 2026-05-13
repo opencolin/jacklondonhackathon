@@ -322,17 +322,21 @@ export default function HackJackLondonSquarePage() {
               <div>
                 <p className="text-xs font-semibold uppercase tracking-widest text-navy-700 dark:text-lime">How to apply</p>
                 <ol className="mt-3 grid gap-3 text-sm leading-relaxed text-ink-700 dark:text-ink-200">
-                  <li><span className="font-mono font-semibold text-navy-700 dark:text-lime">01.</span> Post something you built — an agent, demo, repo, video, anything. Public post on X, LinkedIn, or wherever you live.</li>
-                  <li><span className="font-mono font-semibold text-navy-700 dark:text-lime">02.</span> Tag <span className="font-semibold">@ship_builders @nebiusai @composio @tavilyai @openclaw</span> so we see it. That's the whole signal.</li>
-                  <li><span className="font-mono font-semibold text-navy-700 dark:text-lime">03.</span> Want a deeper read? Reply to our DM, or share a longer write-up wherever you post.</li>
+                  <li><span className="font-mono font-semibold text-navy-700 dark:text-lime">01.</span> Register so we know you exist. One-minute form — name, email, what you're building.</li>
+                  <li><span className="font-mono font-semibold text-navy-700 dark:text-lime">02.</span> Post something you built — an agent, demo, repo, video, anything. Public post on X, LinkedIn, or wherever you live.</li>
+                  <li><span className="font-mono font-semibold text-navy-700 dark:text-lime">03.</span> Tag <span className="font-semibold">@ship_builders @nebiusai @composio @tavilyai @openclaw</span> so we see it. That's the whole signal.</li>
+                  <li><span className="font-mono font-semibold text-navy-700 dark:text-lime">04.</span> Want a deeper read? Reply to our DM, or share a longer write-up wherever you post.</li>
                 </ol>
               </div>
               <div className="flex flex-wrap gap-2 pt-1">
-                <Link href="https://x.com/intent/tweet?text=Show%20us%20your%20claws%20%40ship_builders%20%40nebiusai%20%40composio%20%40tavilyai%20%40openclaw" className="btn-lime text-sm" target="_blank" rel="noreferrer">
-                  Post on X →
+                <Link href="https://luma.com/buildership" className="btn-lime text-sm" target="_blank" rel="noreferrer">
+                  Register →
+                </Link>
+                <Link href="https://x.com/intent/tweet?text=Show%20us%20your%20claws%20%40ship_builders%20%40nebiusai%20%40composio%20%40tavilyai%20%40openclaw" className="btn-outline text-sm" target="_blank" rel="noreferrer">
+                  Post on X
                 </Link>
                 <Link href="https://www.linkedin.com/sharing/share-offsite/?url=https%3A%2F%2Fship.builders" className="btn-outline text-sm" target="_blank" rel="noreferrer">
-                  Post on LinkedIn →
+                  Post on LinkedIn
                 </Link>
               </div>
             </div>
