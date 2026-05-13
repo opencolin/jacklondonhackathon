@@ -27,7 +27,10 @@ async function main() {
   // (e.g. fix office-hours dates, add new workshop entries).
 
   console.log("Seeding sponsors…");
-  const [nebius, composio, tavily] = await db
+  // onConflictDoNothing returns an empty array when every row already
+  // exists, so we'd lose the sponsor IDs we need below. Re-fetch by
+  // slug after the upsert to guarantee we have them either way.
+  await db
     .insert(sponsors)
     .values([
       {
@@ -52,8 +55,14 @@ async function main() {
         docUrl: "https://docs.tavily.com",
       },
     ])
-    .onConflictDoNothing({ target: sponsors.slug })
-    .returning();
+    .onConflictDoNothing({ target: sponsors.slug });
+
+  const allSponsors = await db.select().from(sponsors);
+  const sponsorBySlug = (slug: string) =>
+    allSponsors.find((s) => s.slug === slug);
+  const nebius = sponsorBySlug("nebius");
+  const composio = sponsorBySlug("composio");
+  const tavily = sponsorBySlug("tavily");
 
   console.log("Seeding venues…");
   // Venues have no unique constraint — guard via a lookup so re-runs
@@ -116,13 +125,13 @@ async function main() {
     })
     .returning();
 
-  if (codeCruise) {
+  if (codeCruise && nebius && composio && tavily) {
     await db
       .insert(eventSponsors)
       .values([
-        { eventId: codeCruise.id, sponsorId: nebius!.id, role: "host" },
-        { eventId: codeCruise.id, sponsorId: composio!.id, role: "primary" },
-        { eventId: codeCruise.id, sponsorId: tavily!.id, role: "primary" },
+        { eventId: codeCruise.id, sponsorId: nebius.id, role: "host" },
+        { eventId: codeCruise.id, sponsorId: composio.id, role: "primary" },
+        { eventId: codeCruise.id, sponsorId: tavily.id, role: "primary" },
       ])
       .onConflictDoNothing();
   }
