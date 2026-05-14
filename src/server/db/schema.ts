@@ -323,6 +323,13 @@ export const teams = pgTable(
   },
   (t) => ({
     eventNameIdx: uniqueIndex("teams_event_name_idx").on(t.eventId, t.name),
+    // M1 invariant: one team per event per leader. Prevents the
+    // double-click race in saveProject from creating duplicate solo
+    // teams.
+    eventLeaderIdx: uniqueIndex("teams_event_leader_idx").on(
+      t.eventId,
+      t.leaderId,
+    ),
   }),
 );
 

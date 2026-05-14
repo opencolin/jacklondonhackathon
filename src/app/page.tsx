@@ -619,7 +619,7 @@ export default function HackJackLondonSquarePage() {
             ))}
           </div>
           <p className="mt-6 text-xs text-ink-500 dark:text-ink-400">
-            Total: <span className="font-mono">40 points</span>. Composite score = (AI vote × 0.4) + (Sponsor vote × 0.4) + (Investor vote × 0.2). Public leaderboard goes live May 29 with the top 30.
+            Each judge scores only the axes they grade (AI: demo + usefulness + code; sponsors: demo + integration; investors: usefulness + pitch). Their score is normalized to <span className="font-mono">0–10</span>, then composite = <span className="font-mono">(AI × 0.4) + (Sponsor × 0.4) + (Investor × 0.2)</span>. Public leaderboard goes live May 29 with the top 30.
           </p>
         </Section>
 
