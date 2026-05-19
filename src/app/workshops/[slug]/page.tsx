@@ -52,7 +52,6 @@ export default function WorkshopDetail({ params }: { params: { slug: string } })
             </div>
             <div className="mt-6 flex flex-wrap items-center gap-3">
               <Link href={w.ctaUrl} className="btn-lime">{w.ctaLabel}</Link>
-              <Link href="/ide" className="btn-outline">Open a workspace from this lesson</Link>
               <a href={w.videoUrl} target="_blank" rel="noreferrer" className="btn-ghost">Open video in new tab ↗</a>
             </div>
 
@@ -87,11 +86,6 @@ export default function WorkshopDetail({ params }: { params: { slug: string } })
               <ul className="mt-3 flex flex-wrap gap-2">
                 {w.tags.map((t) => (<li key={t} className="pill-outline">{t}</li>))}
               </ul>
-            </div>
-            <div className="card bg-navy-700 text-white">
-              <p className="text-sm font-semibold">Run it on Nebius.</p>
-              <p className="mt-2 text-sm text-ink-100">Spin a Contree workspace preloaded for this workshop. Token Factory key included.</p>
-              <Link href="/ide" className="btn-lime mt-4 w-full">Open workspace</Link>
             </div>
           </aside>
         </section>

@@ -175,12 +175,6 @@ export default async function BuilderEventHub({ params }: { params: { id: string
             </div>
 
             <aside className="space-y-6">
-              <div className="card bg-navy-700 text-white">
-                <p className="text-xs uppercase tracking-widest text-lime">Open IDE</p>
-                <p className="mt-2 text-sm">Your workspace is warm. Token Factory key scoped. Snapshot baseline pinned.</p>
-                <Link href="/ide" className="btn-lime mt-4 w-full">Open workspace →</Link>
-                <p className="mt-3 text-xs text-ink-100/80">Opens at code-server in a Contree sandbox.</p>
-              </div>
               <div className="card">
                 <h3 className="text-sm font-semibold uppercase tracking-widest text-ink-500">Team</h3>
                 <p className="mt-2 text-sm font-medium">Muglife</p>

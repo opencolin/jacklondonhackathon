@@ -28,8 +28,10 @@ export default function IdePage() {
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">Cloud IDE</p>
             <h1 className="h-display max-w-4xl text-4xl font-bold tracking-tight text-ink-900 md:text-6xl dark:text-ink-50">Open a workspace. Ship an agent.</h1>
             <p className="mt-5 max-w-2xl text-lg text-ink-600 dark:text-ink-300">Code-server editor + Nebius Token Factory inference + Nebius Serverless deploy. The whole loop, in your browser.</p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Link href="/builders/login" className="btn-lime">Open the IDE →</Link>
+            <p className="mt-6 inline-flex items-center gap-2 rounded-pill border border-ink-200 bg-ink-50 px-3 py-1 text-xs font-mono text-ink-600 dark:border-ink-700 dark:bg-ink-800 dark:text-ink-300">
+              <span className="inline-block h-1.5 w-1.5 rounded-full bg-ink-400" /> Coming after BuilderShip
+            </p>
+            <div className="mt-6 flex flex-wrap gap-3">
               <Link href="https://github.com/opencolin/openclaw-deploy" className="btn-outline">openclaw-deploy on GitHub ↗</Link>
             </div>
           </div>

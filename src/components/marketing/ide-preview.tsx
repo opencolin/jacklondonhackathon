@@ -62,9 +62,7 @@ export default async function handler(req, res) {
         </div>
       </div>
       <div className="mt-8 flex flex-wrap items-center gap-3">
-        <Link href="/ide" className="btn-navy">Try the IDE →</Link>
-        <Link href="https://docs.contree.dev/" className="btn-ghost">Contree docs ↗</Link>
-        <Link href="https://github.com/opencolin/openclaw-deploy" className="btn-ghost">openclaw-deploy on GitHub ↗</Link>
+        <Link href="https://github.com/opencolin/openclaw-deploy" className="btn-navy">openclaw-deploy on GitHub ↗</Link>
       </div>
     </Section>
   );

@@ -10,18 +10,12 @@ const docContent: Record<string, { title: string; eyebrow: string; body: React.R
     title: "Quickstart",
     body: (
       <>
-        <p>Three minutes to your first OpenClaw event experience.</p>
+        <p>Three steps to enter BuilderShip.</p>
         <ol>
           <li><strong>Sign in</strong> at <Link href="/builders/login">/builders/login</Link> with GitHub.</li>
-          <li><strong>Pick an event</strong> from the directory and hit <em>Register</em>.</li>
-          <li><strong>Open the IDE</strong>. A Contree workspace boots with OpenClaw and your Token Factory key already loaded.</li>
+          <li><strong>Register</strong> for BuilderShip via the Apply section on the homepage.</li>
+          <li><strong>Build locally</strong> with the sponsor stack — Composio for tools, Tavily for search, Nebius Token Factory for inference, OpenClaw as the runtime — then submit your project before May 28.</li>
         </ol>
-        <pre><code>{`▸ openclaw --version
-openclaw 0.9.0
-▸ openclaw doctor
-✓ TOKEN_FACTORY_API_KEY scoped
-✓ contree instance ready
-✓ code-server bound to https://ws-7af.builders.nebius.com`}</code></pre>
       </>
     ),
   },
