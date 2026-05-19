@@ -101,8 +101,8 @@ export const events: Event[] = [
     isOnline: false,
     cover: "from-accent-sky via-accent-blue to-navy-700",
     description:
-      "Three-week remote AI hackathon hosted by Composio and Nebius. Submit by May 28. Top 30 builders earn a boat day on the bay, May 30. Compete for $10k and a DGX Spark.",
-    capacity: 30,
+      "Three-week remote AI hackathon hosted by Composio and Nebius. Submit by May 28. Top 40 builders earn a boat day on the bay, May 30. Compete for $10k and a DGX Spark.",
+    capacity: 40,
     registered: 0,
     partners: ["Composio", "Nebius", "Tavily", "OpenClaw"],
   },

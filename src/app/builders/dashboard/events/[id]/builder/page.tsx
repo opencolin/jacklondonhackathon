@@ -239,7 +239,7 @@ export default async function BuilderEventHub({ params }: { params: { id: string
                   <p className="mt-1 text-ink-600 dark:text-ink-300">Drop in any weekday before May 28 to get a live read from a sponsor engineer.</p>
                 </li>
                 <li>
-                  <p className="font-semibold text-ink-900 dark:text-ink-50">Top 30 announced May 29</p>
+                  <p className="font-semibold text-ink-900 dark:text-ink-50">Top 40 announced May 29</p>
                   <p className="mt-1 text-ink-600 dark:text-ink-300">If you're in, the boat leaves South Beach at 9 AM May 30.</p>
                 </li>
               </ul>

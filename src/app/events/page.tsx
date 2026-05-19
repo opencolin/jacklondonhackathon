@@ -25,7 +25,7 @@ const timeline = [
     num: "03",
     date: "May 29",
     title: "Finalists announced",
-    body: "Top 30 builders named the night before. Twenty-four hours to polish your pitch and pack a jacket for the bay.",
+    body: "Top 40 builders named the night before. Twenty-four hours to polish your pitch and pack a jacket for the bay.",
   },
   {
     num: "04",
@@ -70,7 +70,7 @@ export default async function EventsIndex() {
         <Section bg="tint">
           <SectionHeader
             eyebrow="Schedule"
-            title={<>Three weeks. Thirty builders.<br />One day on the bay.</>}
+            title={<>Three weeks. Forty builders.<br />One day on the bay.</>}
             body="The hackathon is mostly remote. The boat day is the celebration — and the finals."
           />
           <ol className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
@@ -101,7 +101,7 @@ export default async function EventsIndex() {
           <div className="container-page">
             <p className="mb-3 text-xs font-semibold uppercase tracking-[0.18em] text-navy-700 dark:text-lime">Finals day · May 30</p>
             <h2 className="h-display text-3xl font-bold tracking-tight text-ink-900 md:text-4xl dark:text-ink-50">Cruise from South Beach to Jack London Square. Demos at dinner.</h2>
-            <p className="mt-4 max-w-3xl text-base text-ink-600 dark:text-ink-300">The boat day is for the top 30 builders. Bay crossing, all-day 1:1 conversations and pitch refinement on the waterfront, final presentations before the sunset cruise, dinner at a Jack London Square restaurant where winners are announced, after-party on the docked yacht. Times are firm — the boat doesn't wait.</p>
+            <p className="mt-4 max-w-3xl text-base text-ink-600 dark:text-ink-300">The boat day is for the top 40 builders. Bay crossing, all-day 1:1 conversations and pitch refinement on the waterfront, final presentations before the sunset cruise, dinner at a Jack London Square restaurant where winners are announced, after-party on the docked yacht. Times are firm — the boat doesn't wait.</p>
             <ol className="mt-10 overflow-hidden rounded-card border border-ink-200 bg-white dark:border-ink-700 dark:bg-ink-900">
               {finalsDaySchedule.map((row, i) => (
                 <li

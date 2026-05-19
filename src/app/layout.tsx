@@ -7,12 +7,12 @@ export const metadata: Metadata = {
     template: "%s — BuilderShip",
   },
   description:
-    "BuilderShip: a three-week remote AI hackathon hosted by Composio and Nebius. Submit by May 28. Top 30 builders earn a boat day on the bay, May 30. Compete for $10k and a DGX Spark.",
+    "BuilderShip: a three-week remote AI hackathon hosted by Composio and Nebius. Submit by May 28. Top 40 builders earn a boat day on the bay, May 30. Compete for $10k and a DGX Spark.",
   metadataBase: new URL("https://ship.builders"),
   openGraph: {
     title: "BuilderShip — Three-week hackathon, finals on the bay",
     description:
-      "30 hand-picked builders. Three weeks of daily office hours. One boat day on May 30. Hosted by Composio, Nebius, Tavily, and OpenClaw.",
+      "40 hand-picked builders. Three weeks of daily office hours. One boat day on May 30. Hosted by Composio, Nebius, Tavily, and OpenClaw.",
     url: "https://ship.builders",
     siteName: "BuilderShip",
     type: "website",
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "BuilderShip — Three-week hackathon, finals on the bay",
     description:
-      "30 hand-picked builders. Three weeks of daily office hours. One boat day on May 30. Hosted by Composio, Nebius, Tavily, and OpenClaw.",
+      "40 hand-picked builders. Three weeks of daily office hours. One boat day on May 30. Hosted by Composio, Nebius, Tavily, and OpenClaw.",
   },
 };
 

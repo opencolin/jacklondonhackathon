@@ -6,15 +6,15 @@ import { Section, SectionHeader } from "@/components/section";
 
 export const metadata: Metadata = {
   title: "Co-host BuilderShip — sponsor pitch",
-  description: "Co-host BuilderShip with Composio and Nebius. 30 hand-picked builders, three weeks of daily integration time, one boat day. Internal preview.",
+  description: "Co-host BuilderShip with Composio and Nebius. 40 hand-picked builders, three weeks of daily integration time, one boat day. Internal preview.",
   robots: { index: false, follow: false, nocache: true },
 };
 
 const differentiators = [
   {
     eyebrow: "Curated, not mass-market",
-    title: "30 builders. Hand-picked.",
-    body: "Public application is 'show us your claws' — post something you've built, tag the sponsors, we read everything. We hand-pick 30 finalists from the best builders in the Bay. No spray-and-pray crowd, no resume noise.",
+    title: "40 builders. Hand-picked.",
+    body: "Public application is 'show us your claws' — post something you've built, tag the sponsors, we read everything. We hand-pick 40 finalists from the best builders in the Bay. No spray-and-pray crowd, no resume noise.",
   },
   {
     eyebrow: "Time you can't buy",
@@ -34,7 +34,7 @@ const differentiators = [
 ];
 
 const audience = [
-  { stat: "30", label: "Hand-picked finalists" },
+  { stat: "40", label: "Hand-picked finalists" },
   { stat: "3 weeks", label: "Of daily integration time" },
   { stat: "100+", label: "Expected applicants" },
   { stat: "$10k", label: "Grand prize + DGX Spark" },
@@ -145,7 +145,7 @@ const venues = [
 
 const timeline = [
   { date: "Now → May 28", title: "Build period", body: "Daily office hours. Your team is in the room." },
-  { date: "May 28 → 29", title: "Judging", body: "AI judges read every repo. Top 30 finalists named the night of the 29th." },
+  { date: "May 28 → 29", title: "Judging", body: "AI judges read every repo. Top 40 finalists named the night of the 29th." },
   { date: "May 30", title: "Boat day", body: "Bay crossing, all-day 1:1s at Plank, sunset demos, dinner at Farmhouse, winner walks the plank, after-party on the docked yacht." },
 ];
 
@@ -164,7 +164,7 @@ export default function SponsorsOnlyPage() {
               Get in front of the best builders<br />of the Bay.
             </h1>
             <p className="mt-7 max-w-2xl text-xl text-ink-600 dark:text-ink-300">
-              30 hand-picked finalists. Three weeks of daily integration time with your engineers. One day on a yacht in
+              40 hand-picked finalists. Three weeks of daily integration time with your engineers. One day on a yacht in
               Oakland's harbor. Co-host BuilderShip with Composio and Nebius — May 8 → 30, 2026.
             </p>
             <div className="mt-10 flex flex-wrap items-center gap-3">
@@ -286,7 +286,7 @@ export default function SponsorsOnlyPage() {
         <Section bg="tint">
           <SectionHeader
             eyebrow="The arc"
-            title="Three weeks. Thirty builders. One day on the bay."
+            title="Three weeks. Forty builders. One day on the bay."
           />
           <ol className="grid gap-4 md:grid-cols-3">
             {timeline.map((s, i) => (

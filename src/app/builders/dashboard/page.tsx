@@ -140,7 +140,7 @@ export default async function BuilderDashboard() {
                     Start your submission.
                   </h2>
                   <p className="mt-2 text-ink-600 dark:text-ink-300">
-                    Save a draft now, edit until the deadline, hit submit when you're ready for judges. Top 30 builders earn the boat day on May 30.
+                    Save a draft now, edit until the deadline, hit submit when you're ready for judges. Top 40 builders earn the boat day on May 30.
                   </p>
                   <div className="mt-6 flex flex-wrap gap-3">
                     <Link href={projectHref} className="btn-lime">Open project form →</Link>
@@ -171,7 +171,7 @@ export default async function BuilderDashboard() {
                   May 30
                 </p>
                 <p className="mt-2 text-sm text-ink-600 dark:text-ink-300">
-                  Top 30 finalists named May 29. Boat leaves South Beach at 9 AM May 30.
+                  Top 40 finalists named May 29. Boat leaves South Beach at 9 AM May 30.
                 </p>
               </div>
             </div>
