@@ -21,6 +21,10 @@ const serverSchema = z.object({
   RESEND_API_KEY: z.string().optional(),
   RESEND_FROM_EMAIL: z.string().min(1).default("BuilderShip <hello@mail.ship.builders>"),
 
+  // Comma-separated admin emails. Anyone signing in with one of these gets
+  // session.user.isAdmin = true without touching the DB users.is_admin flag.
+  ADMIN_EMAILS: z.string().optional(),
+
   NEBIUS_TOKEN_FACTORY_KEY: z.string().optional(),
   NEBIUS_TOKEN_FACTORY_BASE_URL: z
     .string()

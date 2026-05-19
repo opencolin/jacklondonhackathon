@@ -79,7 +79,14 @@ export const authConfig = {
     async session({ session, user }: { session: any; user: any }) {
       if (session.user && user) {
         session.user.id = user.id;
-        session.user.isAdmin = (user as { isAdmin?: boolean }).isAdmin ?? false;
+        const dbAdmin = (user as { isAdmin?: boolean }).isAdmin ?? false;
+        const adminEmails = (env.ADMIN_EMAILS ?? "")
+          .split(",")
+          .map((s) => s.trim().toLowerCase())
+          .filter(Boolean);
+        const email = (session.user.email as string | undefined)?.toLowerCase();
+        const envAdmin = email ? adminEmails.includes(email) : false;
+        session.user.isAdmin = dbAdmin || envAdmin;
       }
       return session;
     },
