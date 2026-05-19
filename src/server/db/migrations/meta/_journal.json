@@ -15,6 +15,13 @@
       "when": 1778722700596,
       "tag": "0001_steady_nomad",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1779155341620,
+      "tag": "0002_wealthy_king_bedlam",
+      "breakpoints": true
     }
   ]
 }

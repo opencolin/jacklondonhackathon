@@ -7,7 +7,7 @@ import { formatDate, formatTime } from "@/lib/utils";
 import { safeAuth } from "@/server/lib/safe-auth";
 import { api } from "@/lib/trpc/server";
 import { db } from "@/server/db";
-import { projects, teams } from "@/server/db/schema";
+import { projects, teams, users } from "@/server/db/schema";
 import { ProjectForm } from "./project-form";
 
 export const dynamic = "force-dynamic";
@@ -39,15 +39,40 @@ export default async function BuilderEventHub({ params }: { params: { id: string
   }
   if (!event) return notFound();
 
-  // Look up an existing project for this user + event so the form prefills.
+  // Prefill the form with the user's profile + any existing project for this event.
   let existingProject: {
     name: string;
     summary: string;
     repoUrl: string;
     demoUrl: string;
+    xPostUrl: string;
+    linkedinPostUrl: string;
     status: "draft" | "submitted";
-  } = { name: "", summary: "", repoUrl: "", demoUrl: "", status: "draft" };
+    builderName: string;
+    builderPhone: string;
+  } = {
+    name: "",
+    summary: "",
+    repoUrl: "",
+    demoUrl: "",
+    xPostUrl: "",
+    linkedinPostUrl: "",
+    status: "draft",
+    builderName: session.user.name ?? "",
+    builderPhone: "",
+  };
   try {
+    // Builder row — prefill name + phone.
+    const [userRow] = await db
+      .select({ name: users.name, phone: users.phone })
+      .from(users)
+      .where(eq(users.id, session.user.id))
+      .limit(1);
+    if (userRow) {
+      existingProject.builderName = userRow.name ?? existingProject.builderName;
+      existingProject.builderPhone = userRow.phone ?? "";
+    }
+
     const [team] = await db
       .select({ id: teams.id })
       .from(teams)
@@ -62,6 +87,8 @@ export default async function BuilderEventHub({ params }: { params: { id: string
           summary: projects.summary,
           repoUrl: projects.repoUrl,
           demoUrl: projects.demoUrl,
+          xPostUrl: projects.xPostUrl,
+          linkedinPostUrl: projects.linkedinPostUrl,
           status: projects.status,
         })
         .from(projects)
@@ -71,10 +98,13 @@ export default async function BuilderEventHub({ params }: { params: { id: string
         .limit(1);
       if (project) {
         existingProject = {
+          ...existingProject,
           name: project.name ?? "",
           summary: project.summary ?? "",
           repoUrl: project.repoUrl ?? "",
           demoUrl: project.demoUrl ?? "",
+          xPostUrl: project.xPostUrl ?? "",
+          linkedinPostUrl: project.linkedinPostUrl ?? "",
           status: project.status === "submitted" ? "submitted" : "draft",
         };
       }
@@ -177,7 +207,11 @@ export default async function BuilderEventHub({ params }: { params: { id: string
                 <span className="pill-lime mt-4 inline-flex"><span className="live-dot mr-1" /> Submitted · judges can see it</span>
               ) : null}
               <div className="card mt-6">
-                <ProjectForm eventId={event.id} initial={existingProject} />
+                <ProjectForm
+                  eventId={event.id}
+                  email={session.user.email ?? ""}
+                  initial={existingProject}
+                />
               </div>
             </div>
             <aside className="lg:pl-4">

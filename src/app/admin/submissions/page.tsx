@@ -16,6 +16,22 @@ const adminNav = [
 
 type SearchParams = { status?: string };
 
+function AdminLink({ href, label }: { href: string | null; label: string }) {
+  if (!href) {
+    return <span className="font-mono text-ink-400 dark:text-ink-500">no {label}</span>;
+  }
+  return (
+    <Link
+      href={href}
+      target="_blank"
+      rel="noreferrer"
+      className="font-mono text-navy-700 underline-offset-2 hover:underline dark:text-lime"
+    >
+      {label} ↗
+    </Link>
+  );
+}
+
 export default async function AdminSubmissions({
   searchParams,
 }: {
@@ -51,11 +67,14 @@ export default async function AdminSubmissions({
       summary: projects.summary,
       repoUrl: projects.repoUrl,
       demoUrl: projects.demoUrl,
+      xPostUrl: projects.xPostUrl,
+      linkedinPostUrl: projects.linkedinPostUrl,
       status: projects.status,
       updatedAt: projects.updatedAt,
       teamName: teams.name,
       leaderName: users.name,
       leaderEmail: users.email,
+      leaderPhone: users.phone,
       eventTitle: events.title,
       eventSlug: events.slug,
     })
@@ -139,7 +158,8 @@ export default async function AdminSubmissions({
                         </span>
                       </div>
                       <p className="mt-1 text-xs text-ink-500 dark:text-ink-400">
-                        {r.leaderName ?? "—"} ({r.leaderEmail}) · team {r.teamName} · {r.eventTitle}
+                        {r.leaderName ?? "—"} · {r.leaderEmail}
+                        {r.leaderPhone ? ` · ${r.leaderPhone}` : ""} · team {r.teamName} · {r.eventTitle}
                       </p>
                       {r.summary ? (
                         <p className="mt-3 text-sm leading-relaxed text-ink-700 dark:text-ink-200 line-clamp-4">
@@ -151,30 +171,10 @@ export default async function AdminSubmissions({
                         </p>
                       )}
                       <div className="mt-3 flex flex-wrap gap-3 text-xs">
-                        {r.repoUrl ? (
-                          <Link
-                            href={r.repoUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="font-mono text-navy-700 underline-offset-2 hover:underline dark:text-lime"
-                          >
-                            repo ↗
-                          </Link>
-                        ) : (
-                          <span className="font-mono text-ink-400 dark:text-ink-500">no repo</span>
-                        )}
-                        {r.demoUrl ? (
-                          <Link
-                            href={r.demoUrl}
-                            target="_blank"
-                            rel="noreferrer"
-                            className="font-mono text-navy-700 underline-offset-2 hover:underline dark:text-lime"
-                          >
-                            demo ↗
-                          </Link>
-                        ) : (
-                          <span className="font-mono text-ink-400 dark:text-ink-500">no demo</span>
-                        )}
+                        <AdminLink href={r.repoUrl} label="repo" />
+                        <AdminLink href={r.demoUrl} label="demo" />
+                        <AdminLink href={r.xPostUrl} label="x" />
+                        <AdminLink href={r.linkedinPostUrl} label="linkedin" />
                       </div>
                     </div>
                     <div className="text-xs text-ink-500 dark:text-ink-400 sm:text-right">

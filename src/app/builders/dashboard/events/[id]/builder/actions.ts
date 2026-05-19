@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 import { and, eq } from "drizzle-orm";
 import { z } from "zod";
 import { db } from "@/server/db";
-import { events, projects, teams, teamMemberships } from "@/server/db/schema";
+import { events, projects, teams, teamMemberships, users } from "@/server/db/schema";
 import { safeAuth } from "@/server/lib/safe-auth";
 
 const optionalUrl = z
@@ -18,13 +18,27 @@ const optionalUrl = z
     "Must be a URL starting with http:// or https://",
   );
 
+const optionalText = (max: number) =>
+  z
+    .string()
+    .trim()
+    .max(max)
+    .optional()
+    .transform((v) => (v ? v : null));
+
 const schema = z.object({
   eventId: z.string().uuid("Invalid event id."),
+  // Project fields
   name: z.string().trim().min(1, "Project name is required").max(120),
   summary: z.string().trim().max(2000).optional().transform((v) => (v ? v : null)),
   repoUrl: optionalUrl,
   demoUrl: optionalUrl,
+  xPostUrl: optionalUrl,
+  linkedinPostUrl: optionalUrl,
   status: z.enum(["draft", "submitted"]).default("draft"),
+  // Builder-level fields — saved to the users row, not the project.
+  builderName: optionalText(120),
+  builderPhone: optionalText(40),
 });
 
 export type ProjectSaveState =
@@ -57,7 +71,11 @@ export async function saveProject(
     summary: formData.get("summary"),
     repoUrl: formData.get("repoUrl"),
     demoUrl: formData.get("demoUrl"),
+    xPostUrl: formData.get("xPostUrl"),
+    linkedinPostUrl: formData.get("linkedinPostUrl"),
     status: formData.get("status") ?? "draft",
+    builderName: formData.get("builderName"),
+    builderPhone: formData.get("builderPhone"),
   });
 
   if (!parsed.success) {
@@ -69,7 +87,18 @@ export async function saveProject(
   }
 
   const userId = session.user.id;
-  const { eventId, name, summary, repoUrl, demoUrl, status } = parsed.data;
+  const {
+    eventId,
+    name,
+    summary,
+    repoUrl,
+    demoUrl,
+    xPostUrl,
+    linkedinPostUrl,
+    status,
+    builderName,
+    builderPhone,
+  } = parsed.data;
 
   // Confirm the event exists. Surfaces a clean message instead of a
   // FK-violation cascade later.
@@ -163,6 +192,8 @@ export async function saveProject(
           summary,
           repoUrl,
           demoUrl,
+          xPostUrl,
+          linkedinPostUrl,
           status,
           updatedAt: new Date(),
         })
@@ -175,8 +206,22 @@ export async function saveProject(
         summary,
         repoUrl,
         demoUrl,
+        xPostUrl,
+        linkedinPostUrl,
         status,
       });
+    }
+
+    // Best-effort save of builder name + phone on the users row. Only
+    // touch columns the user actually filled — never null out the OAuth
+    // name with an empty form field.
+    const userPatch: { name?: string; phone?: string | null; updatedAt: Date } = {
+      updatedAt: new Date(),
+    };
+    if (builderName) userPatch.name = builderName;
+    if (builderPhone !== undefined) userPatch.phone = builderPhone; // null clears, value sets
+    if (Object.keys(userPatch).length > 1) {
+      await db.update(users).set(userPatch).where(eq(users.id, userId));
     }
   } catch (err) {
     console.error("[saveProject] project write failed", err);

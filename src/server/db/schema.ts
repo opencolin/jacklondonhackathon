@@ -378,6 +378,8 @@ export const projects = pgTable(
     summary: text("summary"),
     repoUrl: text("repo_url"),
     demoUrl: text("demo_url"),
+    xPostUrl: text("x_post_url"),
+    linkedinPostUrl: text("linkedin_post_url"),
     videoUrl: text("video_url"),
     videoThumbUrl: text("video_thumb_url"),
     status: projectStatusEnum("status").notNull().default("draft"),
