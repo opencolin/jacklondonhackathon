@@ -37,7 +37,7 @@ const audience = [
   { stat: "40", label: "Hand-picked finalists" },
   { stat: "3 weeks", label: "Of daily integration time" },
   { stat: "100+", label: "Expected applicants" },
-  { stat: "$10k", label: "Grand prize + DGX Spark" },
+  { stat: "$50k", label: "Grand prize + DGX Spark" },
 ];
 
 const benefits = [

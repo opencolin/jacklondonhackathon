@@ -8,7 +8,7 @@ import { RotatingHeroTitle } from "@/components/rotating-hero-title";
 export const metadata: Metadata = {
   title: { absolute: "BuilderShip — Three-week hackathon, finals on the bay" },
   description:
-    "BuilderShip: a three-week remote hackathon with daily office hours. Submit by May 28. Top 40 builders earn a boat day on the bay, May 30 — bay crossing, all-day 1:1 pitches in Jack London Square, final presentations, sunset cruise, waterfront dinner, the winner takes home $10k in credits and a DGX Spark, after-party on the yacht. Hosted by Composio, Nebius, Tavily, and OpenClaw.",
+    "BuilderShip: a three-week remote hackathon with daily office hours. Submit by May 28. Top 40 builders earn a boat day on the bay, May 30 — bay crossing, all-day 1:1 pitches in Jack London Square, final presentations, sunset cruise, waterfront dinner, the winner takes home $50,000 in credits and a DGX Spark, after-party on the yacht. Hosted by Composio, Nebius, Tavily, and OpenClaw.",
 };
 
 const timeline = [
@@ -216,7 +216,7 @@ const faqs = [
   },
   {
     q: "What happens on May 30?",
-    a: "Finals day in Jack London Square — and there's no five-minute stage pitch. You spend the whole day in 1:1 conversations: angels and VCs over breakfast at HQ, sponsor judges over lunch and bowling, more 1:1s through the afternoon. A kayak race on the Oakland waterfront — open to anyone who shows up — runs before final presentations. Sunset cruise, dinner waterside, winners announced, the winner takes home $10k in credits and a DGX Spark. After-party back on the docked yacht.",
+    a: "Finals day in Jack London Square — and there's no five-minute stage pitch. You spend the whole day in 1:1 conversations: angels and VCs over breakfast at HQ, sponsor judges over lunch and bowling, more 1:1s through the afternoon. A kayak race on the Oakland waterfront — open to anyone who shows up — runs before final presentations. Sunset cruise, dinner waterside, winners announced, the winner takes home $50,000 in credits and a DGX Spark. After-party back on the docked yacht.",
   },
   {
     q: "What does \"walking the plank\" mean?",
@@ -266,7 +266,7 @@ export default function HackJackLondonSquarePage() {
             <RotatingHeroTitle className="mt-20" />
             <p className="mt-7 max-w-2xl text-xl text-ink-600 dark:text-ink-300">
               Best builders of the bay. 40 onboard — building, bowling, beer, beluga caviar, sunset cruise.
-              Compete for $10k and a DGX Spark.
+              Compete for $50,000 and a DGX Spark.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">
               <span className="text-xs font-semibold uppercase tracking-[0.18em] text-ink-500 dark:text-ink-400">Hosted by</span>

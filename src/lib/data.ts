@@ -101,7 +101,7 @@ export const events: Event[] = [
     isOnline: false,
     cover: "from-accent-sky via-accent-blue to-navy-700",
     description:
-      "Three-week remote AI hackathon hosted by Composio and Nebius. Submit by May 28. Top 40 builders earn a boat day on the bay, May 30. Compete for $10k and a DGX Spark.",
+      "Three-week remote AI hackathon hosted by Composio and Nebius. Submit by May 28. Top 40 builders earn a boat day on the bay, May 30. Compete for $50,000 and a DGX Spark.",
     capacity: 40,
     registered: 0,
     partners: ["Composio", "Nebius", "Tavily", "OpenClaw"],
@@ -1114,9 +1114,8 @@ export const eventBlasts = [
 ];
 
 export const eventPrizes = [
-  { title: "Best Use of OpenClaw", value: "$2,500", dollarValue: 2500 },
-  { title: "Best Token Factory Build", value: "$1,500", dollarValue: 1500 },
-  { title: "Best Demo", value: "$1,000", dollarValue: 1000 },
+  { title: "Credits", value: "$50,000", dollarValue: 50000 },
+  { title: "Hardware", value: "DGX Spark", dollarValue: 0 },
 ];
 
 export const eventVolunteerOpportunities = [

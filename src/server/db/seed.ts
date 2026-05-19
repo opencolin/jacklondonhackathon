@@ -101,7 +101,7 @@ async function main() {
       slug: "buildership",
       title: "BuilderShip",
       description:
-        "Three-week remote hackathon culminating in a finals day on the bay, May 30. Top 40 builders earn the boat day. Compete for $10k and a DGX Spark.",
+        "Three-week remote hackathon culminating in a finals day on the bay, May 30. Top 40 builders earn the boat day. Compete for $50,000 and a DGX Spark.",
       format: "HACKATHON",
       state: "live",
       startsAt: new Date("2026-05-07T09:00:00-07:00"),
@@ -109,7 +109,7 @@ async function main() {
       venueId: jackLondon?.id,
       capacity: 40,
       coverGradient: "from-navy-500 via-navy-600 to-navy-700",
-      prizeSummary: "$10k in credits + a DGX Spark + a walk off the plank",
+      prizeSummary: "$50,000 in credits + a DGX Spark + a walk off the plank",
       partnersJson: ["Nebius", "Composio", "Tavily"],
       scoringConfigJson: {
         ai_weight: 0.4,
