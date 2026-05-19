@@ -4,7 +4,7 @@ import { useState } from "react";
 
 const SHARE_TITLE = "BuilderShip — Three-week hackathon, finals on the bay";
 const SHARE_TEXT =
-  "Three-week remote hackathon with daily office hours. Top 40 builders win a boat day on the bay, May 30. Compete for $50,000 and a DGX Spark.";
+  "Three-week remote hackathon with daily office hours. Top 40 builders win a boat day on the bay, May 30. Compete for $50K credits and a DGX Spark.";
 
 export function ShareButton() {
   const [copied, setCopied] = useState(false);
